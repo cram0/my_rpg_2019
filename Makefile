@@ -1,0 +1,20 @@
+NAME	=	my_rpg
+SRC	=	$(wildcard *.c)
+OBJ	=	$(SRC:.c=.o)
+LDLIBS	=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm
+CFLAGS	=	-O0 -g -g3
+
+all: $(NAME)
+
+$(NAME): $(OBJ)
+
+re:
+	make fclean
+	make all
+
+clean:
+	find -name '*.o' -exec rm {} \;
+
+fclean:
+	make clean
+	rm -f $(NAME)
