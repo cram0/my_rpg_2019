@@ -1,0 +1,1 @@
+char my_basic_getopt(int ac, char *av[]);
