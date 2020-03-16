@@ -1,5 +1,7 @@
 NAME	=	my_rpg
-SRC	=	$(wildcard *.c)
+SRC	=	$(wildcard *.c) \
+		$(wildcard lib/*.c) \
+		$(wildcard get_next_line/*.c)
 OBJ	=	$(SRC:.c=.o)
 LDLIBS	=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm
 CFLAGS	=	-O0 -g -g3
