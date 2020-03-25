@@ -15,6 +15,6 @@ BEGIN {
 }
 
 END {
-        printf "    { .x =    0, .y =    0, .width =    0, .height =    0, },\n", $1, $2, $3, $4
+    printf "    { .x =    0, .y =    0, .width =    0, .height =    0, },\n", $1, $2, $3, $4
     print "};"
 }
