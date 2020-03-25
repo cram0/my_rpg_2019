@@ -10,19 +10,19 @@ BEGIN {
 
     printf "%s... ", struct_name
 
-    printf "const sfRectInt %s[];\n", struct_name >> hfile
+    printf "const sfIntRect %s[];\n", struct_name >> hfile
 
-    printf "const sfRectInt %s[] = {\n", struct_name >> cfile
+    printf "const sfIntRect %s[] = {\n", struct_name >> cfile
 }
 
 {
     if (line > 0) {
-        printf "    { .x = %4s, .y = %4s, .width = %4s, .height = %4s, },\n", $1, $2, $3, $4 >> cfile
+        printf "    { .left = %4s, .top = %4s, .width = %4s, .height = %4s, },\n", $1, $2, $3, $4 >> cfile
     }
     line++
 }
 
 END {
-    printf "    { .x =    0, .y =    0, .width =    0, .height =    0, },\n", $1, $2, $3, $4 >> cfile
+    printf "    { .left =    0, .top =    0, .width =    0, .height =    0, },\n", $1, $2, $3, $4 >> cfile
     print "};\n" >> cfile
 }
