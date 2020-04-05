@@ -6,7 +6,7 @@
 
 void destroy_pair(void *pair)
 {
-    assoc_pair *tmp = pair;
+    alist_pair *tmp = pair;
     free(tmp->data);
     free(tmp->key);
     free(pair);

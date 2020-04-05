@@ -6,7 +6,7 @@
 typedef struct {
     void *key;
     void *data;
-} assoc_pair;
+} alist_pair;
 
 typedef struct {
     int (*match)(void *key1, void *key2);

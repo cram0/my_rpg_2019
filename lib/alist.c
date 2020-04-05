@@ -14,13 +14,13 @@ void alist_destroy(alist *list)
     dlist_destroy(&list->pairs);
 }
 
-int alist_insert_assoc_pair(alist *list, assoc_pair *pair)
+int alist_insert_assoc_pair(alist *list, alist_pair *pair)
 {
     int inserted = 0;
 
     dlist_node *current_node = list->pairs.head;
     while (current_node) {
-        assoc_pair *current_pair = (assoc_pair *)current_node->data;
+        alist_pair *current_pair = (alist_pair *)current_node->data;
         if (!list->match(pair->key, current_pair->key)) {
             if (list->pairs.destroy)
                 list->pairs.destroy(current_pair);
@@ -40,7 +40,7 @@ int alist_insert_assoc_pair(alist *list, assoc_pair *pair)
 
 int alist_insert(alist *list, void *key, void *data)
 {
-    assoc_pair *new_element = malloc(sizeof(assoc_pair));
+    alist_pair *new_element = malloc(sizeof(alist_pair));
     if (!new_element)
         return (-1);
     
@@ -54,7 +54,7 @@ void *alist_search(alist *list, void *key)
 {
     dlist_node *current_node = list->pairs.head;
     while (current_node) {
-        assoc_pair *current_pair = (assoc_pair *)current_node->data;
+        alist_pair *current_pair = (alist_pair *)current_node->data;
         if (!list->match(key, current_pair->key)) {
             return (current_pair->data);
         }
