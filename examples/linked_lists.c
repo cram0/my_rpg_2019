@@ -20,7 +20,7 @@ int **range(int end)
 int main(void)
 {
     dlist list;
-    dlist_init(&list);
+    dlist_init(&list, free);
 
     int **tab = range(7);
 
@@ -35,5 +35,8 @@ int main(void)
     for (int i = 0; tab[i]; i++) {
         dlist_remove(&list, list.head, (void **)&data);
         printf("succesfully removed %d\n", *data);
+        free(data);
     }
+
+    free(tab);
 }
