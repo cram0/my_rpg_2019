@@ -2,11 +2,12 @@
 
 #include "dlist.h"
 
-void dlist_init(dlist *list)
+void dlist_init(dlist *list, void (*destroy)(void *data))
 {
     list->size = 0;
     list->head = NULL;
     list->tail = NULL;
+    list->destroy = destroy;
 }
 
 void dlist_destroy(dlist *list)
@@ -15,10 +16,10 @@ void dlist_destroy(dlist *list)
 
     while (dlist_size(list) > 0) {
         if (dlist_remove(list, dlist_tail(list), &data) == 0) {
-            free(data);
+            if (list->destroy)
+                list->destroy(data);
         }
     }
-    dlist_init(list);
 }
 
 int dlist_ins_next(dlist *list, dlist_node *element, void *data)
