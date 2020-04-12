@@ -23,5 +23,6 @@ int draw_textbox(textbox_state *state, sfRenderWindow *window);
 int update_textbox(textbox_state *state);
 void reset_textbox(textbox_state *state);
 void destroy_textbox(textbox_state *state);
+void setstring_textbox(textbox_state *state, char *string);
 
 #endif

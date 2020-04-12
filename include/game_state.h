@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.h>
 
-#include "../components/textboxes/textboxes.h"
+#include "../components/textboxes/textbox.h"
 
 typedef struct {
     int argc;
