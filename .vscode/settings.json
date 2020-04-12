@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "initialization.h": "c",
-        "game_state.h": "c"
-    }
-}
