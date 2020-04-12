@@ -94,12 +94,12 @@ static sfText *generate_text_object(textbox_state *state)
 
 int update_textbox(textbox_state *state)
 {
-    if (!state->clock) {
-        state->clock = sfClock_create();
-        sfClock_restart(state->clock);
-        return (0);
-    }
     if (state->on) {
+        if (!state->clock) {
+            state->clock = sfClock_create();
+            sfClock_restart(state->clock);
+            return (0);
+        }
         if (GET_ELAPSED_MSECS(state->clock) > (state->string[state->charcount] == '\n' ? 700 : 40)) {
             if (state->charcount < strlen(state->string)) {
                 state->charcount++;
