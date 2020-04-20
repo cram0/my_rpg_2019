@@ -5,3 +5,5 @@ my_rpg
 
 *.gcda
 *.gcno
+
+.vscode
