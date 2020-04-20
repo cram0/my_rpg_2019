@@ -5,7 +5,26 @@
 
 #include "../components/textboxes/textbox.h"
 
-typedef struct {
+typedef struct global_state global_state;
+
+struct scene {
+    void *(*init)(global_state *game_state);
+    int (*update)(void *data);
+    int (*handle_events)(void *data, sfEvent event);
+    int (*destroy)(void *data);
+    int (*draw)(void *data, sfRenderWindow *win);
+};
+
+#define SCENE_DB_ENTRY(name) \
+    (struct scene){ \
+        name##_##init, \
+        name##_##update, \
+        name##_##handle_events, \
+        name##_##destroy, \
+        name##_##draw, \
+    }
+
+typedef struct global_state {
     int argc;
     char **argv;
 
@@ -19,8 +38,12 @@ typedef struct {
     sfRenderWindow *win;
     sfEvent event;
 
-    textbox_state textbox;
+    int continue_loop;
 
+    int scene_id;
+    void *scene_state;
+
+    struct scene scenes_db[20];
 } global_state;
 
 #endif

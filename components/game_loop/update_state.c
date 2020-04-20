@@ -4,7 +4,5 @@
 
 int update_state(global_state *state)
 {
-    if (update_textbox(&state->textbox) < 0)
-        return (-1);
     return (0);
 }
