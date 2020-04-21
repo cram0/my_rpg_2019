@@ -9,8 +9,8 @@
 #include "components/game_loop/game_loop.h"
 #include "components/usage/usage.h"
 
-#include "scenes/sample_scene/interface.h"
-#include "scenes/my_scene/interface.h"
+#include "generated_code/scenes_interfaces.h"
+#include "generated_code/scenes_db.h"
 
 int parse_arguments(global_state *state)
 {
@@ -37,10 +37,7 @@ int main(int argc, char *argv[])
         .width = 256 * 3,
         .height = 224 * 3,
         .scene_id = -1,
-        .scenes_db = {
-            SCENE_DB_ENTRY(sample_scene),
-            SCENE_DB_ENTRY(my_scene)
-        }
+        .scenes_db = ALL_SCENES
     };
     state.argc = argc;
     state.argv = &argv[0];

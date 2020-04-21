@@ -8,7 +8,7 @@
 void press_q_to_quit(global_state *state)
 {
     if (state->event.type == sfEvtKeyPressed) {
-        if (state->event.key.code == 'q')
+        if (state->event.key.code == sfKeyQ)
             sfRenderWindow_close(state->win);
     }
 }

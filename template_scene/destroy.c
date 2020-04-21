@@ -7,5 +7,6 @@
 
 int DECORATE(destroy)(void *data)
 {
+    DEBUG("Destroying scene %s", "xxxxx");
     DEBUG("Destroy operation not implemented!");
 }

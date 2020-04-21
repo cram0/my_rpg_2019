@@ -8,7 +8,7 @@ static void DECORATE(press_any_key)(void *data, sfEvent event)
 {
     if (event.type == sfEvtKeyPressed) {
         DEBUG("Key pressed! => %d", event.key.code);
-        setstring_textbox(&scene_state(data)->textbox, "Hello, World!\nMy name is scene 2!");
+        setstring_textbox(&scene_state(data)->textbox, "xxxxx:\nHello, World!");
     }
 }
 

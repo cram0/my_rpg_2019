@@ -1,11 +1,11 @@
-#ifndef MY_SCENE_INTERFACE_H
-#define MY_SCENE_INTERFACE_H
+#ifndef XXXXX_INTERFACE_H
+#define XXXXX_INTERFACE_H
 
 #include <SFML/Graphics.h>
 
 #include "../../include/game_state.h"
 
-#include "state.h"
+#include "decorator.h"
 
 void *DECORATE(init)(global_state *game_state);
 int DECORATE(update)(void *data);

@@ -1,5 +1,5 @@
-#ifndef MY_SCENE_STATE_H
-#define MY_SCENE_STATE_H
+#ifndef XXXXX_STATE_H
+#define XXXXX_STATE_H
 
 #include "decorator.h"
 
@@ -7,6 +7,9 @@
 
 typedef struct {
     textbox_state textbox;
+
+    /* in case you really need to access the global_state object */
+    void *game_state;
 } DECORATE(state);
 
 #define scene_state(data) ((DECORATE(state) *)data)
