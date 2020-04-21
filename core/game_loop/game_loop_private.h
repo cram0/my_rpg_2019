@@ -4,7 +4,8 @@
 #include "../../include/game_state.h"
 
 void close_window(global_state *state);
-void press_any_key(global_state *state);
+void press_q_to_quit(global_state *state);
+void change_scene(global_state *state);
 
 int manage_events(global_state *state);
 
