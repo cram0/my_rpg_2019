@@ -5,13 +5,13 @@ BEGIN {
     hfile = target ".h"
 
     gsub(".csv", "", struct_name)
-    gsub("data/", "", struct_name)
+    gsub("data/rectangles/", "", struct_name)
 
     printf "%s... ", struct_name
 
-    printf "const sfIntRect %s[];\n", struct_name >> hfile
+    printf "const sfIntRect %s_rects[];\n", struct_name >> hfile
 
-    printf "const sfIntRect %s[] = {\n", struct_name >> cfile
+    printf "const sfIntRect %s_rects[] = {\n", struct_name >> cfile
 }
 
 /^[0-9]+,[0-9]+,[0-9+]/ {
