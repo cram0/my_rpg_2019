@@ -5,8 +5,9 @@
 #include "lib/my_basic_getopt.h"
 #include "lib/substring.h"
 
-#include "components/initialization/initialization.h"
-#include "components/game_loop/game_loop.h"
+#include "core/initialization/initialization.h"
+#include "core/game_loop/game_loop.h"
+
 #include "components/usage/usage.h"
 
 #include "generated_code/scenes_interfaces.h"
