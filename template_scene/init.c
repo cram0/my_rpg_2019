@@ -13,6 +13,7 @@ void *DECORATE(init)(global_state *game_state)
     DEBUG("starting scene %s", "xxxxx");
 
     if (run_once == 0) {
+        scene_state.zoom_level = game_state->zoom_level;
         init_textbox(&scene_state.textbox, game_state->width, game_state->height);
         run_once = 1;
     }

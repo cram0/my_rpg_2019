@@ -1,3 +1,4 @@
+#include <SFML/Graphics.h>
 const sfVector2f boomerang_loop_origs[] = {
     { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
