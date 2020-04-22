@@ -18,9 +18,9 @@ int link_init(DECORATE(state) *state, float width, float height)
     if (animation_load_spritesheet(ani, LINK_PATH) < 0)
         return (-1);
 
-    animation_set_rects(ani, link_right_walk_origs, link_right_walk_rects);
-    animation_set_position(ani, vec_center(width, height));
     animation_set_zoom(ani, state->zoom_level);
+    animation_set_position(ani, vec_center(width, height));
+    animation_set_rects(ani, link_right_walk_origs, link_right_walk_rects);
 
     return (0);
 }

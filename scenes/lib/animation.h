@@ -23,6 +23,7 @@ long animation_get_elapsed_mil(animation *ani, int idx);
 void animation_clock_restart(animation *ani, int idx);
 void animation_draw(animation *ani, sfRenderWindow *win, sfRenderStates *states);
 int animation_update(animation *ani, float time);
+void animation_set_zoom(animation *ani, float zoom);
 
 #define init_animation(ani, fp, origs, rects, pos) \
     animation_load_spritesheet(ani, fp); \
