@@ -6,8 +6,11 @@ TARGETFILE_RECTS="rects"
 TARGETFILE_ORIGS="origins"
 
 mkdir -p ${TARGETDIR}
-rm -f ${TARGETDIR}/${TARGETFILE_RECTS}.*
-rm -f ${TARGETDIR}/${TARGETFILE_ORIGS}.*
+
+echo '#include <SFML/Graphics.h>' > ${TARGETDIR}/${TARGETFILE_RECTS}.c
+echo '#include <SFML/Graphics.h>' > ${TARGETDIR}/${TARGETFILE_RECTS}.h
+echo '#include <SFML/Graphics.h>' > ${TARGETDIR}/${TARGETFILE_ORIGS}.c
+echo '#include <SFML/Graphics.h>' > ${TARGETDIR}/${TARGETFILE_ORIGS}.h
 
 for f in data/rectangles/*.csv
 do
