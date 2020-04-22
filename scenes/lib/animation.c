@@ -85,7 +85,6 @@ int animation_update(animation *ani, float time)
         sfIntRect final_rect = (ani->invert_y ? invert_y_rect(rect) : rect);
         sfVector2f final_orig = (ani->invert_y ? invert_y_origin(relative, rect) : relative);
 
-        sfSprite_setScale(ani->sprite, (sfVector2f){3.0, 3.0});
         sfSprite_setTextureRect(ani->sprite, final_rect);
         sfSprite_setOrigin(ani->sprite, final_orig);
         animation_clock_restart(ani, 0);
