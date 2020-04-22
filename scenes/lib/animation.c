@@ -28,6 +28,8 @@ void animation_set_rects(animation *ani, sfVector2f *origs, sfIntRect *rects)
 
     sfSprite_setTextureRect(ani->sprite, ani->rects[0]);
     sfSprite_setOrigin(ani->sprite, ani->origins[0]);
+
+    DEBUG("SET_RECT END");
 }
 
 void animation_set_position(animation *ani, sfVector2f pos)
