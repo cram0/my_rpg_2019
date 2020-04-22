@@ -1,5 +1,3 @@
-
-
 #include "../../include/debug.h"
 #include "../../include/game_state.h"
 

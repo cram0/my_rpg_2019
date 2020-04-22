@@ -3,8 +3,6 @@
 #include "../../include/debug.h"
 #include "../../include/game_state.h"
 
-#include "../textboxes/textbox.h"
-
 #include "game_loop_private.h"
 
 #define CONTINUE_IF_NEEDED() \
