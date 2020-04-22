@@ -11,7 +11,7 @@ int animation_load_spritesheet(animation *ani, char *fp)
     ani->sprite = sfSprite_create();
     if (!ani->sprite)
         return (-1);
-    
+
     ani->texture = sfTexture_createFromFile(fp, NULL);
     sfSprite_setTexture(ani->sprite, ani->texture, sfFalse);
 
@@ -23,6 +23,8 @@ void animation_set_rects(animation *ani, sfVector2f *origs, sfIntRect *rects)
     ani->frame = -1;
     ani->origins = origs;
     ani->rects = rects;
+
+    DEBUG("SET_RECT %p", rects);
 
     sfSprite_setTextureRect(ani->sprite, ani->rects[0]);
     sfSprite_setOrigin(ani->sprite, ani->origins[0]);

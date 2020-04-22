@@ -7,3 +7,5 @@ my_rpg
 *.gcno
 
 .vscode
+
+vgcore.*
