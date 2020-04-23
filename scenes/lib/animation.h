@@ -25,6 +25,9 @@ void animation_draw(animation *ani, sfRenderWindow *win, sfRenderStates *states)
 int animation_update(animation *ani, float time);
 void animation_set_zoom(animation *ani, float zoom);
 
+#define m_animation_set_rects(ani, name) \
+    animation_set_rects(ani, name##_origs, name##_rects)
+
 #define init_animation(ani, fp, origs, rects, pos) \
     animation_load_spritesheet(ani, fp); \
     animation_set_rects(ani, origs, rects); \

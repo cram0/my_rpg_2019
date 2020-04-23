@@ -10,19 +10,28 @@
 #include "../../generated_code/rects.h"
 
 const char LINK_PATH[] = "assets/link.gif";
+const char MAP_PATH[] = "assets/maps/links_house.png";
+const char MAP_COLOR_PATH[] = "maps_hitboxes/links_house.png";
 
-int link_init(DECORATE(state) *state, float width, float height)
+int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
 {
     animation *ani = &state->my_link.ani;
+    state->my_link.direction = DOWN;
 
     if (animation_load_spritesheet(ani, LINK_PATH) < 0)
         return (-1);
 
     animation_set_zoom(ani, state->zoom_level);
     animation_set_position(ani, vec_center(width, height));
-    animation_set_rects(ani, link_right_walk_origs, link_right_walk_rects);
+    m_animation_set_rects(ani, link_down_idle);
 
     return (0);
+}
+
+int DECORATE(house_init)(DECORATE(state) *state)
+{
+    map *m = &state->my_map.m;
+    map_init(m, MAP_PATH, MAP_COLOR_PATH, state->zoom_level);
 }
 
 void *DECORATE(init)(global_state *game_state)
@@ -30,12 +39,21 @@ void *DECORATE(init)(global_state *game_state)
     static int run_once;
     static DECORATE(state) scene_state = { 0 };
 
+    float w = game_state->width;
+    float h = game_state->height;
+    float zoom = game_state->zoom_level;
+
     DEBUG("starting scene %s", "test");
 
     if (run_once == 0) {
-        scene_state.zoom_level = game_state->zoom_level;
-        if (link_init(&scene_state, game_state->width, game_state->height) < 0)
+        scene_state.zoom_level = zoom;
+        scene_state.width = w;
+        scene_state.height = h;
+
+        if (DECORATE(link_init)(&scene_state, w, h) < 0 ||
+            DECORATE(house_init)(&scene_state) < 0)
             return (NULL);
+
         run_once = 1;
     }
 

@@ -11,7 +11,7 @@ int animation_load_spritesheet(animation *ani, char *fp)
     ani->sprite = sfSprite_create();
     if (!ani->sprite)
         return (-1);
-    
+
     ani->texture = sfTexture_createFromFile(fp, NULL);
     sfSprite_setTexture(ani->sprite, ani->texture, sfFalse);
 
@@ -20,17 +20,19 @@ int animation_load_spritesheet(animation *ani, char *fp)
 
 void animation_set_rects(animation *ani, sfVector2f *origs, sfIntRect *rects)
 {
-    ani->frame = -1;
+    if (ani->origins != origs && ani->rects != rects)
+        ani->frame = -1;
+
     ani->origins = origs;
     ani->rects = rects;
 
-    sfSprite_setTextureRect(ani->sprite, ani->rects[0]);
-    sfSprite_setOrigin(ani->sprite, ani->origins[0]);
+    int i = ani->frame == -1 ? 0 : ani->frame;
 }
 
 void animation_set_position(animation *ani, sfVector2f pos)
 {
-    sfSprite_setPosition(ani->sprite, pos);
+    ani->position = pos;
+    //sfSprite_setPosition(ani->sprite, pos);
 }
 
 void animation_set_zoom(animation *ani, float zoom)
@@ -64,6 +66,11 @@ void animation_draw(animation *ani, sfRenderWindow *win, sfRenderStates *states)
     sfRenderWindow_drawSprite(win, ani->sprite, states);
 }
 
+static inline my_abs(float a)
+{
+    return (a > 0 ? a : -a);
+}
+
 int animation_update(animation *ani, float time)
 {
     int *frame = &(ani->frame);
@@ -78,7 +85,6 @@ int animation_update(animation *ani, float time)
         }
         sfIntRect rect = ani->rects[*frame];
 
-
         sfVector2f origin = ani->origins[*frame];
         sfVector2f relative = get_relative_origin(rect, origin);
 
@@ -88,5 +94,17 @@ int animation_update(animation *ani, float time)
         sfSprite_setTextureRect(ani->sprite, final_rect);
         sfSprite_setOrigin(ani->sprite, final_orig);
         animation_clock_restart(ani, 0);
+    }
+
+    if (!ani->invert_y) {
+        sfSprite_setPosition(ani->sprite, ani->position);
+    } else {
+        sfIntRect rect = ani->rects[*frame];
+        sfVector2f origin = ani->origins[*frame];
+        sfVector2f relative = get_relative_origin(rect, origin);
+        sfSprite_setPosition(ani->sprite, (sfVector2f){
+            ani->position.x + rect.width,
+            ani->position.y
+        });
     }
 }

@@ -6,6 +6,8 @@
 #define GET_ELAPSED_MSECS(clock) \
     sfTime_asMilliseconds(sfClock_getElapsedTime(clock))
 
+#define vec_same(v) ((sfVector2f){ v, v })
+
 #define vec_center(w, h) ((sfVector2f){ (w) / 2.0, (h) / 2.0 })
 
 #endif
