@@ -29,22 +29,29 @@ int animation_collide_with_map(animation *ani, map *m, float zoom, int direction
         end_x = hitbox.left + hitbox.width;
     }
     if (direction & 4) {
+        start_y = hitbox.top;
+        end_y = hitbox.top + hitbox.height;
         start_x = hitbox.left;
         end_x = start_x + 2;
-        start_y = hitbox.top;
-        end_y = hitbox.top + hitbox.height;
     }
     else if (direction & 8) {
-        start_x = hitbox.left + hitbox.width;
-        end_x = start_x + 2;
         start_y = hitbox.top;
         end_y = hitbox.top + hitbox.height;
+        start_x = hitbox.left + hitbox.width;
+        end_x = start_x + 2;
     }
+
+    sfVector2u bg_dimensions = sfImage_getSize(m->hitbox_dump);
 
     for (int i = start_x; i < end_x; i++) {
         for (int j = start_y; j < end_y; j++) {
             sfVector2f point_map = map_point_from_screen_position(m, vec_create(i, j));
-            sfColor color = sfImage_getPixel(m->hitbox_dump, point_map.x / zoom, point_map.y / zoom);
+            point_map.x /= zoom;
+            point_map.y /= zoom;
+            if (point_map.x < 0 || point_map.y < 0 ||
+                point_map.x >= bg_dimensions.x || point_map.y >= bg_dimensions.y)
+                return (1);
+            sfColor color = sfImage_getPixel(m->hitbox_dump, point_map.x, point_map.y);
 
             if (color.r == 255)
                 return (1);
