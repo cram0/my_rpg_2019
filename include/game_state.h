@@ -28,6 +28,8 @@ typedef struct global_state {
     int argc;
     char **argv;
 
+    float zoom_level;
+
     int display_help;
 
     int exit_code;

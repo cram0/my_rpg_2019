@@ -9,7 +9,7 @@ void change_scene(global_state *state)
 {
 #ifndef NDEBUG
     sfKeyCode codes[] = {sfKeyNum1, sfKeyNum2, sfKeyNum3, sfKeyNum4, sfKeyNum5,
-                                                                    sfKeyNum6};
+                                                                sfKeyNum6, 0};
     if (state->event.type == sfEvtKeyPressed) {
         for (int i = 0; codes[i]; i++) {
             if (codes[i] == state->event.key.code) {
