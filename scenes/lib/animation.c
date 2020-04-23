@@ -134,7 +134,7 @@ int animation_update(animation *ani, float time)
     } else {
         sfIntRect rect = ani->rects[*frame];
         sfSprite_setPosition(ani->sprite, (sfVector2f){
-            ani->position.x + rect.width,
+            ani->position.x,
             ani->position.y
         });
     }

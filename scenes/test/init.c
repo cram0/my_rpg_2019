@@ -29,6 +29,7 @@ int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
     animation_set_position(ani, vec_center(width, height));
     m_animation_set_rects(ani, link_down_idle);
     animation_set_hitbox(ani, vec_create(10, 10), vec_create(10, -10));
+    animation_update_hitbox(ani);
 
     return (0);
 }
