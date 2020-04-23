@@ -7,7 +7,7 @@ SCENEDB='generated_code/scenes_db.h'
 echo -ne '' > ${IFACES}
 echo -ne '' > ${SCENEDB}
 
-SCENES=$(ls scenes/ | grep -v lib)
+SCENES=$(ls scenes/ | grep -v sample_scene)
 
 cat >> ${SCENEDB} << EOF
 #ifndef SCENES_DB_H

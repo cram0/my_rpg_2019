@@ -6,8 +6,6 @@
 #include "../../components/textboxes/textbox.h"
 
 typedef struct {
-    float zoom_level;
-
     textbox_state textbox;
 
     /* in case you really need to access the global_state object */
