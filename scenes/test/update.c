@@ -8,6 +8,7 @@
 #include "../../include/maths_helpers.h"
 
 #include "../lib/animation.h"
+#include "../lib/map.h"
 #include "../lib/helpers.h"
 
 int DECORATE(update)(void *data)
