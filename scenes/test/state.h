@@ -4,6 +4,7 @@
 #include "decorator.h"
 
 #include "../lib/animation.h"
+#include "../lib/map.h"
 
 enum {
     UP,
@@ -14,29 +15,25 @@ enum {
 
 typedef struct {
     animation ani;
-    int direction;
 
-    /* to fill with stuff */
+    /* yours to modify */
+    int direction;
+    int diagonals; /* ie. Left-Up: 5 */
+    int is_running;
 } link;
 
 typedef struct {
-    sfSprite *sprite;
-    sfTexture *texture;
+    map m;
 
-    sfSprite *sprite_color;
-    sfTexture *texture_color;
-
-    sfImage *hitbox_dump;
-
-    sfVector2f pos;
-
-} map;
+    /* yours to modify */
+} house;
 
 typedef struct {
     float zoom_level;
+    float width, height;
 
     link my_link;
-    map my_map;
+    house my_map;
 
     /* in case you really need to access the global_state object */
     void *game_state;
