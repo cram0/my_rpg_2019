@@ -35,10 +35,9 @@ int main(int argc, char *argv[])
         DEBUG("argv[%d]: %s", i, argv[i]);
 
     global_state state = {
-        .width = 256 * 3.0,
-        .height = 224 * 3.0,
+        .width = 256 * 3,
+        .height = 224 * 3,
         .scene_id = -1,
-        .zoom_level = 3.0,
         .scenes_db = ALL_SCENES
     };
     state.argc = argc;
