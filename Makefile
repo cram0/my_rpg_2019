@@ -4,7 +4,8 @@ SRC	=	$(wildcard *.c) \
 		$(wildcard get_next_line/*.c) \
 		$(wildcard components/**/*.c) \
 		$(wildcard scenes/**/*.c) \
-		$(wildcard core/**/*.c)
+		$(wildcard core/**/*.c) \
+		$(wildcard generated_code/*.c)
 OBJ	=	$(SRC:.c=.o)
 LDLIBS	=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm
 CFLAGS	=	-O0 -g -g3

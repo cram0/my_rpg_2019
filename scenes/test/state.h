@@ -1,14 +1,20 @@
-#ifndef XXXXX_STATE_H
-#define XXXXX_STATE_H
+#ifndef TEST_STATE_H
+#define TEST_STATE_H
 
 #include "decorator.h"
 
-#include "../../components/textboxes/textbox.h"
+#include "../lib/animation.h"
+
+typedef struct {
+    animation ani;
+
+    /* to fill with stuff */
+} link;
 
 typedef struct {
     float zoom_level;
 
-    textbox_state textbox;
+    link my_link;
 
     /* in case you really need to access the global_state object */
     void *game_state;

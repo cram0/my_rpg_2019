@@ -1,3 +1,4 @@
+#include <SFML/Graphics.h>
 const sfIntRect boomerang_loop_rects[] = {
     { .left =  328, .top =  253, .width =   10, .height =   10, },
     { .left =  343, .top =  253, .width =   10, .height =   10, },
