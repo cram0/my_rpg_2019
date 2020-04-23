@@ -18,10 +18,16 @@ int animation_update_hitbox(animation *ani)
         ani->hitbox = sfRectangleShape_create();
         if (!ani->hitbox)
             return (-1);
+
         sfRectangleShape_setSize(ani->hitbox, ani->hitbox_size);
-        sfRectangleShape_setOrigin(ani->hitbox, vec_center(ani->hitbox_size.x, ani->hitbox_size.y));
+        sfRectangleShape_setOrigin(ani->hitbox,
+            vec_center(ani->hitbox_size.x, ani->hitbox_size.y));
         sfRectangleShape_setScale(ani->hitbox, vec_same(ani->zoom));
+        sfRectangleShape_setFillColor(ani->hitbox, sfTransparent);
+        sfRectangleShape_setOutlineColor(ani->hitbox, sfBlue);
+        sfRectangleShape_setOutlineThickness(ani->hitbox, 1);
     }
+
     sfVector2f position = vec_add(sfSprite_getPosition(ani->sprite), ani->hitbox_offset);
     sfRectangleShape_setPosition(ani->hitbox, position);
 
@@ -91,7 +97,6 @@ void animation_draw(animation *ani, sfRenderWindow *win, sfRenderStates *states)
 #ifndef NDEBUG
     sfRenderWindow_drawRectangleShape(win, ani->hitbox, NULL);
 #endif
-
 }
 
 static inline my_abs(float a)
@@ -128,8 +133,6 @@ int animation_update(animation *ani, float time)
         sfSprite_setPosition(ani->sprite, ani->position);
     } else {
         sfIntRect rect = ani->rects[*frame];
-        sfVector2f origin = ani->origins[*frame];
-        sfVector2f relative = get_relative_origin(rect, origin);
         sfSprite_setPosition(ani->sprite, (sfVector2f){
             ani->position.x + rect.width,
             ani->position.y
@@ -137,5 +140,4 @@ int animation_update(animation *ani, float time)
     }
 
     animation_update_hitbox(ani);
-
 }

@@ -35,7 +35,7 @@ sfVector2f invert_y_origin(sfVector2f origin, sfIntRect rect)
     DEBUG("%d", origin.x);
     return (
         (sfVector2f){
-            .x = rect.width - origin.x,
+            .x = rect.width - origin.x * 2.0,
             .y = origin.y
         }
     );
