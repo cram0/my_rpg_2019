@@ -21,16 +21,9 @@ int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
     animation *ani = &state->my_link.ani;
     state->my_link.direction = DOWN;
 
-    animation_set_zoom(ani, state->zoom_level);
-
-    if (animation_load_spritesheet(ani, LINK_PATH) < 0)
-        return (-1);
-
-    animation_set_position(ani, vec_center(width, height));
-    m_animation_set_rects(ani, link_down_idle);
-    animation_set_hitbox(ani, vec_create(10, 10), vec_create(10, -10));
-    animation_update_hitbox(ani);
-
+    m_animation_init(ani, state->zoom_level, LINK_PATH,
+            vec_center(width, height), link_down_idle, vec_create(10, 10),
+                                                        vec_create(10, -10));
     return (0);
 }
 

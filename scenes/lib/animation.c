@@ -64,6 +64,11 @@ void animation_set_position(animation *ani, sfVector2f pos)
     //sfSprite_setPosition(ani->sprite, pos);
 }
 
+sfVector2f animation_get_position(animation *ani)
+{
+    return (ani->position);
+}
+
 void animation_set_zoom(animation *ani, float zoom)
 {
     ani->zoom = zoom;
