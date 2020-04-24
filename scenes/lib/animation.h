@@ -11,6 +11,12 @@ typedef struct {
     sfIntRect *rects;
     sfClock *clocks[5];
 
+    sfRectangleShape *hitbox;
+    sfVector2f hitbox_size;
+    sfVector2f hitbox_offset;
+
+    float zoom;
+
     int invert_y;
 
     int frame;
@@ -24,6 +30,8 @@ void animation_clock_restart(animation *ani, int idx);
 void animation_draw(animation *ani, sfRenderWindow *win, sfRenderStates *states);
 int animation_update(animation *ani, float time);
 void animation_set_zoom(animation *ani, float zoom);
+int animation_update_hitbox(animation *ani);
+void animation_set_hitbox(animation *ani, sfVector2f pos, sfVector2f offset);
 
 #define m_animation_set_rects(ani, name) \
     animation_set_rects(ani, name##_origs, name##_rects)

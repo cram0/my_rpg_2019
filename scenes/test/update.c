@@ -7,6 +7,7 @@
 #include "../../include/sfml_helpers.h"
 #include "../../include/maths_helpers.h"
 
+#include "../lib/collision.h"
 #include "../lib/animation.h"
 #include "../lib/map.h"
 #include "../lib/helpers.h"
@@ -18,8 +19,15 @@ int DECORATE(update)(void *data)
     house *hous = &state->my_map;
     link *lnk = &state->my_link;
 
-    map_move(&hous->m, lnk->is_running, lnk->diagonals);
     animation_update(&lnk->ani, 30);
+
+    sfVector2f save;
+    map_move(&hous->m, lnk->is_running, lnk->diagonals, &save);
+    if (animation_collide_with_map(&lnk->ani, &hous->m, state->zoom_level, lnk->diagonals)) {
+        hous->m.pos = save;
+        map_update(&hous->m);
+    }
+
 
     return (0);
 }
