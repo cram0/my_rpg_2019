@@ -3,6 +3,7 @@
 #include "animation.h"
 #include "map.h"
 
+#include "../../include/debug.h"
 #include "../../include/sfml_helpers.h"
 
 static sfVector2f map_point_from_screen_position(map *m, sfVector2f pt)
