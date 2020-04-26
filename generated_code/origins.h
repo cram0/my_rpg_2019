@@ -158,3 +158,4 @@ const sfVector2f sfx_bush_slash_origs[9];
 const sfVector2f sfx_kill_enemy_origs[8];
 const sfVector2f sfx_pot_explode_origs[9];
 const sfVector2f transition_circle_origs[9];
+const sfVector2f triforce_origs[89];

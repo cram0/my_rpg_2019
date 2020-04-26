@@ -5,7 +5,13 @@
 
 int DECORATE(draw)(void *data, sfRenderWindow *win)
 {
+    DECORATE(state) *state = data;
+
     if (draw_textbox(&scene_state(data)->textbox, win) < 0)
         return (-1);
+
+    entity_draw(&state->my_intro.nintendo, win, NULL);
+    entity_draw(&state->my_intro.copyright, win, NULL);
+    
     return (0);
 }

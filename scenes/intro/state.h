@@ -19,6 +19,8 @@ typedef struct {
 typedef struct {
     float zoom_level;
 
+    sfClock *glo_clock;
+    float time;
     textbox_state textbox;
 
     intro my_intro;

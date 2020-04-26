@@ -158,3 +158,4 @@ const sfIntRect sfx_bush_slash_rects[9];
 const sfIntRect sfx_kill_enemy_rects[8];
 const sfIntRect sfx_pot_explode_rects[9];
 const sfIntRect transition_circle_rects[9];
+const sfIntRect triforce_rects[89];
