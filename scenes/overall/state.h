@@ -6,6 +6,7 @@
 #include "../../components/textboxes/textbox.h"
 #include "../lib/animation.h"
 #include "../lib/map.h"
+#include "../lib/hud.h"
 
 enum {
     UP,
@@ -21,6 +22,7 @@ typedef struct {
     int direction;
     int diagonals; /* ie. Left-Up: 5 */
     int is_running;
+    equipment link_stuff;
 } link;
 
 typedef struct {

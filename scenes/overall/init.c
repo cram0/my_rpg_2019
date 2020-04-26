@@ -24,6 +24,7 @@ int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
     animation_set_zoom(ani, state->zoom_level);
     animation_set_position(ani, vec_center(width, height));
     m_animation_set_rects(ani, link_down_idle);
+    init_hud(&state->my_link.link_stuff, state->zoom_level);
 
     return (0);
 }
