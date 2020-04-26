@@ -3,6 +3,8 @@
 
 #include <SFML/Graphics.h>
 
+#include "../../mobs/mob.h"
+
 /*
 ** You may only *touch* the following members:
 **     - speed_factor (default value is 0.360) you can increase it to make the
@@ -25,6 +27,9 @@ typedef struct {
     sfVector2f pos;
 
     sfClock *clocks[5];
+
+    mob *mobs;
+
 } map;
 
 /*

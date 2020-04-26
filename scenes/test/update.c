@@ -12,14 +12,22 @@
 #include "../lib/map.h"
 #include "../lib/helpers.h"
 
+#include "../../mobs/mob.h"
+#include "lib/update_mob.h"
+
 int DECORATE(update)(void *data)
 {
     DECORATE(state) *state = data;
 
     house *hous = &state->my_map;
     link *lnk = &state->my_link;
+    mob *mobs = state->my_map.m.mobs;
 
     animation_update(&lnk->ani, 30);
+
+    for (int i = 0; mobs[i].type != NUL_MOB; i++) {
+        animation_update(&mobs[i].ani, 100);
+    }
 
     sfVector2f save;
     map_move(&hous->m, lnk->is_running, lnk->diagonals, &save);
