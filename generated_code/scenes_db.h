@@ -3,6 +3,7 @@
 
 #define ALL_SCENES \
     { \
+SCENE_DB_ENTRY(overall), \
 SCENE_DB_ENTRY(test), \
     }
 
