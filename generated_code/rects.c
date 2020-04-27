@@ -28,7 +28,7 @@ const sfIntRect hud_heart_full_rects[] = {
 };
 
 const sfIntRect hud_heart_half_rects[] = {
-    { .left =  257, .top =   56, .width =    7, .height =    7, },
+    { .left =  275, .top =   56, .width =    7, .height =    7, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
