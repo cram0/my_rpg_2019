@@ -18,7 +18,6 @@ void init_heart(equipment *stuff, health *hearts, int zoom_level)
 
 void sprite_copy(sfRenderWindow *win, sfSprite *sprite, int actual)
 {
-        sprite = sfSprite_copy(sprite),
         sfSprite_setPosition(sprite, (sfVector2f){actual, 72});
         sfRenderWindow_drawSprite(win, sprite, NULL);
 }
