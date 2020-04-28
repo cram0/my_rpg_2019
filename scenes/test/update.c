@@ -25,10 +25,6 @@ int DECORATE(update)(void *data)
 
     animation_update(&lnk->ani, 30);
 
-    for (int i = 0; mobs[i].type != NUL_MOB; i++) {
-        animation_update(&mobs[i].ani, 100);
-    }
-
     sfVector2f save;
     map_move(&hous->m, lnk->is_running, lnk->diagonals, &save);
     if (animation_collide_with_map(&lnk->ani, &hous->m, state->zoom_level, lnk->diagonals)) {
@@ -36,6 +32,9 @@ int DECORATE(update)(void *data)
         map_update(&hous->m);
     }
 
+    for (int i = 0; mobs[i].type != NUL_MOB; i++) {
+        mob_update(&mobs[i], 30);
+    }
 
     return (0);
 }

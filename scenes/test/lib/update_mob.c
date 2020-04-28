@@ -4,7 +4,7 @@
 
 #include "../../../mobs/mob.h"
 
-void mob_update(mob *mobs)
+void mob_update(mob *mobs, float time)
 {
-    animation_update(&mobs->ani, 30);
+    animation_update(&mobs->ani, time);
 }

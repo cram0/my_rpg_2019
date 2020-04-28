@@ -21,6 +21,7 @@ typedef struct {
 
     int type;
 
+    sfClock *mov_clk;
     int direction;
     int is_walking;
     int is_alive;
@@ -30,6 +31,7 @@ typedef struct {
     sfVector2f rel_pos;
 
     int room_id;
+
 } mob;
 
 mob overworld_mobs[4];

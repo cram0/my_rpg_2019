@@ -3,6 +3,6 @@
 
 #include "../../../mobs/mob.h"
 
-void mob_update(mob *mobs);
+void mob_update(mob *mobs, float time);
 
 #endif /* !UPDATE_MOB_H_ */
