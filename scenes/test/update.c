@@ -13,6 +13,7 @@
 #include "../lib/helpers.h"
 
 #include "../../mobs/mob.h"
+
 #include "lib/update_mob.h"
 
 int DECORATE(update)(void *data)
@@ -25,15 +26,26 @@ int DECORATE(update)(void *data)
 
     animation_update(&lnk->ani, 30);
 
-    sfVector2f save;
-    map_move(&hous->m, lnk->is_running, lnk->diagonals, &save);
+    sfVector2f save = hous->m.pos;
+    map_move(&hous->m, lnk->is_running, lnk->diagonals);
     if (animation_collide_with_map(&lnk->ani, &hous->m, state->zoom_level, lnk->diagonals)) {
         hous->m.pos = save;
         map_update(&hous->m);
     }
+    sfVector2f offset = { hous->m.pos.x - save.x, hous->m.pos.y - save.y };
 
     for (int i = 0; mobs[i].type != NUL_MOB; i++) {
-        mob_update(&mobs[i], 30);
+        mob_move_by_offset(&mobs[i], offset);
+        mob_update_ani(&mobs[i], 30);
+
+        sfVector2f save = mobs[i].ani.position;
+        mob_movement(&state->my_map.m, &mobs[i]);
+        if (animation_collide_with_map(&mobs[i].ani, &hous->m, state->zoom_level, mobs[i].direction)) {
+            mobs[i].ani.position = save;
+            mob_update_ani(&mobs[i], 30);
+        }
+
+        mob_set_rects(&mobs[i]);
     }
 
     return (0);

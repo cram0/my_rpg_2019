@@ -14,6 +14,8 @@
 
 #include "lib/init_mob.h"
 
+#include <time.h>
+
 const char LINK_PATH[] = "assets/link.gif";
 const char MAP_PATH[] = "assets/maps/links_house.png";
 const char MAP_COLOR_PATH[] = "maps_hitboxes/links_house.png";
@@ -43,6 +45,8 @@ void *DECORATE(init)(global_state *game_state)
     float w = game_state->width;
     float h = game_state->height;
     float zoom = game_state->zoom_level;
+
+    srand(time(NULL));
 
     DEBUG("starting scene %s", "test");
 

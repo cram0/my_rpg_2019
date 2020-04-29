@@ -22,6 +22,7 @@ typedef struct {
     int type;
 
     sfClock *mov_clk;
+    sfClock *mov_clk_cd;
     int direction;
     int is_walking;
     int is_alive;
