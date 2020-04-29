@@ -46,13 +46,13 @@ int DECORATE(copyright_init)(DECORATE(state) *state)
 int DECORATE(triforce_init)(DECORATE(state) *state, float width, float height)
 {
     animation *tri = &state->my_intro.triforce;
+    tri->invert_y = 0;
 
     if (animation_load_spritesheet(tri, TRIFORCE_PATH) < 0)
         return (-1);
 
-    animation_set_zoom(tri, 0.5);
-    //animation_set_position(tri, (sfVector2f){0.0, 0.0});
-    animation_set_position(tri, vec_center(width, height));
+    animation_set_zoom(tri, 4);
+    animation_set_position(tri, (sfVector2f){45.0, 15.0});
     m_animation_set_rects(tri, triforce);
 
     return (0);
@@ -88,6 +88,7 @@ void *DECORATE(init)(global_state *game_state)
             return (NULL);
         
         run_once = 1;
+        scene_state.tri_update = 0;
         scene_state.tri_draw = 0;
     }
 

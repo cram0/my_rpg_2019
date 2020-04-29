@@ -25,6 +25,7 @@ typedef struct {
 
     intro my_intro;
 
+    int tri_update;
     int tri_draw;
     /* in case you really need to access the global_state object */
     void *game_state;
