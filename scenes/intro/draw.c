@@ -11,10 +11,14 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
         return (-1);
 
     entity_draw(&state->my_intro.nintendo, win, NULL);
+    entity_draw(&state->my_intro.backgrd, win, NULL);
     entity_draw(&state->my_intro.copyright, win, NULL);
-    animation_draw(&state->my_intro.triforce, win, NULL);
+    if (state->my_intro.tri_first == 0)
+        animation_draw(&state->my_intro.triforce, win, NULL);
     entity_draw(&state->my_intro.zelda, win, NULL);
     entity_draw(&state->my_intro.subtitle, win, NULL);
     entity_draw(&state->my_intro.tlo, win, NULL);
+    if (state->my_intro.tri_first == 1)
+        animation_draw(&state->my_intro.triforce, win, NULL);
     return (0);
 }

@@ -47,9 +47,14 @@ void DECORATE(draw_update)(DECORATE(state) *state)
         state->my_intro.triforce.is_drawable = 1;
     }
     if (state->time > 11000) {
+        state->my_intro.tri_first = 1;
         state->my_intro.zelda.is_drawable = 1;
         state->my_intro.subtitle.is_drawable = 1;
         state->my_intro.tlo.is_drawable = 1;
+    }
+    if (state->time > 13000) {
+        state->my_intro.tri_first = 0;
+        state->my_intro.backgrd.is_drawable = 1;
     }
 }
 

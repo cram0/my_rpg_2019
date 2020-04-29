@@ -105,6 +105,20 @@ int DECORATE(triforce_init)(DECORATE(state) *state, float width, float height)
     return (0);
 }
 
+int DECORATE(background_init)(DECORATE(state) * state)
+{
+    entity *backgrd = &state->my_intro.backgrd;
+    backgrd->is_drawable = 0;
+
+    if (entity_load_spritesheet(backgrd, BCKGRD_PATH) < 0)
+        return (-1);
+
+    entity_set_zoom(backgrd, 3.0);
+    entity_set_position(backgrd, (sfVector2f){0.0, 40.0});
+
+    return (0);
+}
+
 int DECORATE(assets_init)(DECORATE(state) *state, float width, float height)
 {
 
@@ -119,6 +133,8 @@ int DECORATE(assets_init)(DECORATE(state) *state, float width, float height)
     if (DECORATE(subtitle_init)(state) < 0)
         return (-1);
     if (DECORATE(tlo_init)(state) < 0)
+        return (-1);
+    if (DECORATE(background_init)(state) < 0)
         return (-1);
     return (0);
 }
@@ -143,6 +159,7 @@ void *DECORATE(init)(global_state *game_state)
         run_once = 1;
         scene_state.tri_update = 0;
         scene_state.tri_once = 0;
+        scene_state.my_intro.tri_first = 1;
     }
 
     scene_state.glo_clock = sfClock_create();

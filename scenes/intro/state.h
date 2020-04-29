@@ -17,6 +17,7 @@ typedef struct {
     animation triforce;
     animation stars;
     animation sword;
+    int tri_first;
 
 } intro;
 
