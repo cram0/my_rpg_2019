@@ -14,6 +14,10 @@ const char COPYRIGHT_PATH[] = "assets/title_screen/copyright.png";
 const char TRIFORCE_PATH[] = "assets/title_screen/triforce.png";
 const char SWORD_PATH[] = "assets/title_screen/logo_sword.png";
 const char STARS_PATH[] = "assets/title_screen/small_shine.png";
+const char SUBTITLE_PATH[] = "assets/title_screen/logo_subtitle.png";
+const char BCKGRD_PATH[] = "assets/title_screen/background.png";
+const char TLO_PATH[] = "assets/title_screen/logo_tlo.png";
+const char ZELDA_PATH[] =  "assets/title_screen/logo_zelda.png";
 
 int DECORATE(nintendo_init)(DECORATE(state) *state)
 {
@@ -43,9 +47,38 @@ int DECORATE(copyright_init)(DECORATE(state) *state)
     return (0);
 }
 
+int DECORATE(zelda_init)(DECORATE(state) *state)
+{
+    entity *zelda = &state->my_intro.zelda;
+    zelda->is_drawable = 0;
+
+    if (entity_load_spritesheet(zelda, ZELDA_PATH) < 0)
+        return (-1);
+
+    entity_set_zoom(zelda, 3.0);
+    entity_set_position(zelda, (sfVector2f){150, 150.0});
+
+    return (0);
+}
+
+int DECORATE(subtitle_init)(DECORATE(state) *state)
+{
+    entity *subtitle = &state->my_intro.subtitle;
+    subtitle->is_drawable = 0;
+
+    if (entity_load_spritesheet(subtitle, SUBTITLE_PATH) < 0)
+        return (-1);
+
+    entity_set_zoom(subtitle, 3.0);
+    entity_set_position(subtitle, (sfVector2f){280.0, 310.0});
+
+    return (0);
+}
+
 int DECORATE(triforce_init)(DECORATE(state) *state, float width, float height)
 {
     animation *tri = &state->my_intro.triforce;
+    tri->is_drawable = 0;
     tri->invert_y = 0;
 
     if (animation_load_spritesheet(tri, TRIFORCE_PATH) < 0)
@@ -66,6 +99,10 @@ int DECORATE(assets_init)(DECORATE(state) *state, float width, float height)
     if (DECORATE(copyright_init)(state) < 0)
         return (-1);
     if (DECORATE(triforce_init)(state, width, height) < 0)
+        return (-1);
+    if (DECORATE(zelda_init)(state) < 0)
+        return (-1);
+    if (DECORATE(subtitle_init)(state) < 0)
         return (-1);
     return (0);
 }
@@ -89,7 +126,6 @@ void *DECORATE(init)(global_state *game_state)
         
         run_once = 1;
         scene_state.tri_update = 0;
-        scene_state.tri_draw = 0;
         scene_state.tri_once = 0;
     }
 

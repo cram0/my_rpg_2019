@@ -14,6 +14,7 @@ typedef struct {
     int invert_y;
 
     int frame;
+    int is_drawable;
 } animation;
 
 int animation_load_spritesheet(animation *ani, char *fp);

@@ -63,7 +63,8 @@ void animation_clock_restart(animation *ani, int idx)
 
 void animation_draw(animation *ani, sfRenderWindow *win, sfRenderStates *states)
 {
-    sfRenderWindow_drawSprite(win, ani->sprite, states);
+    if (ani->is_drawable > 0)
+        sfRenderWindow_drawSprite(win, ani->sprite, states);
 }
 
 static inline my_abs(float a)

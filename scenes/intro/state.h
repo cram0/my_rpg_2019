@@ -10,6 +10,10 @@
 typedef struct {
     entity nintendo;
     entity copyright;
+    entity tlo;
+    entity zelda;
+    entity backgrd;
+    entity subtitle;
     animation triforce;
     animation stars;
     animation sword;
@@ -26,7 +30,6 @@ typedef struct {
     intro my_intro;
 
     int tri_update;
-    int tri_draw;
     int tri_once;
     /* in case you really need to access the global_state object */
     void *game_state;

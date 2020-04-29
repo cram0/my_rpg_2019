@@ -12,7 +12,8 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
 
     entity_draw(&state->my_intro.nintendo, win, NULL);
     entity_draw(&state->my_intro.copyright, win, NULL);
-    if (state->tri_draw > 0)
-        animation_draw(&state->my_intro.triforce, win, NULL);
+    animation_draw(&state->my_intro.triforce, win, NULL);
+    entity_draw(&state->my_intro.zelda, win, NULL);
+    entity_draw(&state->my_intro.subtitle, win, NULL);
     return (0);
 }

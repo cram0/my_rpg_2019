@@ -44,7 +44,11 @@ void DECORATE(draw_update)(DECORATE(state) *state)
             state->tri_update = 1;
             state->tri_once = 1;
         }
-        state->tri_draw = 1;
+        state->my_intro.triforce.is_drawable = 1;
+    }
+    if (state->time > 11000) {
+        state->my_intro.zelda.is_drawable = 1;
+        state->my_intro.subtitle.is_drawable = 1;
     }
 }
 
@@ -57,6 +61,7 @@ int DECORATE(update)(void *data)
     if (update_textbox(&scene_state(data)->textbox) < 0)
         return (-1);
     state->time = update_time(state->glo_clock);
+
     if (state->tri_update > 0) {
         if (animation_update(&state->my_intro.triforce, 70) == 2)
             state->tri_update = 0;
