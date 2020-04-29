@@ -18,7 +18,7 @@ int animation_collide_with_map(animation *ani, map *m, float zoom, int direction
 
     float start_x = 0, start_y = 0, end_x = 0, end_y = 0;
     if (direction & 1) {
-        start_y = hitbox.top;
+        start_y = hitbox.top - 2;
         end_y = start_y + 2;
         start_x = hitbox.left;
         end_x = hitbox.left + hitbox.width;
@@ -32,7 +32,7 @@ int animation_collide_with_map(animation *ani, map *m, float zoom, int direction
     if (direction & 4) {
         start_y = hitbox.top;
         end_y = hitbox.top + hitbox.height;
-        start_x = hitbox.left;
+        start_x = hitbox.left - 2;
         end_x = start_x + 2;
     }
     else if (direction & 8) {
@@ -44,8 +44,8 @@ int animation_collide_with_map(animation *ani, map *m, float zoom, int direction
 
     sfVector2u bg_dimensions = sfImage_getSize(m->hitbox_dump);
 
-    for (int i = start_x; i < end_x; i++) {
-        for (int j = start_y; j < end_y; j++) {
+    for (float i = start_x; i < end_x; i++) {
+        for (float j = start_y; j < end_y; j++) {
             sfVector2f point_map = map_point_from_screen_position(m, vec_create(i, j));
             point_map.x /= zoom;
             point_map.y /= zoom;
