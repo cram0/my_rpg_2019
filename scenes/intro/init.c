@@ -41,7 +41,7 @@ int DECORATE(copyright_init)(DECORATE(state) *state)
     if (entity_load_spritesheet(copyright, COPYRIGHT_PATH) < 0)
         return (-1);
 
-    entity_set_zoom(copyright, (float){3.0});
+    entity_set_zoom(copyright, (float){3.5});
     entity_set_position(copyright, (sfVector2f){270.0, 550.0});
 
     return (0);
@@ -55,8 +55,8 @@ int DECORATE(zelda_init)(DECORATE(state) *state)
     if (entity_load_spritesheet(zelda, ZELDA_PATH) < 0)
         return (-1);
 
-    entity_set_zoom(zelda, 3.0);
-    entity_set_position(zelda, (sfVector2f){150, 150.0});
+    entity_set_zoom(zelda, 3.5);
+    entity_set_position(zelda, (sfVector2f){140, 220.0});
 
     return (0);
 }
@@ -70,7 +70,21 @@ int DECORATE(subtitle_init)(DECORATE(state) *state)
         return (-1);
 
     entity_set_zoom(subtitle, 3.0);
-    entity_set_position(subtitle, (sfVector2f){280.0, 310.0});
+    entity_set_position(subtitle, (sfVector2f){300.0, 410.0});
+
+    return (0);
+}
+
+int DECORATE(tlo_init)(DECORATE(state) *state)
+{
+    entity *tlo = &state->my_intro.tlo;
+    tlo->is_drawable = 0;
+
+    if (entity_load_spritesheet(tlo, TLO_PATH) < 0)
+        return (-1);
+
+    entity_set_zoom(tlo, 3.0);
+    entity_set_position(tlo, (sfVector2f){290.0, 190.0});
 
     return (0);
 }
@@ -84,8 +98,8 @@ int DECORATE(triforce_init)(DECORATE(state) *state, float width, float height)
     if (animation_load_spritesheet(tri, TRIFORCE_PATH) < 0)
         return (-1);
 
-    animation_set_zoom(tri, 3.5);
-    animation_set_position(tri, (sfVector2f){70.0, 15.0});
+    animation_set_zoom(tri, 3.2);
+    animation_set_position(tri, (sfVector2f){130.0, 45.0});
     m_animation_set_rects(tri, triforce);
 
     return (0);
@@ -103,6 +117,8 @@ int DECORATE(assets_init)(DECORATE(state) *state, float width, float height)
     if (DECORATE(zelda_init)(state) < 0)
         return (-1);
     if (DECORATE(subtitle_init)(state) < 0)
+        return (-1);
+    if (DECORATE(tlo_init)(state) < 0)
         return (-1);
     return (0);
 }

@@ -15,5 +15,6 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     animation_draw(&state->my_intro.triforce, win, NULL);
     entity_draw(&state->my_intro.zelda, win, NULL);
     entity_draw(&state->my_intro.subtitle, win, NULL);
+    entity_draw(&state->my_intro.tlo, win, NULL);
     return (0);
 }

@@ -49,6 +49,7 @@ void DECORATE(draw_update)(DECORATE(state) *state)
     if (state->time > 11000) {
         state->my_intro.zelda.is_drawable = 1;
         state->my_intro.subtitle.is_drawable = 1;
+        state->my_intro.tlo.is_drawable = 1;
     }
 }
 
