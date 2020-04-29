@@ -46,8 +46,6 @@ void *DECORATE(init)(global_state *game_state)
     float h = game_state->height;
     float zoom = game_state->zoom_level;
 
-    srand(time(NULL));
-
     DEBUG("starting scene %s", "test");
 
     if (run_once == 0) {
