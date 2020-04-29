@@ -37,6 +37,7 @@ void DECORATE(draw_update)(DECORATE(state) *state)
     if (state->time > 1500) {
         state->my_intro.nintendo.is_drawable = 0;
         state->my_intro.copyright.is_drawable = 1;
+        state->tri_draw = 1;
     }
 }
 
@@ -49,6 +50,11 @@ int DECORATE(update)(void *data)
     if (update_textbox(&scene_state(data)->textbox) < 0)
         return (-1);
     state->time = update_time(state->glo_clock);
+    if (state->tri_draw > 0) {
+        animation_update(&state->my_intro.triforce, 50);
+        animation_set_position(&state->my_intro.triforce, (sfVector2f){0.0, 0.0});
+    }
+
     DECORATE(draw_update(state));
     printf("TIME %f\n", state->time);
     return (0);

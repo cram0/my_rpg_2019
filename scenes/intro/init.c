@@ -49,7 +49,9 @@ int DECORATE(triforce_init)(DECORATE(state) *state, float width, float height)
 
     if (animation_load_spritesheet(tri, TRIFORCE_PATH) < 0)
         return (-1);
-    
+
+    animation_set_zoom(tri, 0.5);
+    //animation_set_position(tri, (sfVector2f){0.0, 0.0});
     animation_set_position(tri, vec_center(width, height));
     m_animation_set_rects(tri, triforce);
 
@@ -86,6 +88,7 @@ void *DECORATE(init)(global_state *game_state)
             return (NULL);
         
         run_once = 1;
+        scene_state.tri_draw = 0;
     }
 
     scene_state.glo_clock = sfClock_create();
