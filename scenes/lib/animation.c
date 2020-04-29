@@ -94,6 +94,9 @@ int animation_update(animation *ani, float time)
         sfSprite_setTextureRect(ani->sprite, final_rect);
         sfSprite_setOrigin(ani->sprite, final_orig);
         animation_clock_restart(ani, 0);
+
+        if (*frame > 86)
+            return 2;
     }
 
     if (!ani->invert_y) {

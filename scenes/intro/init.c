@@ -38,7 +38,7 @@ int DECORATE(copyright_init)(DECORATE(state) *state)
         return (-1);
 
     entity_set_zoom(copyright, (float){3.0});
-    entity_set_position(copyright, (sfVector2f){300.0, 550.0});
+    entity_set_position(copyright, (sfVector2f){270.0, 550.0});
 
     return (0);
 }
@@ -51,8 +51,8 @@ int DECORATE(triforce_init)(DECORATE(state) *state, float width, float height)
     if (animation_load_spritesheet(tri, TRIFORCE_PATH) < 0)
         return (-1);
 
-    animation_set_zoom(tri, 4);
-    animation_set_position(tri, (sfVector2f){45.0, 15.0});
+    animation_set_zoom(tri, 3.5);
+    animation_set_position(tri, (sfVector2f){70.0, 15.0});
     m_animation_set_rects(tri, triforce);
 
     return (0);
@@ -90,6 +90,7 @@ void *DECORATE(init)(global_state *game_state)
         run_once = 1;
         scene_state.tri_update = 0;
         scene_state.tri_draw = 0;
+        scene_state.tri_once = 0;
     }
 
     scene_state.glo_clock = sfClock_create();

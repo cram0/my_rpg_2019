@@ -27,6 +27,7 @@ typedef struct {
 
     int tri_update;
     int tri_draw;
+    int tri_once;
     /* in case you really need to access the global_state object */
     void *game_state;
 } DECORATE(state);

@@ -37,11 +37,14 @@ void DECORATE(draw_update)(DECORATE(state) *state)
     if (state->time > 1500) {
         state->my_intro.nintendo.is_drawable = 0;
         state->my_intro.copyright.is_drawable = 1;
-        state->tri_draw = 1;
-        state->tri_update = 1;
+
     }
-    if (state->time > 10000) {
-        state->tri_update = 0;
+    if (state->time > 2200) {
+        if (state->tri_once == 0) {
+            state->tri_update = 1;
+            state->tri_once = 1;
+        }
+        state->tri_draw = 1;
     }
 }
 
@@ -55,7 +58,8 @@ int DECORATE(update)(void *data)
         return (-1);
     state->time = update_time(state->glo_clock);
     if (state->tri_update > 0) {
-        animation_update(&state->my_intro.triforce, 70);
+        if (animation_update(&state->my_intro.triforce, 70) == 2)
+            state->tri_update = 0;
     }
 
     DECORATE(draw_update(state));
