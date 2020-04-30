@@ -21,7 +21,9 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     }
 
     for (int i = 0; objects[i].type != NUL_OBJECT; i++) {
-        objects_draw(&objects[i], win, NULL);
+        if (objects[i].interacted == 0) {
+            objects_draw(&objects[i], win, NULL);
+        }
     }
 
     animation_draw(&state->my_link.ani, win, NULL);
