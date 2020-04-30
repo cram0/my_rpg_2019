@@ -45,12 +45,14 @@ void init_inventory(items *item, int zoom_level, float width, float height)
                         (sfVector2f){slot[0].x - 8, slot[0].y - 8});
     init_item(item);
     init_def(item);
+    item->clock = sfClock_create();
     add_item(item, 1);
     add_item(item, 2);
     add_item(item, 1);
     sfSprite_setScale(item->inventory, vec_same(zoom_level));
     sfSprite_setPosition(item->inventory,
-                         (sfVector2f){0.0, -244 * zoom_level});
+                            (sfVector2f){0.0, -244 * zoom_level});
+    item->clining = 1;
     item->lock = 0;
     item->cursor_pos = 0;
     item->cursor_item = 0;

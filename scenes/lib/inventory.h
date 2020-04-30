@@ -8,6 +8,9 @@
 #include "../../include/sfml_helpers.h"
 #include "../../include/debug.h"
 
+#include "../lib/animation.h"
+#include "../lib/map.h"
+
 typedef struct {
     int x;
     int y;
@@ -25,10 +28,12 @@ typedef struct {
     sfSprite *def_boom;
     sfSprite *def_lantern;
 
+    sfClock *clock;
     sfSprite *select;
     int cursor_pos;
     int cursor_old;
     int cursor_item;
+    int clining;
 
     sfSprite *boomrang_sp;
     sfSprite *lantern_sp;

@@ -75,6 +75,7 @@ void draw_item(items *item)
 
 void draw_content(items *item)
 {
+    int ms = GET_ELAPSED_MSECS(item->clock);
     int cursor = item->cursor_pos;
     sfTexture *texture = NULL;
     sfRenderTexture_clear(item->window_inv, sfTransparent);
@@ -85,10 +86,13 @@ void draw_content(items *item)
     sfRenderTexture_drawSprite(item->window_inv, item->back_inventory, NULL);
     draw_item(item);
     draw_def(item);
-    sfRenderTexture_drawSprite(item->window_inv, item->select, NULL);
-
+    if (ms > 200) {
+        item->clining *= -1;
+        sfClock_restart(item->clock);
+    }
+    if (item->clining == 1 || item->cursor_item != 0)
+        sfRenderTexture_drawSprite(item->window_inv, item->select, NULL);
     sfRenderTexture_display(item->window_inv);
-
-    texture = (sfTexture *)sfRenderTexture_getTexture(item->window_inv);
+    texture = sfRenderTexture_getTexture(item->window_inv);
     sfSprite_setTexture(item->inventory, texture, sfFalse);
 }
