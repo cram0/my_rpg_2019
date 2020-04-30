@@ -44,12 +44,41 @@ void DECORATE(sword_anim)(DECORATE(state) *state)
     }
 }
 
-void DECORATE(draw_update)(DECORATE(state) *state)
+void DECORATE(stars_change)(DECORATE(state) *state)
+{
+    if (state->my_intro.stars_change > 0) {
+        if (state->my_intro.stars.position.x == 460 && 
+        state->my_intro.stars.position.y == 230) {
+            state->my_intro.stars.position.x = 340;
+            state->my_intro.stars.position.y = 370;
+        } else if (state->my_intro.stars.position.x == 340 && 
+                state->my_intro.stars.position.y == 370) {
+            state->my_intro.stars.position.x = 130;
+            state->my_intro.stars.position.y = 250;
+        } else if (state->my_intro.stars.position.x == 130 && 
+                state->my_intro.stars.position.y == 250) {
+            state->my_intro.stars.position.x = 620;
+            state->my_intro.stars.position.y = 370;
+        } else {
+            state->my_intro.stars.position.x = 460;
+            state->my_intro.stars.position.y = 230;
+        }
+        animation_set_position(&state->my_intro.stars, (sfVector2f){
+        state->my_intro.stars.position.x, state->my_intro.stars.position.y});
+        state->my_intro.stars_change = 0;
+    }
+}
+
+void DECORATE(first_update)(DECORATE(state) *state)
 {
     if (state->time > 1500) {
         state->my_intro.nintendo.is_drawable = 0;
         state->my_intro.copyright.is_drawable = 1;
     }
+}
+
+void DECORATE(second_update)(DECORATE(state) *state)
+{
     if (state->time > 2200) {
         if (state->tri_once == 0) {
             state->tri_update = 1;
@@ -57,20 +86,44 @@ void DECORATE(draw_update)(DECORATE(state) *state)
         }
         state->my_intro.triforce.is_drawable = 1;
     }
+}
+
+void DECORATE(third_update)(DECORATE(state) *state)
+{
     if (state->time > 11000) {
         state->my_intro.tri_first = 1;
         state->my_intro.zelda.is_drawable = 1;
         state->my_intro.subtitle.is_drawable = 1;
         state->my_intro.tlo.is_drawable = 1;
     }
+}
+
+void DECORATE(fourth_update)(DECORATE(state) *state)
+{
     if (state->time > 13000) {
         state->my_intro.tri_first = 0;
         state->my_intro.sword.is_drawable = 1;
         state->my_intro.zelda_z.is_drawable = 1;
         DECORATE(sword_anim(state));
     }
-    if (state->time > 16000)
+}
+
+void DECORATE(fifth_update)(DECORATE(state) *state)
+{
+    if (state->time > 16000) {
         state->my_intro.backgrd.is_drawable = 1;
+        state->my_intro.stars.is_drawable = 1;
+        state->my_intro.stars_update = 1;
+    }
+}
+
+void DECORATE(draw_update)(DECORATE(state) *state)
+{
+    DECORATE(first_update(state));
+    DECORATE(second_update(state));
+    DECORATE(third_update(state));
+    DECORATE(fourth_update(state));
+    DECORATE(fifth_update(state));
 }
 
 int DECORATE(update)(void *data)
@@ -87,7 +140,11 @@ int DECORATE(update)(void *data)
         if (animation_update(&state->my_intro.triforce, 70) == 2)
             state->tri_update = 0;
     }
-
+    if (state->my_intro.stars_update > 0) {
+        if (animation_update(&state->my_intro.stars, 130) == 3)
+            state->my_intro.stars_change = 1;
+    }
+    DECORATE(stars_change(state));
     DECORATE(draw_update(state));
     printf("TIME %f\n", state->time);
     return (0);

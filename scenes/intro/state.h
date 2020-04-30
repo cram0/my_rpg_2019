@@ -19,7 +19,8 @@ typedef struct {
     animation triforce;
     animation stars;
     int tri_first;
-
+    int stars_update;
+    int stars_change;
 } intro;
 
 typedef struct {

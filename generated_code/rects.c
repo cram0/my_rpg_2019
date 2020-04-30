@@ -1142,6 +1142,14 @@ const sfIntRect sfx_pot_explode_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
+const sfIntRect small_shine_rects[] = {
+    { .left =    0, .top =    0, .width =   15, .height =   15, },
+    { .left =   15, .top =    0, .width =   15, .height =   15, },
+    { .left =   30, .top =    0, .width =   15, .height =   15, },
+    { .left =   45, .top =    0, .width =   15, .height =   15, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
 const sfIntRect transition_circle_rects[] = {
     { .left =    2, .top =    2, .width =  257, .height =  223, },
     { .left =  265, .top =    3, .width =  256, .height =  223, },

@@ -1142,6 +1142,14 @@ const sfVector2f sfx_pot_explode_origs[] = {
     { .x =    0, .y =    0 },
 };
 
+const sfVector2f small_shine_origs[] = {
+    { .x =    0, .y =    0 },
+    { .x =   15, .y =    0 },
+    { .x =   30, .y =    0 },
+    { .x =   45, .y =    0 },
+    { .x =    0, .y =    0 },
+};
+
 const sfVector2f transition_circle_origs[] = {
     { .x =  132, .y =  123 },
     { .x =  393, .y =  114 },

@@ -98,6 +98,8 @@ int animation_update(animation *ani, float time)
 
         if (*frame > 86)
             return 2;
+        if (*frame >= 3)
+            return 3;
     }
 
     if (!ani->invert_y) {

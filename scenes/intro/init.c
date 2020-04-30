@@ -90,7 +90,7 @@ int DECORATE(tlo_init)(DECORATE(state) *state)
     return (0);
 }
 
-int DECORATE(triforce_init)(DECORATE(state) *state, float width, float height)
+int DECORATE(triforce_init)(DECORATE(state) *state)
 {
     animation *tri = &state->my_intro.triforce;
     tri->is_drawable = 0;
@@ -102,6 +102,22 @@ int DECORATE(triforce_init)(DECORATE(state) *state, float width, float height)
     animation_set_zoom(tri, 3.2);
     animation_set_position(tri, (sfVector2f){130.0, 45.0});
     m_animation_set_rects(tri, triforce);
+
+    return (0);
+}
+
+int DECORATE(stars_init)(DECORATE(state) *state)
+{
+    animation *stars = &state->my_intro.stars;
+    stars->is_drawable = 0;
+    stars->invert_y = 0;
+
+    if (animation_load_spritesheet(stars, STARS_PATH) < 0)
+        return (-1);
+
+    animation_set_zoom(stars, 3.2);
+    animation_set_position(stars, (sfVector2f){460.0, 230.0});
+    m_animation_set_rects(stars, small_shine);
 
     return (0);
 }
@@ -152,12 +168,13 @@ int DECORATE(zelda_z_init)(DECORATE(state) *state)
 
 int DECORATE(assets_init)(DECORATE(state) *state, float width, float height)
 {
-
     if (DECORATE(nintendo_init)(state) < 0)
         return (-1);
     if (DECORATE(copyright_init)(state) < 0)
         return (-1);
-    if (DECORATE(triforce_init)(state, width, height) < 0)
+    if (DECORATE(triforce_init)(state) < 0)
+        return (-1);
+    if (DECORATE(stars_init)(state) < 0)
         return (-1);
     if (DECORATE(zelda_init)(state) < 0)
         return (-1);
@@ -194,6 +211,8 @@ void *DECORATE(init)(global_state *game_state)
         run_once = 1;
         scene_state.tri_update = 0;
         scene_state.tri_once = 0;
+        scene_state.my_intro.stars_change = 0;
+        scene_state.my_intro.stars_update = 0;
         scene_state.my_intro.tri_first = 1;
     }
 
