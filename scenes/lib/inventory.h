@@ -46,6 +46,7 @@ typedef struct {
 slot_inventory slot[20];
 
 int add_item(items *item, int id);
+void mouse_cursor(items *item, sfEvent event);
 void draw_def(items *item);
 void draw_item(items *item);
 void init_inventory(items *item, int zoom_level, float width, float height);

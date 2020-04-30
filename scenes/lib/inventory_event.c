@@ -12,12 +12,8 @@ int key_is_arrow(sfEvent event)
 
 void move_cursor(items *item, sfEvent event)
 {
-    int mvx = 0;
-    int mvy = 0;
-
-    if (!key_is_arrow(event))
-        return;
-
+    int mvx = 0, mvy = 0;
+    if (!key_is_arrow(event)) return;
     if (event.type == sfEvtKeyPressed) {
         if (event.key.code == sfKeyUp) mvy -= 5;
         if (event.key.code == sfKeyRight && (item->cursor_pos + 1) % 5 != 0)
@@ -26,20 +22,14 @@ void move_cursor(items *item, sfEvent event)
         if (event.key.code == sfKeyLeft && item->cursor_pos % 5 != 0)
             mvx -= 1;
     }
-
     if (item->cursor_pos + mvx + mvy < 0 ||
-        item->cursor_pos + mvx + mvy > 19) {
-        return;
-    }
-
+        item->cursor_pos + mvx + mvy > 19) return;
     if (item->cursor_item != 0) {
-        if (slot[item->cursor_pos + mvx + mvy].occuped != 0)
-            return;
+        if (slot[item->cursor_pos + mvx + mvy].occuped != 0) return;
         slot[item->cursor_old].occuped = 0;
         slot[item->cursor_pos].occuped = item->cursor_item;
         draw_item(item);
     }
-
     item->cursor_old = item->cursor_pos;
     item->cursor_pos += mvx + mvy;
 }
@@ -70,6 +60,7 @@ void equipe_item(items *item, sfEvent event)
 void inventory_interaction(items *item, sfEvent event)
 {
     if (item->lock == 1) {
+        mouse_cursor(item, event);
         move_cursor(item, event);
         cursor_selection(item, event);
         equipe_item(item, event);
