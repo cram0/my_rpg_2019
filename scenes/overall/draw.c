@@ -10,5 +10,6 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     map_draw(&state->my_map.m, win, NULL);
     animation_draw(&state->my_link.ani, win, NULL);
     display_hud(&state->my_link.link_stuff, win);
+    display_inventory(win, &state->my_link.link_item);
     return (0);
 }

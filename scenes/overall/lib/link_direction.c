@@ -49,10 +49,8 @@ static int key_is_arrow(sfEvent event)
 void DECORATE(link_direction)(link *lnk, sfEvent event)
 {
     animation *lnk_ani = &lnk->ani;
-
     int combination = 0;
     lnk->diagonals = 0;
-
     if (!is_valid_direction(event, &combination))
         return;
 
@@ -63,7 +61,6 @@ void DECORATE(link_direction)(link *lnk, sfEvent event)
 
     lnk_ani->invert_y = 0;
     lnk->is_running = 0;
-
     if (event.type == sfEvtKeyPressed) {
         if (event.key.code == sfKeyUp)      lnk->direction = UP;
         if (event.key.code == sfKeyRight)   lnk->direction = RIGHT;

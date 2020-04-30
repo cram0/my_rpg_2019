@@ -7,6 +7,7 @@
 #include "../lib/animation.h"
 #include "../lib/map.h"
 #include "../lib/hud.h"
+#include "../lib/inventory.h"
 
 enum {
     UP,
@@ -23,6 +24,7 @@ typedef struct {
     int diagonals; /* ie. Left-Up: 5 */
     int is_running;
     equipment link_stuff;
+    items link_item;
 } link;
 
 typedef struct {
