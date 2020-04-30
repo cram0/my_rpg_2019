@@ -54,7 +54,7 @@ void *DECORATE(init)(global_state *game_state)
         scene_state.height = h;
 
         if (DECORATE(link_init)(&scene_state, w, h) < 0 ||
-            DECORATE(house_init)(&scene_state) < 0 || DECORATE(mobs_init)(&scene_state) < 0)
+            DECORATE(house_init)(&scene_state) < 0 || DECORATE(mobs_init)(&scene_state) < 0 || DECORATE(objects_init)(&scene_state) < 0)
             return (NULL);
 
         run_once = 1;

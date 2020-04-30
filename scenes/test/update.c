@@ -15,6 +15,7 @@
 #include "../../mobs/mob.h"
 
 #include "lib/update_mob.h"
+#include "lib/update_objects.h"
 
 int DECORATE(update)(void *data)
 {
@@ -23,6 +24,7 @@ int DECORATE(update)(void *data)
     house *hous = &state->my_map;
     link *lnk = &state->my_link;
     mob *mobs = state->my_map.m.mobs;
+    object *objects = state->my_map.m.objects;
 
     animation_update(&lnk->ani, 30);
 
@@ -46,6 +48,11 @@ int DECORATE(update)(void *data)
         }
 
         mob_set_rects(&mobs[i]);
+    }
+
+    for (int i = 0; objects[i].type != NUL_OBJECT; i++) {
+        obj_move_by_offset(&objects[i], offset);
+        obj_update_ani(&objects[i], 30);
     }
 
     return (0);

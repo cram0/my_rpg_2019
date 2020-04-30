@@ -4,6 +4,7 @@
 #include <SFML/Graphics.h>
 
 #include "../../mobs/mob.h"
+#include "../../objects/objects.h"
 
 /*
 ** You may only *touch* the following members:
@@ -29,6 +30,8 @@ typedef struct {
     sfClock *clocks[5];
 
     mob *mobs;
+
+    object *objects;
 
 } map;
 

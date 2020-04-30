@@ -1,5 +1,7 @@
 #include "init_mob.h"
 
+#include <SFML/Graphics.h>
+
 #include "../state.h"
 #include "../decorator.h"
 
@@ -45,4 +47,6 @@ int DECORATE(mobs_init)(DECORATE(state) *state)
                 break;
         }
     }
+
+    return (0);
 }

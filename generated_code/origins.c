@@ -989,23 +989,28 @@ const sfVector2f npc_zelda_up_walk_origs[] = {
     { .x =    0, .y =    0 },
 };
 
+const sfVector2f object_big_rock_origs[] = {
+    { .x =   24, .y =  123 },
+    { .x =    0, .y =    0 },
+};
+
 const sfVector2f object_boomerang_origs[] = {
     { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_bush_origs[] = {
-    { .x =    0, .y =    0 },
+    { .x =   22, .y =  102 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_chest_closed_origs[] = {
-    { .x =    0, .y =    0 },
+    { .x =  110, .y =  234 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_chest_open_origs[] = {
-    { .x =    0, .y =    0 },
+    { .x =  131, .y =  234 },
     { .x =    0, .y =    0 },
 };
 
@@ -1059,7 +1064,12 @@ const sfVector2f object_map_origs[] = {
 };
 
 const sfVector2f object_pot_origs[] = {
+    { .x =   60, .y =  171 },
     { .x =    0, .y =    0 },
+};
+
+const sfVector2f object_rock_origs[] = {
+    { .x =  106, .y =  100 },
     { .x =    0, .y =    0 },
 };
 
