@@ -18,6 +18,8 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     entity_draw(&state->my_intro.zelda, win, NULL);
     entity_draw(&state->my_intro.subtitle, win, NULL);
     entity_draw(&state->my_intro.tlo, win, NULL);
+    entity_draw(&state->my_intro.sword, win, NULL);
+    entity_draw(&state->my_intro.zelda_z, win, NULL);
     if (state->my_intro.tri_first == 1)
         animation_draw(&state->my_intro.triforce, win, NULL);
     return (0);

@@ -18,6 +18,7 @@ const char SUBTITLE_PATH[] = "assets/title_screen/logo_subtitle.png";
 const char BCKGRD_PATH[] = "assets/title_screen/background.png";
 const char TLO_PATH[] = "assets/title_screen/logo_tlo.png";
 const char ZELDA_PATH[] =  "assets/title_screen/logo_zelda.png";
+const char ZELDA_Z_PATH[] = "assets/title_screen/logo_zelda_z.png";
 
 int DECORATE(nintendo_init)(DECORATE(state) *state)
 {
@@ -119,6 +120,36 @@ int DECORATE(background_init)(DECORATE(state) * state)
     return (0);
 }
 
+int DECORATE(sword_init)(DECORATE(state) *state)
+{
+    entity *sword = &state->my_intro.sword;
+    sword->is_drawable = 0;
+    sword->position.x = 170;
+    sword->position.y = -500;
+
+    if (entity_load_spritesheet(sword, SWORD_PATH) < 0)
+        return (-1);
+
+    entity_set_zoom(sword, 3.0);
+    entity_set_position(sword, (sfVector2f){170.0, -500.0});
+
+    return (0);
+}
+
+int DECORATE(zelda_z_init)(DECORATE(state) *state)
+{
+    entity *zelda_z = &state->my_intro.zelda_z;
+    zelda_z->is_drawable = 0;
+
+    if (entity_load_spritesheet(zelda_z, ZELDA_Z_PATH) < 0)
+        return (-1);
+
+    entity_set_zoom(zelda_z, 3.5);
+    entity_set_position(zelda_z, (sfVector2f){140, 220.0});
+
+    return (0);
+}
+
 int DECORATE(assets_init)(DECORATE(state) *state, float width, float height)
 {
 
@@ -130,11 +161,15 @@ int DECORATE(assets_init)(DECORATE(state) *state, float width, float height)
         return (-1);
     if (DECORATE(zelda_init)(state) < 0)
         return (-1);
+    if (DECORATE(zelda_z_init)(state) < 0)
+        return (-1);
     if (DECORATE(subtitle_init)(state) < 0)
         return (-1);
     if (DECORATE(tlo_init)(state) < 0)
         return (-1);
     if (DECORATE(background_init)(state) < 0)
+        return (-1);
+    if (DECORATE(sword_init)(state) < 0)
         return (-1);
     return (0);
 }

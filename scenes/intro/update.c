@@ -32,12 +32,23 @@ float update_time(sfClock *clock)
     return (elapsed);
 }
 
+void DECORATE(sword_anim)(DECORATE(state) *state)
+{
+    if (state->time < 15900) {
+        if (state->my_intro.sword.position.y <= 90) {
+            state->my_intro.sword.position.y += 10;
+            entity_set_position(&state->my_intro.sword, 
+            (sfVector2f){state->my_intro.sword.position.x,
+            state->my_intro.sword.position.y});
+        }
+    }
+}
+
 void DECORATE(draw_update)(DECORATE(state) *state)
 {
     if (state->time > 1500) {
         state->my_intro.nintendo.is_drawable = 0;
         state->my_intro.copyright.is_drawable = 1;
-
     }
     if (state->time > 2200) {
         if (state->tri_once == 0) {
@@ -54,8 +65,12 @@ void DECORATE(draw_update)(DECORATE(state) *state)
     }
     if (state->time > 13000) {
         state->my_intro.tri_first = 0;
-        state->my_intro.backgrd.is_drawable = 1;
+        state->my_intro.sword.is_drawable = 1;
+        state->my_intro.zelda_z.is_drawable = 1;
+        DECORATE(sword_anim(state));
     }
+    if (state->time > 16000)
+        state->my_intro.backgrd.is_drawable = 1;
 }
 
 int DECORATE(update)(void *data)

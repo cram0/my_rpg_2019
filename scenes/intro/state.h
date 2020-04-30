@@ -14,9 +14,10 @@ typedef struct {
     entity zelda;
     entity backgrd;
     entity subtitle;
+    entity sword;
+    entity zelda_z;
     animation triforce;
     animation stars;
-    animation sword;
     int tri_first;
 
 } intro;
