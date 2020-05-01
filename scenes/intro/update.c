@@ -146,6 +146,6 @@ int DECORATE(update)(void *data)
     }
     DECORATE(stars_change(state));
     DECORATE(draw_update(state));
-    printf("TIME %f\n", state->time);
+    
     return (0);
 }
