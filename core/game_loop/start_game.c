@@ -10,6 +10,11 @@
        continue; \
     }
 
+#define BREAK_IF_NEEDED() \
+    if (state->continue_loop) { \
+       break; \
+    }
+
 int game_loop(global_state *state)
 {
     DEBUG("game_loop: entered");
@@ -21,9 +26,10 @@ int game_loop(global_state *state)
 
         while (sfRenderWindow_pollEvent(state->win, &state->event)) {
             manage_events(state);
-            CONTINUE_IF_NEEDED();
+            BREAK_IF_NEEDED();
             state->scenes_db[id].handle_events(state->scene_state, state->event);
         }
+        CONTINUE_IF_NEEDED();
 
         sfRenderWindow_clear(state->win, sfBlack);
 

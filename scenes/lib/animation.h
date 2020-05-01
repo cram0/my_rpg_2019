@@ -17,6 +17,7 @@ typedef struct {
 
     float zoom;
 
+    int is_drawable;
     int invert_y;
 
     int frame;

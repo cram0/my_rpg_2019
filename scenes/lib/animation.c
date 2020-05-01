@@ -44,18 +44,19 @@ int animation_load_spritesheet(animation *ani, char *fp)
     sfSprite_setTexture(ani->sprite, ani->texture, sfFalse);
     sfSprite_setScale(ani->sprite, vec_same(ani->zoom));
 
+    ani->is_drawable = 1;
+
     return (0);
 }
 
 void animation_set_rects(animation *ani, sfVector2f *origs, sfIntRect *rects)
 {
-    if (ani->origins != origs && ani->rects != rects)
-        ani->frame = -1;
+    if (ani->rects != rects)
+        ani->frame = 0;
 
     ani->origins = origs;
     ani->rects = rects;
 
-    int i = ani->frame == -1 ? 0 : ani->frame;
 }
 
 void animation_set_position(animation *ani, sfVector2f pos)
@@ -97,11 +98,14 @@ void animation_clock_restart(animation *ani, int idx)
 
 void animation_draw(animation *ani, sfRenderWindow *win, sfRenderStates *states)
 {
-    sfRenderWindow_drawSprite(win, ani->sprite, states);
+    if (ani->is_drawable) {
+        sfRenderWindow_drawSprite(win, ani->sprite, states);
 
 #ifndef NDEBUG
-    sfRenderWindow_drawRectangleShape(win, ani->hitbox, NULL);
+        if (ani->hitbox)
+            sfRenderWindow_drawRectangleShape(win, ani->hitbox, NULL);
 #endif
+    }
 }
 
 static inline my_abs(float a)

@@ -17,11 +17,11 @@ struct scene {
 
 #define SCENE_DB_ENTRY(name) \
     (struct scene){ \
-        name##_##init, \
-        name##_##update, \
-        name##_##handle_events, \
-        name##_##destroy, \
-        name##_##draw, \
+        name##_init, \
+        name##_update, \
+        name##_handle_events, \
+        name##_destroy, \
+        name##_draw, \
     }
 
 typedef struct global_state {

@@ -1,5 +1,5 @@
 #include <SFML/Graphics.h>
-const sfIntRect boomerang_loop_rects[] = {
+sfIntRect boomerang_loop_rects[] = {
     { .left =  328, .top =  253, .width =   10, .height =   10, },
     { .left =  343, .top =  253, .width =   10, .height =   10, },
     { .left =  356, .top =  253, .width =   10, .height =   10, },
@@ -7,72 +7,72 @@ const sfIntRect boomerang_loop_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_boomerang_rects[] = {
+sfIntRect hud_boomerang_rects[] = {
     { .left =  276, .top =   74, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_boomerang_desc_rects[] = {
+sfIntRect hud_boomerang_desc_rects[] = {
     { .left =  164, .top =  608, .width =   64, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_rects[] = {
+sfIntRect hud_rects[] = {
     { .left =    0, .top =    0, .width =  256, .height =  224, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_def_boomrang_rects[] = {
+sfIntRect hud_def_boomrang_rects[] = {
     { .left =  164, .top =  608, .width =   64, .height =   15, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_def_lantern_rects[] = {
+sfIntRect hud_def_lantern_rects[] = {
     { .left =   92, .top =  752, .width =   64, .height =   15, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_heart_empty_rects[] = {
+sfIntRect hud_heart_empty_rects[] = {
     { .left =  259, .top =   56, .width =    7, .height =    7, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_heart_full_rects[] = {
+sfIntRect hud_heart_full_rects[] = {
     { .left =  291, .top =   56, .width =    7, .height =    7, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_heart_half_rects[] = {
+sfIntRect hud_heart_half_rects[] = {
     { .left =  275, .top =   56, .width =    7, .height =    7, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_lantern_rects[] = {
+sfIntRect hud_lantern_rects[] = {
     { .left =  259, .top =  159, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_lantern_desc_rects[] = {
+sfIntRect hud_lantern_desc_rects[] = {
     { .left =   92, .top =  752, .width =   64, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_pause_rects[] = {
+sfIntRect hud_pause_rects[] = {
     { .left =    8, .top =    8, .width =  256, .height =  224, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_select_rects[] = {
+sfIntRect hud_select_rects[] = {
     { .left =  464, .top =  329, .width =   31, .height =   31, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect hud_selection_rects[] = {
+sfIntRect hud_selection_rects[] = {
     { .left =  467, .top =  331, .width =   26, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_attack_rects[] = {
+sfIntRect link_down_attack_rects[] = {
     { .left =  510, .top =  282, .width =   20, .height =   23, },
     { .left =  542, .top =  286, .width =   22, .height =   24, },
     { .left =  571, .top =  282, .width =   20, .height =   31, },
@@ -82,18 +82,18 @@ const sfIntRect link_down_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_boomerang_throw_rects[] = {
+sfIntRect link_down_boomerang_throw_rects[] = {
     { .left =  442, .top =  245, .width =   23, .height =   22, },
     { .left =  468, .top =  246, .width =   20, .height =   21, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_carry_idle_rects[] = {
+sfIntRect link_down_carry_idle_rects[] = {
     { .left =  159, .top =  137, .width =   16, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_carry_walk_rects[] = {
+sfIntRect link_down_carry_walk_rects[] = {
     { .left =  176, .top =  138, .width =   16, .height =   21, },
     { .left =  193, .top =  138, .width =   16, .height =   21, },
     { .left =  159, .top =  137, .width =   16, .height =   22, },
@@ -103,28 +103,28 @@ const sfIntRect link_down_carry_walk_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_charge_super_attack_rects[] = {
+sfIntRect link_down_charge_super_attack_rects[] = {
     { .left =  701, .top =  284, .width =   19, .height =   29, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_idle_rects[] = {
+sfIntRect link_down_idle_rects[] = {
     { .left =   90, .top =   13, .width =   16, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_idle_shield_rects[] = {
+sfIntRect link_down_idle_shield_rects[] = {
     { .left =    7, .top =  209, .width =   16, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_pull_rects[] = {
+sfIntRect link_down_pull_rects[] = {
     { .left =  297, .top =   59, .width =   16, .height =   20, },
     { .left =  319, .top =   59, .width =   16, .height =   20, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_super_attack_rects[] = {
+sfIntRect link_down_super_attack_rects[] = {
     { .left =  504, .top =  139, .width =   20, .height =   26, },
     { .left =  532, .top =  126, .width =   15, .height =   36, },
     { .left =  554, .top =  126, .width =   16, .height =   39, },
@@ -140,7 +140,7 @@ const sfIntRect link_down_super_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_walk_rects[] = {
+sfIntRect link_down_walk_rects[] = {
     { .left =  122, .top =   13, .width =   16, .height =   22, },
     { .left =  149, .top =   12, .width =   16, .height =   23, },
     { .left =  174, .top =   11, .width =   16, .height =   24, },
@@ -152,7 +152,7 @@ const sfIntRect link_down_walk_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_down_walk_shield_rects[] = {
+sfIntRect link_down_walk_shield_rects[] = {
     { .left =   33, .top =  209, .width =   16, .height =   22, },
     { .left =   59, .top =  208, .width =   16, .height =   23, },
     { .left =   82, .top =  207, .width =   16, .height =   24, },
@@ -164,7 +164,7 @@ const sfIntRect link_down_walk_shield_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_falling_rects[] = {
+sfIntRect link_falling_rects[] = {
     { .left =  283, .top =  170, .width =   22, .height =   22, },
     { .left =  317, .top =  175, .width =   16, .height =   16, },
     { .left =  341, .top =  178, .width =   13, .height =   13, },
@@ -174,7 +174,7 @@ const sfIntRect link_falling_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_attack_rects[] = {
+sfIntRect link_left_attack_rects[] = {
     { .left =  519, .top =  192, .width =   16, .height =   23, },
     { .left =  546, .top =  191, .width =   23, .height =   24, },
     { .left =  574, .top =  194, .width =   29, .height =   21, },
@@ -184,46 +184,46 @@ const sfIntRect link_left_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_boomerang_throw_rects[] = {
+sfIntRect link_left_boomerang_throw_rects[] = {
     { .left =  284, .top =  244, .width =   20, .height =   23, },
     { .left =  309, .top =  245, .width =   16, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_carry_idle_rects[] = {
+sfIntRect link_left_carry_idle_rects[] = {
     { .left =  159, .top =  168, .width =   16, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_carry_walk_rects[] = {
+sfIntRect link_left_carry_walk_rects[] = {
     { .left =  181, .top =  170, .width =   16, .height =   22, },
     { .left =  204, .top =  171, .width =   17, .height =   21, },
     { .left =  159, .top =  168, .width =   16, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_charge_super_attack_rects[] = {
+sfIntRect link_left_charge_super_attack_rects[] = {
     { .left =  708, .top =  192, .width =   24, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_idle_rects[] = {
+sfIntRect link_left_idle_rects[] = {
     { .left =    4, .top =   56, .width =   16, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_idle_shield_rects[] = {
+sfIntRect link_left_idle_shield_rects[] = {
     { .left =  225, .top =  209, .width =   19, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_pull_rects[] = {
+sfIntRect link_left_pull_rects[] = {
     { .left =  109, .top =  139, .width =   16, .height =   23, },
     { .left =  135, .top =  137, .width =   19, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_super_attack_rects[] = {
+sfIntRect link_left_super_attack_rects[] = {
     { .left =  500, .top =   19, .width =   23, .height =   23, },
     { .left =  536, .top =   19, .width =   31, .height =   23, },
     { .left =  577, .top =   20, .width =   34, .height =   23, },
@@ -239,7 +239,7 @@ const sfIntRect link_left_super_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_walk_rects[] = {
+sfIntRect link_left_walk_rects[] = {
     { .left =   31, .top =   55, .width =   16, .height =   24, },
     { .left =   57, .top =   55, .width =   16, .height =   24, },
     { .left =   84, .top =   56, .width =   17, .height =   23, },
@@ -251,7 +251,7 @@ const sfIntRect link_left_walk_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_left_walk_shield_rects[] = {
+sfIntRect link_left_walk_shield_rects[] = {
     { .left =  249, .top =  208, .width =   19, .height =   24, },
     { .left =  277, .top =  208, .width =   18, .height =   24, },
     { .left =  301, .top =  209, .width =   19, .height =   23, },
@@ -262,7 +262,7 @@ const sfIntRect link_left_walk_shield_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_attack_rects[] = {
+sfIntRect link_right_attack_rects[] = {
     { .left =  519, .top =  192, .width =   16, .height =   23, },
     { .left =  546, .top =  191, .width =   23, .height =   24, },
     { .left =  574, .top =  194, .width =   29, .height =   21, },
@@ -272,46 +272,46 @@ const sfIntRect link_right_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_boomerang_throw_rects[] = {
+sfIntRect link_right_boomerang_throw_rects[] = {
     { .left =  284, .top =  244, .width =   20, .height =   23, },
     { .left =  309, .top =  245, .width =   16, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_carry_idle_rects[] = {
+sfIntRect link_right_carry_idle_rects[] = {
     { .left =  159, .top =  168, .width =   16, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_carry_walk_rects[] = {
+sfIntRect link_right_carry_walk_rects[] = {
     { .left =  181, .top =  170, .width =   16, .height =   22, },
     { .left =  204, .top =  171, .width =   17, .height =   21, },
     { .left =  159, .top =  168, .width =   16, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_charge_super_attack_rects[] = {
+sfIntRect link_right_charge_super_attack_rects[] = {
     { .left =  708, .top =  192, .width =   24, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_idle_rects[] = {
+sfIntRect link_right_idle_rects[] = {
     { .left =    4, .top =   56, .width =   16, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_idle_shield_rects[] = {
+sfIntRect link_right_idle_shield_rects[] = {
     { .left =  225, .top =  209, .width =   19, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_pull_rects[] = {
+sfIntRect link_right_pull_rects[] = {
     { .left =  109, .top =  139, .width =   16, .height =   23, },
     { .left =  135, .top =  137, .width =   19, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_super_attack_rects[] = {
+sfIntRect link_right_super_attack_rects[] = {
     { .left =  500, .top =   19, .width =   23, .height =   23, },
     { .left =  536, .top =   19, .width =   31, .height =   23, },
     { .left =  577, .top =   20, .width =   34, .height =   23, },
@@ -327,7 +327,7 @@ const sfIntRect link_right_super_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_walk_rects[] = {
+sfIntRect link_right_walk_rects[] = {
     { .left =   31, .top =   55, .width =   16, .height =   24, },
     { .left =   57, .top =   55, .width =   16, .height =   24, },
     { .left =   84, .top =   56, .width =   17, .height =   23, },
@@ -339,7 +339,7 @@ const sfIntRect link_right_walk_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_right_walk_shield_rects[] = {
+sfIntRect link_right_walk_shield_rects[] = {
     { .left =  249, .top =  208, .width =   19, .height =   24, },
     { .left =  277, .top =  208, .width =   18, .height =   24, },
     { .left =  301, .top =  209, .width =   19, .height =   23, },
@@ -350,12 +350,12 @@ const sfIntRect link_right_walk_shield_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_sword_rise_rects[] = {
+sfIntRect link_sword_rise_rects[] = {
     { .left =  284, .top =  124, .width =   17, .height =   35, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_attack_rects[] = {
+sfIntRect link_up_attack_rects[] = {
     { .left =  517, .top =  243, .width =   22, .height =   22, },
     { .left =  546, .top =  235, .width =   22, .height =   30, },
     { .left =  582, .top =  230, .width =   20, .height =   35, },
@@ -364,18 +364,18 @@ const sfIntRect link_up_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_boomerang_throw_rects[] = {
+sfIntRect link_up_boomerang_throw_rects[] = {
     { .left =  387, .top =  243, .width =   23, .height =   23, },
     { .left =  415, .top =  244, .width =   19, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_carry_idle_rects[] = {
+sfIntRect link_up_carry_idle_rects[] = {
     { .left =   10, .top =  177, .width =   16, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_carry_walk_rects[] = {
+sfIntRect link_up_carry_walk_rects[] = {
     { .left =   36, .top =  178, .width =   16, .height =   21, },
     { .left =   60, .top =  177, .width =   16, .height =   22, },
     { .left =   82, .top =  178, .width =   16, .height =   21, },
@@ -383,28 +383,28 @@ const sfIntRect link_up_carry_walk_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_charge_super_attack_rects[] = {
+sfIntRect link_up_charge_super_attack_rects[] = {
     { .left =  686, .top =  239, .width =   19, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_idle_rects[] = {
+sfIntRect link_up_idle_rects[] = {
     { .left =    3, .top =   97, .width =   16, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_idle_shield_rects[] = {
+sfIntRect link_up_idle_shield_rects[] = {
     { .left =    7, .top =  239, .width =   17, .height =   22, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_pull_rects[] = {
+sfIntRect link_up_pull_rects[] = {
     { .left =  232, .top =   98, .width =   16, .height =   21, },
     { .left =  253, .top =   99, .width =   16, .height =   20, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_super_attack_rects[] = {
+sfIntRect link_up_super_attack_rects[] = {
     { .left =  487, .top =   60, .width =   20, .height =   27, },
     { .left =  516, .top =   61, .width =   15, .height =   35, },
     { .left =  541, .top =   60, .width =   17, .height =   38, },
@@ -420,7 +420,7 @@ const sfIntRect link_up_super_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_walk_rects[] = {
+sfIntRect link_up_walk_rects[] = {
     { .left =   30, .top =   97, .width =   16, .height =   22, },
     { .left =   57, .top =   96, .width =   16, .height =   23, },
     { .left =   81, .top =   95, .width =   16, .height =   24, },
@@ -432,7 +432,7 @@ const sfIntRect link_up_walk_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect link_up_walk_shield_rects[] = {
+sfIntRect link_up_walk_shield_rects[] = {
     { .left =   32, .top =  237, .width =   17, .height =   24, },
     { .left =   55, .top =  239, .width =   17, .height =   22, },
     { .left =   78, .top =  239, .width =   17, .height =   22, },
@@ -443,18 +443,18 @@ const sfIntRect link_up_walk_shield_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_bk_down_idle_rects[] = {
+sfIntRect monster_bk_down_idle_rects[] = {
     { .left =  128, .top =   75, .width =   22, .height =   33, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_bk_down_walk_rects[] = {
+sfIntRect monster_bk_down_walk_rects[] = {
     { .left =  155, .top =   75, .width =   22, .height =   34, },
     { .left =  182, .top =   74, .width =   22, .height =   35, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_bk_falling_rects[] = {
+sfIntRect monster_bk_falling_rects[] = {
     { .left =  361, .top =  281, .width =   22, .height =   22, },
     { .left =  384, .top =  280, .width =   16, .height =   16, },
     { .left =  402, .top =  282, .width =   13, .height =   13, },
@@ -462,72 +462,72 @@ const sfIntRect monster_bk_falling_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_bk_left_idle_rects[] = {
+sfIntRect monster_bk_left_idle_rects[] = {
     { .left =   11, .top =   82, .width =   29, .height =   27, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_bk_left_walk_rects[] = {
+sfIntRect monster_bk_left_walk_rects[] = {
     { .left =   10, .top =    7, .width =   32, .height =   28, },
     { .left =   48, .top =    8, .width =   27, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_bk_right_idle_rects[] = {
+sfIntRect monster_bk_right_idle_rects[] = {
     { .left =   11, .top =   82, .width =   29, .height =   27, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_bk_right_walk_rects[] = {
+sfIntRect monster_bk_right_walk_rects[] = {
     { .left =   10, .top =    7, .width =   32, .height =   28, },
     { .left =   48, .top =    8, .width =   27, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_bk_up_idle_rects[] = {
+sfIntRect monster_bk_up_idle_rects[] = {
     { .left =  285, .top =   81, .width =   22, .height =   27, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_bk_up_walk_rects[] = {
+sfIntRect monster_bk_up_walk_rects[] = {
     { .left =  233, .top =   82, .width =   22, .height =   26, },
     { .left =  259, .top =   82, .width =   22, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_crab_idle_rects[] = {
+sfIntRect monster_crab_idle_rects[] = {
     { .left =  658, .top =  130, .width =   12, .height =   14, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_crab_walk_rects[] = {
+sfIntRect monster_crab_walk_rects[] = {
     { .left =  624, .top =  131, .width =   16, .height =   13, },
     { .left =  642, .top =  131, .width =   12, .height =   13, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_down_idle_rects[] = {
+sfIntRect monster_gk_down_idle_rects[] = {
     { .left =   16, .top =   44, .width =   16, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_down_look_left_rects[] = {
+sfIntRect monster_gk_down_look_left_rects[] = {
     { .left =   76, .top =   44, .width =   16, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_down_look_right_rects[] = {
+sfIntRect monster_gk_down_look_right_rects[] = {
     { .left =   56, .top =   44, .width =   16, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_down_walk_rects[] = {
+sfIntRect monster_gk_down_walk_rects[] = {
     { .left =   16, .top =   44, .width =   16, .height =   28, },
     { .left =   36, .top =   44, .width =   16, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_falling_rects[] = {
+sfIntRect monster_gk_falling_rects[] = {
     { .left =  217, .top =  281, .width =   22, .height =   22, },
     { .left =  240, .top =  280, .width =   16, .height =   16, },
     { .left =  258, .top =  282, .width =   13, .height =   13, },
@@ -535,160 +535,160 @@ const sfIntRect monster_gk_falling_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_left_idle_rects[] = {
+sfIntRect monster_gk_left_idle_rects[] = {
     { .left =  203, .top =   44, .width =   18, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_left_look_down_rects[] = {
+sfIntRect monster_gk_left_look_down_rects[] = {
     { .left =  225, .top =   44, .width =   17, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_left_look_up_rects[] = {
+sfIntRect monster_gk_left_look_up_rects[] = {
     { .left =  246, .top =   44, .width =   17, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_left_walk_rects[] = {
+sfIntRect monster_gk_left_walk_rects[] = {
     { .left =  181, .top =   44, .width =   18, .height =   28, },
     { .left =  203, .top =   44, .width =   18, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_right_idle_rects[] = {
+sfIntRect monster_gk_right_idle_rects[] = {
     { .left =   95, .top =   44, .width =   18, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_right_look_down_rects[] = {
+sfIntRect monster_gk_right_look_down_rects[] = {
     { .left =  155, .top =   44, .width =   17, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_right_look_up_rects[] = {
+sfIntRect monster_gk_right_look_up_rects[] = {
     { .left =  137, .top =   44, .width =   17, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_right_walk_rects[] = {
+sfIntRect monster_gk_right_walk_rects[] = {
     { .left =   95, .top =   44, .width =   18, .height =   28, },
     { .left =  115, .top =   44, .width =   18, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_up_idle_rects[] = {
+sfIntRect monster_gk_up_idle_rects[] = {
     { .left =  265, .top =   44, .width =   16, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_up_look_left_rects[] = {
+sfIntRect monster_gk_up_look_left_rects[] = {
     { .left =  305, .top =   44, .width =   16, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_up_look_right_rects[] = {
+sfIntRect monster_gk_up_look_right_rects[] = {
     { .left =  325, .top =   44, .width =   16, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_gk_up_walk_rects[] = {
+sfIntRect monster_gk_up_walk_rects[] = {
     { .left =  265, .top =   44, .width =   16, .height =   28, },
     { .left =  285, .top =   44, .width =   16, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_mouse_down_idle_rects[] = {
+sfIntRect monster_mouse_down_idle_rects[] = {
     { .left =  442, .top =  128, .width =   12, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_mouse_down_walk_rects[] = {
+sfIntRect monster_mouse_down_walk_rects[] = {
     { .left =  490, .top =  129, .width =   12, .height =   15, },
     { .left =  416, .top =  129, .width =   12, .height =   15, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_mouse_left_idle_rects[] = {
+sfIntRect monster_mouse_left_idle_rects[] = {
     { .left =  505, .top =  128, .width =   15, .height =   16, },
     { .left =  520, .top =  128, .width =   15, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_mouse_left_walk_rects[] = {
+sfIntRect monster_mouse_left_walk_rects[] = {
     { .left =  456, .top =  130, .width =   16, .height =   12, },
     { .left =  472, .top =  130, .width =   16, .height =   11, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_mouse_right_idle_rects[] = {
+sfIntRect monster_mouse_right_idle_rects[] = {
     { .left =  505, .top =  128, .width =   15, .height =   16, },
     { .left =  520, .top =  128, .width =   15, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_mouse_right_walk_rects[] = {
+sfIntRect monster_mouse_right_walk_rects[] = {
     { .left =  456, .top =  130, .width =   16, .height =   12, },
     { .left =  472, .top =  130, .width =   16, .height =   11, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_mouse_up_idle_rects[] = {
+sfIntRect monster_mouse_up_idle_rects[] = {
     { .left =  442, .top =  128, .width =   12, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_mouse_up_walk_rects[] = {
+sfIntRect monster_mouse_up_walk_rects[] = {
     { .left =  490, .top =  129, .width =   12, .height =   15, },
     { .left =  416, .top =  129, .width =   12, .height =   15, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_serpent_down_idle_rects[] = {
+sfIntRect monster_serpent_down_idle_rects[] = {
     { .left =  546, .top =  128, .width =   13, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_serpent_down_walk_rects[] = {
+sfIntRect monster_serpent_down_walk_rects[] = {
     { .left =  546, .top =  128, .width =   13, .height =   16, },
     { .left =  678, .top =  128, .width =   13, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_serpent_left_idle_rects[] = {
+sfIntRect monster_serpent_left_idle_rects[] = {
     { .left =  576, .top =  128, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_serpent_left_walk_rects[] = {
-    { .left =  576, .top =  128, .width =   16, .height =   16, },
-    { .left =  593, .top =  128, .width =   15, .height =   16, },
-    { .left =    0, .top =    0, .width =    0, .height =    0, },
-};
-
-const sfIntRect monster_serpent_right_idle_rects[] = {
-    { .left =  576, .top =  128, .width =   16, .height =   16, },
-    { .left =    0, .top =    0, .width =    0, .height =    0, },
-};
-
-const sfIntRect monster_serpent_right_walk_rects[] = {
+sfIntRect monster_serpent_left_walk_rects[] = {
     { .left =  576, .top =  128, .width =   16, .height =   16, },
     { .left =  593, .top =  128, .width =   15, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_serpent_up_idle_rects[] = {
+sfIntRect monster_serpent_right_idle_rects[] = {
+    { .left =  576, .top =  128, .width =   16, .height =   16, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+sfIntRect monster_serpent_right_walk_rects[] = {
+    { .left =  576, .top =  128, .width =   16, .height =   16, },
+    { .left =  593, .top =  128, .width =   15, .height =   16, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+sfIntRect monster_serpent_up_idle_rects[] = {
     { .left =  562, .top =  128, .width =   12, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_serpent_up_walk_rects[] = {
+sfIntRect monster_serpent_up_walk_rects[] = {
     { .left =  562, .top =  128, .width =   12, .height =   16, },
     { .left =  693, .top =  128, .width =   12, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_down_attack_rects[] = {
+sfIntRect monster_trooper_down_attack_rects[] = {
     { .left =   16, .top =  590, .width =   26, .height =   27, },
     { .left =  184, .top =  599, .width =   40, .height =   25, },
     { .left =  238, .top =  597, .width =   25, .height =   30, },
@@ -723,18 +723,18 @@ const sfIntRect monster_trooper_down_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_down_idle_rects[] = {
+sfIntRect monster_trooper_down_idle_rects[] = {
     { .left =   16, .top =  590, .width =   26, .height =   27, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_down_walk_rects[] = {
+sfIntRect monster_trooper_down_walk_rects[] = {
     { .left =   73, .top =  593, .width =   26, .height =   26, },
     { .left =  127, .top =  596, .width =   26, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_left_attack_rects[] = {
+sfIntRect monster_trooper_left_attack_rects[] = {
     { .left =   60, .top =   12, .width =   16, .height =   27, },
     { .left =   84, .top =   11, .width =   29, .height =   27, },
     { .left =  129, .top =   10, .width =   18, .height =   33, },
@@ -781,18 +781,18 @@ const sfIntRect monster_trooper_left_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_left_idle_rects[] = {
+sfIntRect monster_trooper_left_idle_rects[] = {
     { .left =    4, .top =   11, .width =   16, .height =   27, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_left_walk_rects[] = {
+sfIntRect monster_trooper_left_walk_rects[] = {
     { .left =    4, .top =   11, .width =   16, .height =   27, },
     { .left =   33, .top =   12, .width =   16, .height =   27, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_right_attack_rects[] = {
+sfIntRect monster_trooper_right_attack_rects[] = {
     { .left =   60, .top =   12, .width =   16, .height =   27, },
     { .left =   84, .top =   11, .width =   29, .height =   27, },
     { .left =  129, .top =   10, .width =   18, .height =   33, },
@@ -839,18 +839,18 @@ const sfIntRect monster_trooper_right_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_right_idle_rects[] = {
+sfIntRect monster_trooper_right_idle_rects[] = {
     { .left =    4, .top =   11, .width =   16, .height =   27, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_right_walk_rects[] = {
+sfIntRect monster_trooper_right_walk_rects[] = {
     { .left =    4, .top =   11, .width =   16, .height =   27, },
     { .left =   33, .top =   12, .width =   16, .height =   27, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_up_attack_rects[] = {
+sfIntRect monster_trooper_up_attack_rects[] = {
     { .left =  179, .top =  343, .width =   27, .height =   25, },
     { .left =  214, .top =  340, .width =   40, .height =   25, },
     { .left =  285, .top =  343, .width =   25, .height =   25, },
@@ -876,267 +876,267 @@ const sfIntRect monster_trooper_up_attack_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_up_idle_rects[] = {
+sfIntRect monster_trooper_up_idle_rects[] = {
     { .left =    5, .top =  344, .width =   27, .height =   25, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_trooper_up_walk_rects[] = {
+sfIntRect monster_trooper_up_walk_rects[] = {
     { .left =   61, .top =  344, .width =   27, .height =   24, },
     { .left =  119, .top =  344, .width =   27, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_yk_down_idle_rects[] = {
+sfIntRect monster_yk_down_idle_rects[] = {
     { .left =  210, .top =  120, .width =   25, .height =   30, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_yk_left_idle_rects[] = {
+sfIntRect monster_yk_left_idle_rects[] = {
     { .left =  293, .top =  122, .width =   21, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_yk_right_idle_rects[] = {
+sfIntRect monster_yk_right_idle_rects[] = {
     { .left =  239, .top =  122, .width =   21, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect monster_yk_up_idle_rects[] = {
+sfIntRect monster_yk_up_idle_rects[] = {
     { .left =  264, .top =  122, .width =   25, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_priest_down_idle_rects[] = {
+sfIntRect npc_priest_down_idle_rects[] = {
     { .left =  248, .top =  521, .width =   16, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_priest_left_idle_rects[] = {
+sfIntRect npc_priest_left_idle_rects[] = {
     { .left =  289, .top =  521, .width =   14, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_priest_right_idle_rects[] = {
+sfIntRect npc_priest_right_idle_rects[] = {
     { .left =  289, .top =  521, .width =   14, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_priest_up_idle_rects[] = {
+sfIntRect npc_priest_up_idle_rects[] = {
     { .left =  328, .top =  521, .width =   16, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_uncle_dead_no_sword_rects[] = {
+sfIntRect npc_uncle_dead_no_sword_rects[] = {
     { .left =  203, .top =  321, .width =   26, .height =   24, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_uncle_dead_sword_rects[] = {
+sfIntRect npc_uncle_dead_sword_rects[] = {
     { .left =  202, .top =  279, .width =   28, .height =   28, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_uncle_down_idle_rects[] = {
+sfIntRect npc_uncle_down_idle_rects[] = {
     { .left =  126, .top =  280, .width =   20, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_uncle_down_walk_rects[] = {
+sfIntRect npc_uncle_down_walk_rects[] = {
     { .left =  126, .top =  280, .width =   20, .height =   26, },
     { .left =  126, .top =  320, .width =   20, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_uncle_left_idle_rects[] = {
+sfIntRect npc_uncle_left_idle_rects[] = {
     { .left =  166, .top =  280, .width =   19, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_uncle_left_walk_rects[] = {
-    { .left =  166, .top =  280, .width =   19, .height =   26, },
-    { .left =  165, .top =  320, .width =   21, .height =   25, },
-    { .left =    0, .top =    0, .width =    0, .height =    0, },
-};
-
-const sfIntRect npc_uncle_right_idle_rects[] = {
-    { .left =  166, .top =  280, .width =   19, .height =   26, },
-    { .left =    0, .top =    0, .width =    0, .height =    0, },
-};
-
-const sfIntRect npc_uncle_right_walk_rects[] = {
+sfIntRect npc_uncle_left_walk_rects[] = {
     { .left =  166, .top =  280, .width =   19, .height =   26, },
     { .left =  165, .top =  320, .width =   21, .height =   25, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_down_idle_rects[] = {
+sfIntRect npc_uncle_right_idle_rects[] = {
+    { .left =  166, .top =  280, .width =   19, .height =   26, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+sfIntRect npc_uncle_right_walk_rects[] = {
+    { .left =  166, .top =  280, .width =   19, .height =   26, },
+    { .left =  165, .top =  320, .width =   21, .height =   25, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+sfIntRect npc_zelda_down_idle_rects[] = {
     { .left =  128, .top =   81, .width =   16, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_down_walk_rects[] = {
+sfIntRect npc_zelda_down_walk_rects[] = {
     { .left =  128, .top =   81, .width =   16, .height =   23, },
     { .left =  128, .top =  121, .width =   16, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_laying_down_rects[] = {
+sfIntRect npc_zelda_laying_down_rects[] = {
     { .left =  164, .top =  165, .width =   24, .height =   15, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_left_idle_rects[] = {
+sfIntRect npc_zelda_left_idle_rects[] = {
     { .left =  169, .top =   81, .width =   14, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_left_walk_rects[] = {
+sfIntRect npc_zelda_left_walk_rects[] = {
     { .left =  169, .top =   81, .width =   14, .height =   23, },
     { .left =  169, .top =  121, .width =   13, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_levitating_rects[] = {
+sfIntRect npc_zelda_levitating_rects[] = {
     { .left =  205, .top =  165, .width =   22, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_right_idle_rects[] = {
+sfIntRect npc_zelda_right_idle_rects[] = {
     { .left =  169, .top =   81, .width =   14, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_right_walk_rects[] = {
+sfIntRect npc_zelda_right_walk_rects[] = {
     { .left =  169, .top =   81, .width =   14, .height =   23, },
     { .left =  169, .top =  121, .width =   13, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_up_idle_rects[] = {
+sfIntRect npc_zelda_up_idle_rects[] = {
     { .left =  208, .top =   81, .width =   15, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect npc_zelda_up_walk_rects[] = {
+sfIntRect npc_zelda_up_walk_rects[] = {
     { .left =  208, .top =   81, .width =   15, .height =   23, },
     { .left =  208, .top =  121, .width =   15, .height =   23, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_big_rock_rects[] = {
+sfIntRect object_big_rock_rects[] = {
     { .left =   24, .top =  123, .width =   32, .height =   32, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_boomerang_rects[] = {
+sfIntRect object_boomerang_rects[] = {
     { .left =  167, .top =   78, .width =   14, .height =   14, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_bush_rects[] = {
+sfIntRect object_bush_rects[] = {
     { .left =   22, .top =  102, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_chest_closed_rects[] = {
+sfIntRect object_chest_closed_rects[] = {
     { .left =  110, .top =  234, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_chest_open_rects[] = {
+sfIntRect object_chest_open_rects[] = {
     { .left =  131, .top =  234, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_ground_torch_off_rects[] = {
+sfIntRect object_ground_torch_off_rects[] = {
     { .left =   80, .top =  268, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_ground_torch_on_rects[] = {
+sfIntRect object_ground_torch_on_rects[] = {
     { .left =   99, .top =  268, .width =   16, .height =   16, },
     { .left =  118, .top =  268, .width =   16, .height =   16, },
     { .left =  137, .top =  268, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_ground_torch_sanctuary_rects[] = {
+sfIntRect object_ground_torch_sanctuary_rects[] = {
     { .left =   17, .top =  260, .width =   16, .height =   31, },
     { .left =   37, .top =  260, .width =   16, .height =   31, },
     { .left =   59, .top =  260, .width =   16, .height =   31, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_heart_container_rects[] = {
+sfIntRect object_heart_container_rects[] = {
     { .left =  153, .top =   30, .width =   14, .height =   13, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_heart_container_dialog_rects[] = {
+sfIntRect object_heart_container_dialog_rects[] = {
     { .left =  171, .top =   29, .width =   16, .height =   14, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_key_big_rects[] = {
+sfIntRect object_key_big_rects[] = {
     { .left =  146, .top =    5, .width =   14, .height =   17, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_key_simple_rects[] = {
+sfIntRect object_key_simple_rects[] = {
     { .left =  166, .top =    6, .width =    8, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_lamp_rects[] = {
+sfIntRect object_lamp_rects[] = {
     { .left =  186, .top =   78, .width =   12, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_map_rects[] = {
+sfIntRect object_map_rects[] = {
     { .left =  180, .top =    5, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_pot_rects[] = {
+sfIntRect object_pot_rects[] = {
     { .left =   60, .top =  171, .width =   12, .height =   13, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_rock_rects[] = {
+sfIntRect object_rock_rects[] = {
     { .left =  106, .top =  100, .width =   16, .height =   15, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_rupee_blue_rects[] = {
+sfIntRect object_rupee_blue_rects[] = {
     { .left =   67, .top =   78, .width =    8, .height =   14, },
     { .left =   80, .top =   78, .width =    8, .height =   14, },
     { .left =   93, .top =   78, .width =    8, .height =   14, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_rupee_green_rects[] = {
+sfIntRect object_rupee_green_rects[] = {
     { .left =   30, .top =   78, .width =    8, .height =   14, },
     { .left =   43, .top =   78, .width =    8, .height =   14, },
     { .left =   56, .top =   78, .width =    8, .height =   14, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_rupee_red_rects[] = {
+sfIntRect object_rupee_red_rects[] = {
     { .left =  105, .top =   78, .width =    8, .height =   14, },
     { .left =  118, .top =   78, .width =    8, .height =   14, },
     { .left =  131, .top =   78, .width =    8, .height =   14, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect object_wall_torch_rects[] = {
+sfIntRect object_wall_torch_rects[] = {
     { .left =  161, .top =  267, .width =   18, .height =   16, },
     { .left =  181, .top =  267, .width =   18, .height =   16, },
     { .left =  201, .top =  267, .width =   18, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect rain_flash_rects[] = {
+sfIntRect rain_flash_rects[] = {
     { .left =    2, .top =  523, .width =  256, .height =  223, },
     { .left =  265, .top =  523, .width =  256, .height =  223, },
     { .left =    2, .top =  751, .width =  256, .height =  223, },
@@ -1144,7 +1144,7 @@ const sfIntRect rain_flash_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect rain_noflash_rects[] = {
+sfIntRect rain_noflash_rects[] = {
     { .left =    2, .top =   33, .width =  256, .height =  233, },
     { .left =  266, .top =   33, .width =  256, .height =  233, },
     { .left =    2, .top =  263, .width =  256, .height =  233, },
@@ -1152,7 +1152,7 @@ const sfIntRect rain_noflash_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect sfx_bush_slash_rects[] = {
+sfIntRect sfx_bush_slash_rects[] = {
     { .left =    7, .top =   17, .width =   29, .height =   43, },
     { .left =   37, .top =   17, .width =   29, .height =   43, },
     { .left =   67, .top =   17, .width =   29, .height =   43, },
@@ -1164,7 +1164,7 @@ const sfIntRect sfx_bush_slash_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect sfx_kill_enemy_rects[] = {
+sfIntRect sfx_kill_enemy_rects[] = {
     { .left =    7, .top =  128, .width =   26, .height =   32, },
     { .left =   34, .top =  128, .width =   26, .height =   32, },
     { .left =   61, .top =  128, .width =   26, .height =   32, },
@@ -1175,7 +1175,7 @@ const sfIntRect sfx_kill_enemy_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect sfx_pot_explode_rects[] = {
+sfIntRect sfx_pot_explode_rects[] = {
     { .left =    7, .top =   83, .width =   30, .height =   28, },
     { .left =   38, .top =   83, .width =   30, .height =   28, },
     { .left =   69, .top =   83, .width =   30, .height =   28, },
@@ -1187,7 +1187,15 @@ const sfIntRect sfx_pot_explode_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
-const sfIntRect transition_circle_rects[] = {
+sfIntRect small_shine_rects[] = {
+    { .left =    0, .top =    0, .width =   15, .height =   15, },
+    { .left =   15, .top =    0, .width =   15, .height =   15, },
+    { .left =   30, .top =    0, .width =   15, .height =   15, },
+    { .left =   45, .top =    0, .width =   15, .height =   15, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+sfIntRect transition_circle_rects[] = {
     { .left =    2, .top =    2, .width =  257, .height =  223, },
     { .left =  265, .top =    3, .width =  256, .height =  223, },
     { .left =    2, .top =  233, .width =  257, .height =  223, },
@@ -1196,6 +1204,98 @@ const sfIntRect transition_circle_rects[] = {
     { .left =  265, .top =  461, .width =  259, .height =  223, },
     { .left =    3, .top =  694, .width =  257, .height =  223, },
     { .left =  267, .top =  694, .width =  256, .height =  223, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+sfIntRect triforce_rects[] = {
+    { .left =    0, .top =    0, .width =  175, .height =  160, },
+    { .left =  176, .top =    0, .width =  175, .height =  160, },
+    { .left =  352, .top =    0, .width =  175, .height =  160, },
+    { .left =  528, .top =    0, .width =  175, .height =  160, },
+    { .left =  704, .top =    0, .width =  175, .height =  160, },
+    { .left =  880, .top =    0, .width =  175, .height =  160, },
+    { .left = 1056, .top =    0, .width =  175, .height =  160, },
+    { .left = 1232, .top =    0, .width =  175, .height =  160, },
+    { .left =    0, .top =  160, .width =  175, .height =  160, },
+    { .left =  176, .top =  160, .width =  175, .height =  160, },
+    { .left =  352, .top =  160, .width =  175, .height =  160, },
+    { .left =  528, .top =  160, .width =  175, .height =  160, },
+    { .left =  704, .top =  160, .width =  175, .height =  160, },
+    { .left =  880, .top =  160, .width =  175, .height =  160, },
+    { .left = 1056, .top =  160, .width =  175, .height =  160, },
+    { .left = 1232, .top =  160, .width =  175, .height =  160, },
+    { .left =    0, .top =  320, .width =  175, .height =  160, },
+    { .left =  176, .top =  320, .width =  175, .height =  160, },
+    { .left =  352, .top =  320, .width =  175, .height =  160, },
+    { .left =  528, .top =  320, .width =  175, .height =  160, },
+    { .left =  704, .top =  320, .width =  175, .height =  160, },
+    { .left =  880, .top =  320, .width =  175, .height =  160, },
+    { .left = 1056, .top =  320, .width =  175, .height =  160, },
+    { .left = 1232, .top =  320, .width =  175, .height =  160, },
+    { .left =    0, .top =  480, .width =  175, .height =  160, },
+    { .left =  176, .top =  480, .width =  175, .height =  160, },
+    { .left =  352, .top =  480, .width =  175, .height =  160, },
+    { .left =  528, .top =  480, .width =  175, .height =  160, },
+    { .left =  704, .top =  480, .width =  175, .height =  160, },
+    { .left =  880, .top =  480, .width =  175, .height =  160, },
+    { .left = 1056, .top =  480, .width =  175, .height =  160, },
+    { .left = 1232, .top =  480, .width =  175, .height =  160, },
+    { .left =    0, .top =  640, .width =  175, .height =  160, },
+    { .left =  176, .top =  640, .width =  175, .height =  160, },
+    { .left =  352, .top =  640, .width =  175, .height =  160, },
+    { .left =  528, .top =  640, .width =  175, .height =  160, },
+    { .left =  704, .top =  640, .width =  175, .height =  160, },
+    { .left =  880, .top =  640, .width =  175, .height =  160, },
+    { .left = 1056, .top =  640, .width =  175, .height =  160, },
+    { .left = 1232, .top =  640, .width =  175, .height =  160, },
+    { .left =    0, .top =  800, .width =  175, .height =  160, },
+    { .left =  176, .top =  800, .width =  175, .height =  160, },
+    { .left =  352, .top =  800, .width =  175, .height =  160, },
+    { .left =  528, .top =  800, .width =  175, .height =  160, },
+    { .left =  704, .top =  800, .width =  175, .height =  160, },
+    { .left =  880, .top =  800, .width =  175, .height =  160, },
+    { .left = 1056, .top =  800, .width =  175, .height =  160, },
+    { .left = 1232, .top =  800, .width =  175, .height =  160, },
+    { .left =    0, .top =  960, .width =  175, .height =  160, },
+    { .left =  176, .top =  960, .width =  175, .height =  160, },
+    { .left =  352, .top =  960, .width =  175, .height =  160, },
+    { .left =  528, .top =  960, .width =  175, .height =  160, },
+    { .left =  704, .top =  960, .width =  175, .height =  160, },
+    { .left =  880, .top =  960, .width =  175, .height =  160, },
+    { .left = 1056, .top =  960, .width =  175, .height =  160, },
+    { .left = 1232, .top =  960, .width =  175, .height =  160, },
+    { .left =    0, .top = 1120, .width =  175, .height =  160, },
+    { .left =  176, .top = 1120, .width =  175, .height =  160, },
+    { .left =  352, .top = 1120, .width =  175, .height =  160, },
+    { .left =  528, .top = 1120, .width =  175, .height =  160, },
+    { .left =  704, .top = 1120, .width =  175, .height =  160, },
+    { .left =  880, .top = 1120, .width =  175, .height =  160, },
+    { .left = 1056, .top = 1120, .width =  175, .height =  160, },
+    { .left = 1232, .top = 1120, .width =  175, .height =  160, },
+    { .left =    0, .top = 1280, .width =  175, .height =  160, },
+    { .left =  176, .top = 1280, .width =  175, .height =  160, },
+    { .left =  352, .top = 1280, .width =  175, .height =  160, },
+    { .left =  528, .top = 1280, .width =  175, .height =  160, },
+    { .left =  704, .top = 1280, .width =  175, .height =  160, },
+    { .left =  880, .top = 1280, .width =  175, .height =  160, },
+    { .left = 1056, .top = 1280, .width =  175, .height =  160, },
+    { .left = 1232, .top = 1280, .width =  175, .height =  160, },
+    { .left =    0, .top = 1440, .width =  175, .height =  160, },
+    { .left =  176, .top = 1440, .width =  175, .height =  160, },
+    { .left =  352, .top = 1440, .width =  175, .height =  160, },
+    { .left =  528, .top = 1440, .width =  175, .height =  160, },
+    { .left =  704, .top = 1440, .width =  175, .height =  160, },
+    { .left =  880, .top = 1440, .width =  175, .height =  160, },
+    { .left = 1056, .top = 1440, .width =  175, .height =  160, },
+    { .left = 1232, .top = 1440, .width =  175, .height =  160, },
+    { .left =    0, .top = 1600, .width =  175, .height =  160, },
+    { .left =  176, .top = 1600, .width =  175, .height =  160, },
+    { .left =  352, .top = 1600, .width =  175, .height =  160, },
+    { .left =  528, .top = 1600, .width =  175, .height =  160, },
+    { .left =  704, .top = 1600, .width =  175, .height =  160, },
+    { .left =  880, .top = 1600, .width =  175, .height =  160, },
+    { .left = 1056, .top = 1600, .width =  175, .height =  160, },
+    { .left = 1232, .top = 1600, .width =  175, .height =  160, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
