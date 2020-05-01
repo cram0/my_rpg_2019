@@ -1,7 +1,5 @@
 #include <SFML/Graphics.h>
 
-#include "../../include/debug.h"
-
 #include "helpers.h"
 
 sfVector2f get_relative_origin(sfIntRect rect, sfVector2f pos)
@@ -30,11 +28,14 @@ sfIntRect invert_y_rect(sfIntRect rect)
     );
 }
 
+#include "../../include/debug.h"
+
 sfVector2f invert_y_origin(sfVector2f origin, sfIntRect rect)
 {
+    DEBUG("%d", origin.x);
     return (
         (sfVector2f){
-            .x = rect.width - 2.0 * origin.x,
+            .x = rect.width - origin.x,
             .y = origin.y
         }
     );

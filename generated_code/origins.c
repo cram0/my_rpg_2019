@@ -1,18 +1,13 @@
 #include <SFML/Graphics.h>
 const sfVector2f boomerang_loop_origs[] = {
-    { .x =  328, .y =  253 },
-    { .x =  343, .y =  253 },
-    { .x =  356, .y =  253 },
-    { .x =  370, .y =  253 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f hud_boomerang_origs[] = {
-    { .x =  276, .y =   74 },
-    { .x =    0, .y =    0 },
-};
-
-const sfVector2f hud_boomerang_desc_origs[] = {
     { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
@@ -23,36 +18,21 @@ const sfVector2f hud_origs[] = {
 };
 
 const sfVector2f hud_heart_empty_origs[] = {
-    { .x =  259, .y =   56 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f hud_heart_full_origs[] = {
-    { .x =  291, .y =   56 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f hud_heart_half_origs[] = {
-    { .x =  167, .y =   78 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f hud_lantern_origs[] = {
-    { .x =  259, .y =  159 },
-    { .x =    0, .y =    0 },
-};
-
-const sfVector2f hud_lantern_desc_origs[] = {
-    { .x =    0, .y =    0 },
-    { .x =    0, .y =    0 },
-};
-
-const sfVector2f hud_pause_origs[] = {
-    { .x =    0, .y =    0 },
-    { .x =    0, .y =    0 },
-};
-
-const sfVector2f hud_selection_origs[] = {
     { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
@@ -1009,131 +989,121 @@ const sfVector2f npc_zelda_up_walk_origs[] = {
     { .x =    0, .y =    0 },
 };
 
-const sfVector2f object_big_rock_origs[] = {
-    { .x =   24, .y =  123 },
-    { .x =    0, .y =    0 },
-};
-
 const sfVector2f object_boomerang_origs[] = {
-    { .x =  167, .y =   78 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_bush_origs[] = {
-    { .x =   22, .y =  102 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_chest_closed_origs[] = {
-    { .x =  110, .y =  234 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_chest_open_origs[] = {
-    { .x =  131, .y =  234 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_ground_torch_off_origs[] = {
-    { .x =   80, .y =  268 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_ground_torch_on_origs[] = {
-    { .x =   99, .y =  268 },
-    { .x =  118, .y =  268 },
-    { .x =  137, .y =  268 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_ground_torch_sanctuary_origs[] = {
-    { .x =   17, .y =  260 },
-    { .x =   37, .y =  260 },
-    { .x =   59, .y =  260 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_heart_container_origs[] = {
-    { .x =  153, .y =   30 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_heart_container_dialog_origs[] = {
-    { .x =  171, .y =   29 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_key_big_origs[] = {
-    { .x =  146, .y =    5 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_key_simple_origs[] = {
-    { .x =  166, .y =    6 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_lamp_origs[] = {
-    { .x =  186, .y =   78 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_map_origs[] = {
-    { .x =  180, .y =    5 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_pot_origs[] = {
-    { .x =   60, .y =  171 },
     { .x =    0, .y =    0 },
-};
-
-const sfVector2f object_rock_origs[] = {
-    { .x =  106, .y =  100 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_rupee_blue_origs[] = {
-    { .x =   67, .y =   78 },
-    { .x =   80, .y =   78 },
-    { .x =   93, .y =   78 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_rupee_green_origs[] = {
-    { .x =   30, .y =   78 },
-    { .x =   43, .y =   78 },
-    { .x =   56, .y =   78 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_rupee_red_origs[] = {
-    { .x =  105, .y =   78 },
-    { .x =  118, .y =   78 },
-    { .x =  131, .y =   78 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f object_wall_torch_origs[] = {
-    { .x =  161, .y =  267 },
-    { .x =  181, .y =  267 },
-    { .x =  201, .y =  267 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f rain_flash_origs[] = {
-    { .x =    2, .y =  523 },
-    { .x =  265, .y =  523 },
-    { .x =    2, .y =  751 },
-    { .x =  265, .y =  750 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 
 const sfVector2f rain_noflash_origs[] = {
-    { .x =    2, .y =    3 },
-    { .x =  266, .y =   33 },
-    { .x =    2, .y =  263 },
-    { .x =  266, .y =  263 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
     { .x =    0, .y =    0 },
 };
 

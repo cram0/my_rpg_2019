@@ -63,17 +63,6 @@ long map_get_elapsed_mil(map *map, int idx)
     return (GET_ELAPSED_MSECS(*clock));
 }
 
-void map_set_position(map *m, sfVector2f pos)
-{
-    m->pos = pos;
-    //sfSprite_setPosition(ani->sprite, pos);
-}
-
-sfVector2f map_get_position(map *m)
-{
-    return (m->pos);
-}
-
 void map_clock_restart(map *map, int idx)
 {
     sfClock *clock = map->clocks[idx];

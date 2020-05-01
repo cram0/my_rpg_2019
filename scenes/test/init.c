@@ -6,31 +6,24 @@
 #include "../../include/game_state.h"
 #include "../../include/sfml_helpers.h"
 
-#include "../lib/animation.h"
-#include "../lib/map.h"
-#include "../lib/sprite_paths.h"
-
 #include "../../generated_code/origins.h"
 #include "../../generated_code/rects.h"
 
-#include "lib/init_mob.h"
-
-#include <time.h>
+const char LINK_PATH[] = "assets/link.gif";
+const char MAP_PATH[] = "assets/maps/links_house.png";
+const char MAP_COLOR_PATH[] = "maps_hitboxes/links_house.png";
 
 int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
 {
     animation *ani = &state->my_link.ani;
     state->my_link.direction = DOWN;
 
-    m_animation_init(ani, state->zoom_level, LINK_PATH,
-            vec_center(width, height), link_down_idle, vec_create(10, 10),
-                                                        vec_create(10, -10));
+    if (animation_load_spritesheet(ani, LINK_PATH) < 0)
+        return (-1);
 
-    init_hud(&state->my_link.link_stuff, state->zoom_level);
-    init_inventory(&state->my_link.link_item, state->zoom_level,
-                    width, height);
-    init_boomerang(&state->my_link.boomr, state->zoom_level,
-                    width, height, state->my_map.m.pos);
+    animation_set_zoom(ani, state->zoom_level);
+    animation_set_position(ani, vec_center(width, height));
+    m_animation_set_rects(ani, link_down_idle);
 
     return (0);
 }
@@ -58,7 +51,7 @@ void *DECORATE(init)(global_state *game_state)
         scene_state.height = h;
 
         if (DECORATE(link_init)(&scene_state, w, h) < 0 ||
-            DECORATE(house_init)(&scene_state) < 0 || DECORATE(mobs_init)(&scene_state) < 0 || DECORATE(objects_init)(&scene_state) < 0)
+            DECORATE(house_init)(&scene_state) < 0)
             return (NULL);
 
         run_once = 1;
