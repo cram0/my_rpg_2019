@@ -52,8 +52,10 @@ void equipe_item(items *item, sfEvent event)
     if (event.key.code != sfKeyE)
         return;
     if (event.type == sfEvtKeyReleased) {
-        if (event.key.code == sfKeyE)
+        if (item->equiped != slot[item->cursor_pos].occuped)
             item->equiped = slot[item->cursor_pos].occuped;
+        else
+            item->equiped = 0;
     }
 }
 

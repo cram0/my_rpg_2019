@@ -8,6 +8,7 @@
 #include "../lib/map.h"
 #include "../lib/hud.h"
 #include "../lib/inventory.h"
+#include "../lib/boomerang.h"
 
 enum {
     UP,
@@ -25,6 +26,7 @@ typedef struct {
     int is_running;
     equipment link_stuff;
     items link_item;
+    boomerang boomr;
 } link;
 
 typedef struct {

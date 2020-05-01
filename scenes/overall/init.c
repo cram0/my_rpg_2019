@@ -27,7 +27,8 @@ int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
     init_hud(&state->my_link.link_stuff, state->zoom_level);
     init_inventory(&state->my_link.link_item, state->zoom_level,
                     width, height);
-
+    init_boomerang(&state->my_link.boomr, state->zoom_level,
+                    width, height, state->my_map.m.pos);
     return (0);
 }
 
