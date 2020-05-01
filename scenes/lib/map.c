@@ -82,14 +82,11 @@ void map_clock_restart(map *map, int idx)
     }
 }
 
-void map_move(map *m, int should_move, int directions, sfVector2f *save)
+void map_move(map *m, int should_move, int directions)
 {
     sfVector2f *map_pos = &m->pos;
 
     if (should_move) {
-        save->x = map_pos->x;
-        save->y = map_pos->y;
-
         float elapsed = map_get_elapsed_mil(m, 0);
         float factor = m->speed_factor;
         float offset = elapsed * factor;

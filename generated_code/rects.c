@@ -989,6 +989,11 @@ const sfIntRect npc_zelda_up_walk_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
+const sfIntRect object_big_rock_rects[] = {
+    { .left =   24, .top =  123, .width =   32, .height =   32, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
 const sfIntRect object_boomerang_rects[] = {
     { .left =  167, .top =   78, .width =   14, .height =   14, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
@@ -1060,6 +1065,11 @@ const sfIntRect object_map_rects[] = {
 
 const sfIntRect object_pot_rects[] = {
     { .left =   60, .top =  171, .width =   12, .height =   13, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+const sfIntRect object_rock_rects[] = {
+    { .left =  106, .top =  100, .width =   16, .height =   15, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 

@@ -3,6 +3,9 @@
 
 #include <SFML/Graphics.h>
 
+#include "../../mobs/mob.h"
+#include "../../objects/objects.h"
+
 /*
 ** You may only *touch* the following members:
 **     - speed_factor (default value is 0.360) you can increase it to make the
@@ -25,6 +28,11 @@ typedef struct {
     sfVector2f pos;
 
     sfClock *clocks[5];
+
+    mob *mobs;
+
+    object *objects;
+
 } map;
 
 /*
@@ -88,7 +96,7 @@ long map_get_elapsed_mil(map *map, int idx);
 **      - down + left  = 0b0010 + 0b0100 = 0b0110 = 6
 **      - down + right = 0b0010 + 0b1000 = 0b1010 = 10
 */
-void map_move(map *m, int should_move, int directions, sfVector2f *movement);
+void map_move(map *m, int should_move, int directions);
 
 /*
 ** This function sets the position of the top-left corner of a map.
