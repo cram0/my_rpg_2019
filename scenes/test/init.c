@@ -8,6 +8,7 @@
 
 #include "../lib/animation.h"
 #include "../lib/map.h"
+#include "../lib/sprite_paths.h"
 
 #include "../../generated_code/origins.h"
 #include "../../generated_code/rects.h"
@@ -15,10 +16,6 @@
 #include "lib/init_mob.h"
 
 #include <time.h>
-
-const char LINK_PATH[] = "assets/link.gif";
-const char MAP_PATH[] = "assets/maps/links_house.png";
-const char MAP_COLOR_PATH[] = "maps_hitboxes/links_house.png";
 
 int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
 {
@@ -28,6 +25,13 @@ int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
     m_animation_init(ani, state->zoom_level, LINK_PATH,
             vec_center(width, height), link_down_idle, vec_create(10, 10),
                                                         vec_create(10, -10));
+
+    init_hud(&state->my_link.link_stuff, state->zoom_level);
+    init_inventory(&state->my_link.link_item, state->zoom_level,
+                    width, height);
+    init_boomerang(&state->my_link.boomr, state->zoom_level,
+                    width, height, state->my_map.m.pos);
+
     return (0);
 }
 

@@ -12,18 +12,13 @@ const sfIntRect hud_boomerang_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
+const sfIntRect hud_boomerang_desc_rects[] = {
+    { .left =  164, .top =  608, .width =   64, .height =   16, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
 const sfIntRect hud_rects[] = {
     { .left =    0, .top =    0, .width =  256, .height =  224, },
-    { .left =    0, .top =    0, .width =    0, .height =    0, },
-};
-
-const sfIntRect hud_pause_rects[] = {
-    { .left =    8, .top =    8, .width =  256, .height =  224, },
-    { .left =    0, .top =    0, .width =    0, .height =    0, },
-};
-
-const sfIntRect hud_select_rects[] = {
-    { .left =  464, .top =  329, .width =   31, .height =   31, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
@@ -54,6 +49,26 @@ const sfIntRect hud_heart_half_rects[] = {
 
 const sfIntRect hud_lantern_rects[] = {
     { .left =  259, .top =  159, .width =   16, .height =   16, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+const sfIntRect hud_lantern_desc_rects[] = {
+    { .left =   92, .top =  752, .width =   64, .height =   16, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+const sfIntRect hud_pause_rects[] = {
+    { .left =    8, .top =    8, .width =  256, .height =  224, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+const sfIntRect hud_select_rects[] = {
+    { .left =  464, .top =  329, .width =   31, .height =   31, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
+const sfIntRect hud_selection_rects[] = {
+    { .left =  467, .top =  331, .width =   26, .height =   26, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 

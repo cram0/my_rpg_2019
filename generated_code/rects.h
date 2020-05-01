@@ -1,15 +1,18 @@
 #include <SFML/Graphics.h>
 const sfIntRect boomerang_loop_rects[5];
 const sfIntRect hud_boomerang_rects[2];
-const sfIntRect hud_def_boomrang_rects[2];
+const sfIntRect hud_boomerang_desc_rects[2];
 const sfIntRect hud_rects[2];
-const sfIntRect hud_pause_rects[2];
-const sfIntRect hud_select_rects[2];
+const sfIntRect hud_def_boomrang_rects[2];
+const sfIntRect hud_def_lantern_rects[2];
 const sfIntRect hud_heart_empty_rects[2];
 const sfIntRect hud_heart_full_rects[2];
 const sfIntRect hud_heart_half_rects[2];
 const sfIntRect hud_lantern_rects[2];
-const sfIntRect hud_def_lantern_rects[2];
+const sfIntRect hud_lantern_desc_rects[2];
+const sfIntRect hud_pause_rects[2];
+const sfIntRect hud_select_rects[2];
+const sfIntRect hud_selection_rects[2];
 const sfIntRect link_down_attack_rects[7];
 const sfIntRect link_down_boomerang_throw_rects[3];
 const sfIntRect link_down_carry_idle_rects[2];

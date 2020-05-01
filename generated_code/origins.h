@@ -1,11 +1,15 @@
 #include <SFML/Graphics.h>
 const sfVector2f boomerang_loop_origs[5];
 const sfVector2f hud_boomerang_origs[2];
+const sfVector2f hud_boomerang_desc_origs[2];
 const sfVector2f hud_origs[2];
 const sfVector2f hud_heart_empty_origs[2];
 const sfVector2f hud_heart_full_origs[2];
 const sfVector2f hud_heart_half_origs[2];
 const sfVector2f hud_lantern_origs[2];
+const sfVector2f hud_lantern_desc_origs[2];
+const sfVector2f hud_pause_origs[2];
+const sfVector2f hud_selection_origs[2];
 const sfVector2f link_down_attack_origs[7];
 const sfVector2f link_down_boomerang_throw_origs[3];
 const sfVector2f link_down_carry_idle_origs[2];

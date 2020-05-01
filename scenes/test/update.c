@@ -21,7 +21,7 @@ int DECORATE(update)(void *data)
 {
     DECORATE(state) *state = data;
 
-    house *hous = &state->my_map;
+    world *hous = &state->my_map;
     link *lnk = &state->my_link;
     mob *mobs = state->my_map.m.mobs;
     object *objects = state->my_map.m.objects;
