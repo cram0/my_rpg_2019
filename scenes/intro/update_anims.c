@@ -13,6 +13,36 @@
 #include "lib/time.h"
 #include "update.h"
 
+const char MONOLOG[] = "Long ago, in the beautiful\n kingdom of Hyrule surrounded\n by mountains and forests...\n legends told of an omnipotent\n and omniscient Golden Power\n that resided in a hidden land.";
+const char MONOLOG2[] = "Many people aggressively\n sought to enter the hidden\n Golden Land...\n But no one ever returned.\n One day evil power began to\n flow from the Golden Land...";
+const char MONOLOG3[] = "So the king commanded seven\n wise men to seal the gate to\n the Land of the Golden Power.";
+const char MONOLOG4[] = "That seal should have remained\n for all time...";
+const char MONOLOG5[] = "... ...But, when these events\n were obscured by the mists of\n time and became legend..."; 
+
+void DECORATE(monolog_start)(DECORATE(state) *state)
+{
+    if (state->my_intro.monolog == 1) {
+        setstring_textbox(&state->textbox, MONOLOG);
+        state->my_intro.monolog = 4;
+    }
+    if (state->my_intro.monolog2 == 1) {
+        setstring_textbox(&state->textbox, MONOLOG2);
+        state->my_intro.monolog2 = 4;
+    }
+    if (state->my_intro.monolog3 == 1) {
+        setstring_textbox(&state->textbox, MONOLOG3);
+        state->my_intro.monolog3 = 4;
+    }
+    if (state->my_intro.monolog4 == 1) {
+        setstring_textbox(&state->textbox, MONOLOG4);
+        state->my_intro.monolog4 = 4;
+    }
+    if (state->my_intro.monolog5 == 1) {
+        setstring_textbox(&state->textbox, MONOLOG5);
+        state->my_intro.monolog5 = 4;
+    }
+}
+
 void DECORATE(sword_anim)(DECORATE(state) *state)
 {
     if (state->time < 15900) {
