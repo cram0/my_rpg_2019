@@ -8,17 +8,7 @@
 
 #include "../../generated_code/origins.h"
 #include "../../generated_code/rects.h"
-
-const char NINTENDO_PATH[] = "assets/title_screen/nintendo_presents.png";
-const char COPYRIGHT_PATH[] = "assets/title_screen/copyright.png";
-const char TRIFORCE_PATH[] = "assets/title_screen/triforce.png";
-const char SWORD_PATH[] = "assets/title_screen/logo_sword.png";
-const char STARS_PATH[] = "assets/title_screen/small_shine.png";
-const char SUBTITLE_PATH[] = "assets/title_screen/logo_subtitle.png";
-const char BCKGRD_PATH[] = "assets/title_screen/background.png";
-const char TLO_PATH[] = "assets/title_screen/logo_tlo.png";
-const char ZELDA_PATH[] =  "assets/title_screen/logo_zelda.png";
-const char ZELDA_Z_PATH[] = "assets/title_screen/logo_zelda_z.png";
+#include "../lib/sprite_paths.h"
 
 int DECORATE(nintendo_init)(DECORATE(state) *state)
 {

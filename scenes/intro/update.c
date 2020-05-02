@@ -11,6 +11,7 @@
 #include "../lib/helpers.h"
 #include "lib/entity.h"
 #include "lib/time.h"
+#include "lib/my_update.h"
 
 long global_get_elapsed_mil(sfClock *clock)
 {
