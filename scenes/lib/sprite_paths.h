@@ -16,4 +16,6 @@ const char BCKGRD_PATH[35];
 const char TLO_PATH[33];
 const char ZELDA_PATH[35];
 const char ZELDA_Z_PATH[37];
+const char IMAGES_PATH[31];
+
 #endif

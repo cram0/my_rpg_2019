@@ -17,3 +17,4 @@ const char BCKGRD_PATH[35] = "assets/title_screen/background.png";
 const char TLO_PATH[33] = "assets/title_screen/logo_tlo.png";
 const char ZELDA_PATH[35] =  "assets/title_screen/logo_zelda.png";
 const char ZELDA_Z_PATH[37] = "assets/title_screen/logo_zelda_z.png";
+const char IMAGES_PATH[31] = "assets/title_screen/images.png";
