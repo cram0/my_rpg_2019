@@ -7,6 +7,7 @@
 
 #include "../../include/sfml_helpers.h"
 #include "../../include/debug.h"
+#include "../../lib/int_to_char.h"
 
 #include "../lib/animation.h"
 #include "../lib/map.h"
@@ -28,6 +29,15 @@ typedef struct {
     sfSprite *def_boom;
     sfSprite *def_lantern;
 
+    sfText *level_text;
+    sfFont *font;
+    sfRectangleShape *xp_shape;
+    sfRectangleShape *xp_prog;
+    int xp;
+    int step;
+    int level;
+    float coef_prog;
+
     sfClock *clock;
     sfSprite *select;
     int cursor_pos;
@@ -45,6 +55,7 @@ typedef struct {
 
 slot_inventory slot[20];
 
+void draw_xp(items *item);
 int add_item(items *item, int id);
 void mouse_cursor(items *item, sfEvent event);
 void draw_def(items *item);

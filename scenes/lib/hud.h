@@ -33,7 +33,15 @@ typedef struct {
     sfIntRect *rects;
     text value_display;
     health hearts;
+
+    sfClock *health_clock;
+    sfClock *regeneration;
     int health;
+    int old_health;
+    int lose_health;
+    int clining;
+    int loop;
+
     int ruby;
     int arrow;
     int key;
@@ -41,6 +49,7 @@ typedef struct {
     int max_health
 } equipment;
 
+void lose_health_animation(equipment *stuff);
 void init_hud(equipment *stuff, float zoom_level);
 void init_heart(equipment *stuff, health *hearts, int zoom_level);
 void display_hud(equipment *stuff, sfRenderWindow *win);

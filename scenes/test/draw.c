@@ -27,7 +27,6 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     }
 
     boomerang_draw(win, &state->my_link.boomr, state->my_map.m.pos);
-
     animation_draw(&state->my_link.ani, win, NULL);
 
     display_hud(&state->my_link.link_stuff, win);

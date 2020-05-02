@@ -86,6 +86,7 @@ void draw_content(items *item)
     sfRenderTexture_drawSprite(item->window_inv, item->back_inventory, NULL);
     draw_item(item);
     draw_def(item);
+    draw_xp(item);
     if (ms > 200) {
         item->clining *= -1;
         sfClock_restart(item->clock);
