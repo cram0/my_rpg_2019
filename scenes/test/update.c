@@ -57,14 +57,12 @@ int DECORATE(update)(void *data)
             mob_update_ani(&mobs[i], 200);
         }
 
-        /////// COLLISIONS MOBS->OBJECTS NE MARCHE PAS ///////
         for (int j = 0; objects[j].type != NUL_OBJECT; j++) {
             if (obj_mob_collision(&objects[j], &mobs[i], mobs[i].direction)) {
                 mobs[i].ani.position = save;
                 mob_update_ani(&mobs[i], 200);
             }
         }
-        /////////////////////////////////////////////////////
 
         mob_set_rects(&mobs[i]);
     }
