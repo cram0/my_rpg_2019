@@ -27,6 +27,8 @@ void init_text(text *value)
 void init_hud(equipment *stuff, float zoom_level)
 {
     init_text(&stuff->value_display);
+    stuff->health_clock = sfClock_create();
+    stuff->regeneration = sfClock_create();
     stuff->sprite = sfSprite_create();
     stuff->texture = sfTexture_createFromFile("./assets/hud.png", NULL);
     sfSprite_setTexture(stuff->sprite, stuff->texture, sfFalse);
@@ -35,6 +37,10 @@ void init_hud(equipment *stuff, float zoom_level)
     init_heart(stuff, &stuff->hearts, zoom_level);
     stuff->arrow = 30;
     stuff->health = 5;
+    stuff->old_health = 5;
+    stuff->lose_health = 0;
+    stuff->clining = -1;
+    stuff->loop = 0;
     stuff->ruby = 0;
     stuff->key = 0;
     stuff->bomb = 0;
@@ -63,7 +69,20 @@ void display_value(sfRenderWindow *win, equipment *stuff, text *value)
 
 void display_hud(equipment *stuff, sfRenderWindow *win)
 {
+    int ms = GET_ELAPSED_MSECS(stuff->health_clock);
     sfRenderWindow_drawSprite(win, stuff->sprite, NULL);
     display_value(win, stuff, &stuff->value_display);
-    display_health(win, stuff->health, stuff->max_health, &stuff->hearts);
+    if (ms > 200) {
+        stuff->clining *= -1;
+        sfClock_restart(stuff->health_clock);
+        if (stuff->loop > 5 && stuff->health > 2) {
+            stuff->clining = -1;
+            stuff->lose_health = 0;
+            stuff->loop = 0;
+        }
+        stuff->loop += 1;
+    }
+    if (stuff->clining == -1 || stuff->lose_health == 0) {
+        display_health(win, stuff->health, stuff->max_health, &stuff->hearts);
+    }
 }

@@ -1,5 +1,28 @@
 #include "hud.h"
 
+void lose_health_animation(equipment *stuff)
+{
+    if (stuff->lose_health == 0) {
+        if (stuff->old_health != stuff->health) {
+            stuff->lose_health = 1;
+            sfClock_restart(stuff->health_clock);
+        }
+        stuff->old_health = stuff->health;
+    }
+}
+
+void health_regeneration(equipment *stuff)
+{
+    int ms = GET_ELAPSED_MSECS(stuff->regeneration);
+    if (ms > 20000) {
+        if (stuff->health >= stuff->max_health) {
+            sfClock_restart(stuff->regeneration);
+        } else {
+            stuff->health += 1;
+        }
+    }
+}
+
 void init_heart(equipment *stuff, health *hearts, int zoom_level)
 {
     hearts->heart_1 = sfSprite_create();
