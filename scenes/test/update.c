@@ -47,6 +47,7 @@ int DECORATE(update)(void *data)
 
     for (int i = 0; mobs[i].type != NUL_MOB; i++) {
         mob_move_by_offset(&mobs[i], offset);
+        save = mobs[i].ani.position;
         mob_update_ani(&mobs[i], 200);
 
         sfVector2f save = mobs[i].ani.position;
@@ -57,9 +58,8 @@ int DECORATE(update)(void *data)
         }
 
         /////// COLLISIONS MOBS->OBJECTS NE MARCHE PAS ///////
-        save = mobs[i].ani.position;
-        for (int i = 0; objects[i].type != NUL_OBJECT; i++) {
-            if (obj_mob_collision(&objects[i], &mobs[i], mobs[i].direction)) {
+        for (int j = 0; objects[j].type != NUL_OBJECT; j++) {
+            if (obj_mob_collision(&objects[j], &mobs[i], mobs[i].direction)) {
                 mobs[i].ani.position = save;
                 mob_update_ani(&mobs[i], 200);
             }

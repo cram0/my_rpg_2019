@@ -67,8 +67,9 @@ int obj_mob_collision(object *objects, mob *mobs, int direction)
 
     for (float i = start_x; i < end_x; i++) {
         for (float j = start_y; j < end_y; j++) {
-            if (sfFloatRect_contains(&hitbox_obj, i, j))
+            if (sfFloatRect_contains(&hitbox_obj, i, j)) {
                 return (1);
+            }
         }
     }
     return (0);
