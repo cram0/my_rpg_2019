@@ -73,28 +73,54 @@ void DECORATE(link_direction)(link *lnk, sfEvent event)
     }
 
     if (event.type == sfEvtKeyReleased) {
-        if (lnk->direction == LEFT) {
-            m_animation_set_rects(lnk_ani, link_left_idle_shield);
-            lnk_ani->invert_y = 1;
-        }
-        if (lnk->direction == RIGHT)
-            m_animation_set_rects(lnk_ani, link_right_idle_shield);
-        if (lnk->direction == UP)
-            m_animation_set_rects(lnk_ani, link_up_idle_shield);
-        if (lnk->direction == DOWN)
-            m_animation_set_rects(lnk_ani, link_down_idle_shield);
-    }
-
-    if (event.type == sfEvtKeyPressed) {
-        if (lnk->direction == LEFT) {
-            m_animation_set_rects(lnk_ani, link_right_walk_shield);
+        if (lnk->is_carrying) {
+            if (lnk->direction == LEFT) {
+            m_animation_set_rects(lnk_ani, link_right_carry_idle);
             lnk->ani.invert_y = 1;
         }
         if (lnk->direction == RIGHT)
-            m_animation_set_rects(lnk_ani, link_right_walk_shield);
+            m_animation_set_rects(lnk_ani, link_right_carry_idle);
         if (lnk->direction == UP)
-            m_animation_set_rects(lnk_ani, link_up_walk_shield);
+            m_animation_set_rects(lnk_ani, link_up_carry_idle);
         if (lnk->direction == DOWN)
-            m_animation_set_rects(lnk_ani, link_down_walk_shield);
+            m_animation_set_rects(lnk_ani, link_down_carry_idle);
+        } else {
+            if (lnk->direction == LEFT) {
+                m_animation_set_rects(lnk_ani, link_left_idle_shield);
+                lnk_ani->invert_y = 1;
+            }
+            if (lnk->direction == RIGHT)
+                m_animation_set_rects(lnk_ani, link_right_idle_shield);
+            if (lnk->direction == UP)
+                m_animation_set_rects(lnk_ani, link_up_idle_shield);
+            if (lnk->direction == DOWN)
+                m_animation_set_rects(lnk_ani, link_down_idle_shield);
+        }
+    }
+
+    if (event.type == sfEvtKeyPressed) {
+        if (lnk->is_carrying) {
+            if (lnk->direction == LEFT) {
+                m_animation_set_rects(lnk_ani, link_right_carry_walk);
+                lnk->ani.invert_y = 1;
+            }
+            if (lnk->direction == RIGHT)
+                m_animation_set_rects(lnk_ani, link_right_carry_walk);
+            if (lnk->direction == UP)
+                m_animation_set_rects(lnk_ani, link_up_carry_walk);
+            if (lnk->direction == DOWN)
+                m_animation_set_rects(lnk_ani, link_down_carry_walk);
+        } else {
+            if (lnk->direction == LEFT) {
+                m_animation_set_rects(lnk_ani, link_right_walk_shield);
+                lnk->ani.invert_y = 1;
+            }
+            if (lnk->direction == RIGHT)
+                m_animation_set_rects(lnk_ani, link_right_walk_shield);
+            if (lnk->direction == UP)
+                m_animation_set_rects(lnk_ani, link_up_walk_shield);
+            if (lnk->direction == DOWN)
+                m_animation_set_rects(lnk_ani, link_down_walk_shield);
+        }
     }
 }

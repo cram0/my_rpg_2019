@@ -29,6 +29,7 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     boomerang_draw(win, &state->my_link.boomr, state->my_map.m.pos);
 
     animation_draw(&state->my_link.ani, win, NULL);
+    sfRenderWindow_drawSprite(win, state->my_link.object_carried, NULL);
 
     display_hud(&state->my_link.link_stuff, win);
     display_inventory(win, &state->my_link.link_item);

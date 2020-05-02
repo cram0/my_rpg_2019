@@ -42,7 +42,6 @@ int DECORATE(update)(void *data)
         map_update(&hous->m);
     }
 
-
     sfVector2f offset = { hous->m.pos.x - save.x, hous->m.pos.y - save.y };
 
     for (int i = 0; mobs[i].type != NUL_MOB; i++) {
