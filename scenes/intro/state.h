@@ -18,9 +18,12 @@ typedef struct {
     entity zelda_z;
     animation triforce;
     animation stars;
+    entity images;
     int tri_first;
     int stars_update;
     int stars_change;
+    int monolog;
+    int monolog2;
 } intro;
 
 typedef struct {
