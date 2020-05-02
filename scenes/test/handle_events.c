@@ -9,15 +9,15 @@
 
 #include "lib/link_direction.h"
 
-void test(equipment *stuff, sfEvent event)
+void test(items *item, equipment *stuff, sfEvent event)
 {
     if (event.type == sfEvtKeyPressed &&
         event.key.code == sfKeyA) {
-            stuff->health -= 1;
+            item->xp -= 10;
     }
     if (event.type == sfEvtKeyPressed &&
         event.key.code == sfKeyZ) {
-            stuff->health += 1;
+            item->xp += 10;
     }
 }
 
@@ -25,7 +25,7 @@ int DECORATE(handle_events)(void *data, sfEvent event)
 {
     DECORATE(state) *state = data;
 
-    test(&state->my_link.link_stuff, event);
+    test(&state->my_link.link_item, &state->my_link.link_stuff, event);
     inventory_interaction(&state->my_link.link_item, event);
     if (state->my_link.link_item.lock == 0) {
         boomerang_launch(&state->my_link.boomr,
