@@ -9,6 +9,7 @@
 #include "../lib/hud.h"
 #include "../lib/inventory.h"
 #include "../lib/boomerang.h"
+#include "../lib/equiped_stuff.h"
 
 enum {
     UP,

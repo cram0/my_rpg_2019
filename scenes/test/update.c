@@ -29,6 +29,7 @@ int DECORATE(update)(void *data)
     animation_update(&lnk->ani, 30);
     lose_health_animation(&lnk->link_stuff);
     health_regeneration(&lnk->link_stuff);
+    synchro_boomrang(&lnk->boomr, &lnk->link_item);
 
     sfVector2f save = hous->m.pos;
     map_move(&hous->m, lnk->is_running, lnk->diagonals);
