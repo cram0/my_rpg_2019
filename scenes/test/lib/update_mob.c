@@ -51,7 +51,39 @@ void mob_movement(map *m, mob *mobs)
     }
 }
 
-void mob_set_rects(mob *mobs)
+void mob_set_rects_bk(mob *mobs)
+{
+    if (mobs->direction & 2) {
+        mobs->ani.invert_y = 0;
+        if (mobs->is_walking)
+            m_animation_set_rects(&mobs->ani, monster_bk_down_walk);
+        else
+            m_animation_set_rects(&mobs->ani, monster_bk_down_idle);
+    } else if (mobs->direction & 1) {
+        mobs->ani.invert_y = 0;
+        if (mobs->is_walking)
+            m_animation_set_rects(&mobs->ani, monster_bk_up_walk);
+        else
+            m_animation_set_rects(&mobs->ani, monster_bk_up_idle);
+    }
+    if (mobs->direction & 8) {
+        mobs->ani.invert_y = 0;
+        if (mobs->is_walking)
+            m_animation_set_rects(&mobs->ani, monster_bk_right_walk);
+        else
+            m_animation_set_rects(&mobs->ani, monster_bk_right_idle);
+    } else if (mobs->direction & 4) {
+        mobs->ani.invert_y = 1;
+        if (mobs->is_walking) {
+            m_animation_set_rects(&mobs->ani, monster_bk_left_walk);
+        }
+        else {
+            m_animation_set_rects(&mobs->ani, monster_bk_left_idle);
+        }
+    }
+}
+
+void mob_set_rects_gk(mob *mobs)
 {
     if (mobs->direction & 2) {
         if (mobs->is_walking)
@@ -77,6 +109,14 @@ void mob_set_rects(mob *mobs)
             m_animation_set_rects(&mobs->ani, monster_gk_left_idle);
         }
     }
+}
+
+void mob_set_rects(mob *mobs)
+{
+    if (mobs->type == BLUE_KNIGHT)
+        mob_set_rects_bk(mobs);
+    if (mobs->type == GREEN_KNIGHT)
+        mob_set_rects_gk(mobs);
 }
 
 void mob_move_by_offset(mob *mobs, sfVector2f offset)
