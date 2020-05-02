@@ -9,7 +9,6 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
 
     if (draw_textbox(&scene_state(data)->textbox, win) < 0)
         return (-1);
-
     entity_draw(&state->my_intro.nintendo, win, NULL);
     entity_draw(&state->my_intro.backgrd, win, NULL);
     entity_draw(&state->my_intro.copyright, win, NULL);

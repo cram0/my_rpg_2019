@@ -13,6 +13,22 @@
 #include "lib/entity.h"
 #include "lib/time.h"
 
+const char MONOLOG[] = "ALLLOO";
+
+void DECORATE(disable_draws)(DECORATE(state) *state)
+{
+    state->my_intro.backgrd.is_drawable = 0;
+    state->my_intro.copyright.is_drawable  = 0;
+    state->my_intro.stars.is_drawable = 0;
+    state->my_intro.subtitle.is_drawable = 0;
+    state->my_intro.sword.is_drawable = 0;
+    state->my_intro.tlo.is_drawable = 0;
+    state->my_intro.triforce.is_drawable = 0;
+    state->my_intro.zelda.is_drawable = 0;
+    state->my_intro.zelda_z.is_drawable = 0;
+    state->my_intro.nintendo.is_drawable = 0;
+}
+
 void DECORATE(draw_update)(DECORATE(state) *state)
 {
     DECORATE(first_update(state));
@@ -20,6 +36,9 @@ void DECORATE(draw_update)(DECORATE(state) *state)
     DECORATE(third_update(state));
     DECORATE(fourth_update(state));
     DECORATE(fifth_update(state));
+    if (state->time > 30000) {
+        DECORATE(disable_draws(state));
+    }
 }
 
 int DECORATE(update)(void *data)
