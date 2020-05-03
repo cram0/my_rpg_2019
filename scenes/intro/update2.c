@@ -44,7 +44,7 @@ void DECORATE(third_update)(DECORATE(state) *state)
 
 void DECORATE(fourth_update)(DECORATE(state) *state)
 {
-    if (state->time > 13000) {
+    if (state->time > 12300) {
         state->my_intro.tri_first = 0;
         state->my_intro.sword.is_drawable = 1;
         state->my_intro.zelda_z.is_drawable = 1;
@@ -54,7 +54,7 @@ void DECORATE(fourth_update)(DECORATE(state) *state)
 
 void DECORATE(fifth_update)(DECORATE(state) *state)
 {
-    if (state->time > 16000) {
+    if (state->time > 14000) {
         state->my_intro.backgrd.is_drawable = 1;
         state->my_intro.stars.is_drawable = 1;
         state->my_intro.stars_update = 1;

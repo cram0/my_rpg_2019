@@ -26,8 +26,10 @@ void DECORATE(fourth_update)(DECORATE(state) *state);
 void DECORATE(fifth_update)(DECORATE(state) *state);
 void DECORATE(six_update)(DECORATE(state) *state);
 void DECORATE(seven_update)(DECORATE(state) *state);
+void DECORATE(eight_update)(DECORATE(state) *state);
 void DECORATE(sword_anim)(DECORATE(state) *state);
 void DECORATE(disable_draws)(DECORATE(state) *state);
 void DECORATE(monolog_start)(DECORATE(state) *state);
+void DECORATE(monolog_next)(DECORATE(state) *state);
 
 #endif

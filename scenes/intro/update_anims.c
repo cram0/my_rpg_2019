@@ -13,11 +13,33 @@
 #include "lib/time.h"
 #include "update.h"
 
-const char MONOLOG[] = "Long ago, in the beautiful\n kingdom of Hyrule surrounded\n by mountains and forests...\n legends told of an omnipotent\n and omniscient Golden Power\n that resided in a hidden land.";
-const char MONOLOG2[] = "Many people aggressively\n sought to enter the hidden\n Golden Land...\n But no one ever returned.\n One day evil power began to\n flow from the Golden Land...";
-const char MONOLOG3[] = "So the king commanded seven\n wise men to seal the gate to\n the Land of the Golden Power.";
-const char MONOLOG4[] = "That seal should have remained\n for all time...";
-const char MONOLOG5[] = "... ...But, when these events\n were obscured by the mists of\n time and became legend..."; 
+const char MONOLOG[] = "Long ago, in the beautiful\nkingdom of Hyrule surrounded\nby mountains and forests...\nlegends told of an omnipotent\nand omniscient Golden Power\nthat resided in a hidden land.";
+const char MONOLOG2[] = "Many people aggressively\nsought to enter the hidden\nGolden Land...\nBut no one ever returned.\nOne day evil power began to\nflow from the Golden Land...";
+const char MONOLOG3[] = "So the king commanded seven\nwise men to seal the gate to\nthe Land of the Golden Power.";
+const char MONOLOG4[] = "That seal should have remained\nfor all time...";
+const char MONOLOG5[] = "... ...But, when these events\nwere obscured by the mists of\ntime and became legend...";
+const char MONOLOG6[] = "A mysterious wizard known as\nAgahnim came to Hyrule to\nrelease the seal. He eliminated\nthe good King of Hyrule...";
+const char MONOLOG7[] = "Through evil magic, he began\nto make wise men vanish, one\nafter another.\nAnd the time of destiny for\nPrincess Zelda is drawing\nnear.";
+
+void DECORATE(eight_update)(DECORATE(state) *state)
+{
+    if (state->time > 84000) {
+        if (state->my_intro.monolog7 != 4)
+            state->my_intro.monolog7 = 1;
+    }
+}
+
+void DECORATE(monolog_next)(DECORATE(state) *state)
+{
+    if (state->my_intro.monolog6 == 1) {
+        setstring_textbox(&state->textbox, MONOLOG6);
+        state->my_intro.monolog6 = 4;
+    }
+    if (state->my_intro.monolog7 == 1) {
+        setstring_textbox(&state->textbox, MONOLOG7);
+        state->my_intro.monolog7 = 4;
+    }
+}
 
 void DECORATE(monolog_start)(DECORATE(state) *state)
 {
@@ -41,6 +63,7 @@ void DECORATE(monolog_start)(DECORATE(state) *state)
         setstring_textbox(&state->textbox, MONOLOG5);
         state->my_intro.monolog5 = 4;
     }
+    DECORATE(monolog_next(state));
 }
 
 void DECORATE(sword_anim)(DECORATE(state) *state)

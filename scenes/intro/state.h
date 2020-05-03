@@ -27,6 +27,8 @@ typedef struct {
     int monolog3;
     int monolog4;
     int monolog5;
+    int monolog6;
+    int monolog7;
 } intro;
 
 typedef struct {

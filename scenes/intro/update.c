@@ -36,6 +36,7 @@ void DECORATE(draw_update)(DECORATE(state) *state)
     DECORATE(fifth_update(state));
     DECORATE(six_update(state));
     DECORATE(seven_update(state));
+    DECORATE(eight_update(state));
 }
 
 void DECORATE(six_update)(DECORATE(state) *state)
@@ -66,6 +67,10 @@ void DECORATE(seven_update)(DECORATE(state) *state)
     if (state->time > 68000) {
         if (state->my_intro.monolog5 != 4)
             state->my_intro.monolog5 = 1;
+    }
+    if (state->time > 75000) {
+        if (state->my_intro.monolog6 != 4)
+            state->my_intro.monolog6 = 1;
     }
 }
 
