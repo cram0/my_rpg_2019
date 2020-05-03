@@ -35,44 +35,12 @@ void DECORATE(draw_update)(DECORATE(state) *state)
     DECORATE(fourth_update(state));
     DECORATE(fifth_update(state));
     DECORATE(six_update(state));
-    DECORATE(seven_update(state));
-    DECORATE(eight_update(state));
 }
 
 void DECORATE(six_update)(DECORATE(state) *state)
 {
     if (state->time > 25000) {
-        DECORATE(disable_draws(state));
-        state->my_intro.images.is_drawable = 1;
-        if (state->my_intro.monolog != 4) {
-            state->my_intro.monolog = 1;
-            sfMusic_play(state->opening);
-        }
-        DECORATE(monolog_start(state));
-    }
-}
-
-void DECORATE(seven_update)(DECORATE(state) *state)
-{
-    if (state->time > 41000) {
-        if (state->my_intro.monolog2 != 4)
-            state->my_intro.monolog2 = 1;
-    }
-    if (state->time > 55000) {
-        if (state->my_intro.monolog3 != 4)
-            state->my_intro.monolog3 = 1;
-    }
-    if (state->time > 63000) {
-        if (state->my_intro.monolog4 != 4)
-            state->my_intro.monolog4 = 1;
-    }
-    if (state->time > 68000) {
-        if (state->my_intro.monolog5 != 4)
-            state->my_intro.monolog5 = 1;
-    }
-    if (state->time > 75000) {
-        if (state->my_intro.monolog6 != 4)
-            state->my_intro.monolog6 = 1;
+        load_scene(state->game_state, 1);
     }
 }
 
