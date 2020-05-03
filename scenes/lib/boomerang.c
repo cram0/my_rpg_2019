@@ -68,6 +68,7 @@ void boomerang_draw(sfRenderWindow *win, boomerang *boomr, sfVector2f map_pos)
             }
             new_pos(boomr, map_pos);
             move_boomrang(boomr);
+            sfRenderWindow_drawSprite(win, boomr->sprite, NULL);
         } else {
             boomr->ori_launch = sfSprite_getPosition(boomr->sprite);
             boomr->old_pos = map_pos;
@@ -78,6 +79,5 @@ void boomerang_draw(sfRenderWindow *win, boomerang *boomr, sfVector2f map_pos)
             boomr->back = 1;
             boomr->last_mob_id = 0;
         }
-        sfRenderWindow_drawSprite(win, boomr->sprite, NULL);
     }
 }

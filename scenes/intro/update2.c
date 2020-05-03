@@ -30,6 +30,12 @@ void DECORATE(second_update)(DECORATE(state) *state)
         }
         state->my_intro.triforce.is_drawable = 1;
     }
+    if (state->time > 4000) {
+        if (state->tri_once == 1) {
+            state->tri_once = 5;
+            sfMusic_play(state->music);
+        }
+    }
 }
 
 void DECORATE(third_update)(DECORATE(state) *state)
