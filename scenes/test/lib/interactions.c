@@ -6,6 +6,12 @@
 
 #include "../../../objects/objects.h"
 
+#include "../../lib/animation.h"
+
+#include "../../../components/textboxes/textbox.h"
+
+const char NPC_DIALOG[] = "BITE\n";
+
 void link_pick_object(link *lnk, object *objects)
 {
     if (!lnk->object_carried) {
@@ -16,15 +22,23 @@ void link_pick_object(link *lnk, object *objects)
         sfSprite_setPosition(lnk->object_carried, vec_create(hitbox.left, hitbox.top - (hitbox.height * 1.5)));
 }
 
-void link_throw_object(link *lnk)
+void throw_direction(link *lnk)
 {
 
 }
 
+void link_throw_object(link *lnk)
+{
+    lnk->is_carrying = 0;
+
+    switch (lnk->direction) {
+        case 0 : lnk->throw_direction = 0;
+    }
+}
+
 void link_interaction(link *lnk, object *objects)
 {
-    if (lnk->is_carrying) {
-        link_throw_object(lnk);
+    if (lnk->is_carrying == 1) {
         return;
     }
 
@@ -49,8 +63,15 @@ void link_interaction(link *lnk, object *objects)
         if (sfFloatRect_contains(&obj_hitbox, pos.x, pos.y)) {
             objects[i].interacted = 1;
             if (objects[i].type == POT || objects[i].type == BUSH) {
+                objects[i].not_draw = 1;
                 lnk->is_carrying = 1;
                 link_pick_object(lnk, &objects[i]);
+            }
+            if (objects[i].type == NPC) {
+
+            }
+            if (objects[i].type == CHEST && objects[i].interacted) {
+                m_animation_set_rects(&objects[i].ani, object_chest_open);
             }
         }
     }
@@ -60,4 +81,7 @@ void interaction_event(sfEvent event, link *lnk, object *objects)
 {
     if (event.key.code == sfKeyE && event.type == sfEvtKeyPressed)
         link_interaction(lnk, objects);
+    if (event.key.code == sfKeyG && event.type == sfEvtKeyPressed)
+        link_throw_object(lnk);
+
 }

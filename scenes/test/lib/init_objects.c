@@ -16,6 +16,7 @@
 #include "../../../scenes/lib/animation.h"
 
 const char OBJECTS_PATH[] = "assets/objects.gif";
+const char NPC_PATH[] = "assets/npc.png";
 
 sfVector2f obj_rel_position(sfVector2f map_pos, sfVector2f abs_pos, float zoom)
 {
@@ -40,6 +41,7 @@ int DECORATE(objects_init)(DECORATE(state) *state)
                 break;
             case POT : m_animation_init(&objects[i].ani, state->zoom_level, OBJECTS_PATH, rel, object_pot, vec_create(12, 13), vec_create(18, 19.5));
                 break;
+            case NPC : m_animation_init(&objects[i].ani, state->zoom_level, NPC_PATH, rel, npc_uncle_down_idle, vec_create(20, 26), vec_create(10, -26));
             default : break;
         }
     }

@@ -28,6 +28,7 @@ typedef struct {
     int is_carrying;
 
     sfSprite *object_carried;
+    int throw_direction;
     sfVector2f interact_point;
 
     equipment link_stuff;

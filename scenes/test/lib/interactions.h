@@ -8,5 +8,6 @@
 
 void interaction_event(sfEvent event, link *lnk, object *objects);
 void link_interaction(link *lnk, object *objects);
+void link_throw_object(link *lnk);
 
 #endif
