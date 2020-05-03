@@ -15,6 +15,7 @@ void move_cursor(items *item, sfEvent event)
     int mvx = 0, mvy = 0;
     if (!key_is_arrow(event)) return;
     if (event.type == sfEvtKeyPressed) {
+        sfSound_play(item->cursor_sound);
         if (event.key.code == sfKeyUp) mvy -= 5;
         if (event.key.code == sfKeyRight && (item->cursor_pos + 1) % 5 != 0)
             mvx += 1;
@@ -30,8 +31,7 @@ void move_cursor(items *item, sfEvent event)
         slot[item->cursor_pos].occuped = item->cursor_item;
         draw_item(item);
     }
-    item->cursor_old = item->cursor_pos;
-    item->cursor_pos += mvx + mvy;
+    item->cursor_old = item->cursor_pos, item->cursor_pos += mvx + mvy;
 }
 
 void cursor_selection(items *item, sfEvent event)
@@ -72,7 +72,9 @@ void inventory_interaction(items *item, sfEvent event)
     if (event.type == sfEvtKeyReleased) {
         if (item->lock == 0 || item->lock == 2) {
             item->lock = 1;
+            sfSound_play(item->open);
         } else {
+            sfSound_play(item->close);
             item->lock = 2;
         }
     }

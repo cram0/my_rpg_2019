@@ -2,6 +2,7 @@
 #define INVENTORY_H
 
 #include <SFML/Graphics.h>
+#include <SFML/Audio.h>
 
 #include "../../generated_code/rects.h"
 
@@ -19,6 +20,13 @@ typedef struct {
 } slot_inventory;
 
 typedef struct {
+    sfSound *open;
+    sfSoundBuffer *buff_open;
+    sfSound *close;
+    sfSoundBuffer *buff_close;
+    sfSound *cursor_sound;
+    sfSoundBuffer *buff_cursor;
+    
     sfSprite *inventory;
     sfRenderTexture *window_inv;
     sfTexture *hud_texture;

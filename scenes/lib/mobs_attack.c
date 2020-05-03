@@ -3,8 +3,8 @@
 sfVector2f calcul_vec(sfVector2f pt1, sfVector2f pt2, float mag)
 {
     sfVector2f vec;
-    vec.x = (pt2.x - pt1.x) / mag;
-    vec.y = (pt2.y - pt1.y) / mag;
+    vec.x = (pt2.x - pt1.x) / mag * 2;
+    vec.y = (pt2.y - pt1.y) / mag * 2;
 
     return (vec);
 }
@@ -55,7 +55,7 @@ void find_target(mob *mobs, animation *lnk)
 
     distance = sqrt(pow(pt2.x - pt1.x, 2) + pow(pt2.y - pt1.y, 2));
 
-    if (distance < 100) {
+    if (distance < 200) {
         mobs->is_aggro = 1;
     }
 }

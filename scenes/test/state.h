@@ -13,6 +13,7 @@
 #include "../lib/boomerang_colision.h"
 #include "../lib/body_attack.h"
 #include "../lib/mobs_attack.h"
+#include "../lib/game_over.h"
 
 enum {
     UP,
@@ -38,6 +39,7 @@ typedef struct {
     equipment link_stuff;
     items link_item;
     boomerang boomr;
+    game_over gmv;
 } link;
 
 typedef struct {
@@ -52,6 +54,7 @@ typedef struct {
 
     link my_link;
     world my_map;
+    textbox_state text_gmv;
 
     /* in case you really need to access the global_state object */
     void *game_state;

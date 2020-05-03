@@ -4,16 +4,24 @@ void init_item(items *item)
 {
     item->boomrang_sp = sfSprite_create();
     item->lantern_sp = sfSprite_create();
-
     sfSprite_setTexture(item->boomrang_sp, item->object_texture, sfFalse);
     sfSprite_setTexture(item->lantern_sp, item->object_texture, sfFalse);
-
     sfSprite_setTextureRect(item->boomrang_sp, hud_boomerang_rects[0]);
     sfSprite_setTextureRect(item->lantern_sp, hud_lantern_rects[0]);
-
+    item->open = sfSound_create(), item->close = sfSound_create();
+    item->cursor_sound = sfSound_create();
+    item->buff_open = sfSoundBuffer_createFromFile(
+                        "./audio/sounds/Pause_Open.wav");
+    sfSound_setBuffer(item->open, item->buff_open);
+    item->buff_close = sfSoundBuffer_createFromFile(
+                        "./audio/sounds/Pause_Close.wav");
+    sfSound_setBuffer(item->close, item->buff_close);
+    item->buff_cursor = sfSoundBuffer_createFromFile(
+                        "./audio/sounds/Menu_Cursor.wav");
+    sfSound_setBuffer(item->cursor_sound, item->buff_cursor);
     add_item(item, 1);
     add_item(item, 2);
-    add_item(item, 1);
+    add_item(item, 2);
 }
 
 void init_def(items *item)
@@ -80,13 +88,13 @@ void display_inventory(sfRenderWindow *win, items *lnk_item)
     draw_content(lnk_item);
     if (lnk_item->lock == 1) {
         if (loca.y < 0.0) {
-            sfSprite_move(lnk_item->inventory, (sfVector2f){0.0, 15.0});
+            sfSprite_move(lnk_item->inventory, (sfVector2f){0.0, 25.0});
         }
         sfRenderWindow_drawSprite(win, lnk_item->inventory, NULL);
     }
     if (lnk_item->lock == 2) {
         if (loca.y > (-224 * 3)) {
-            sfSprite_move(lnk_item->inventory, (sfVector2f){0.0, -15.0});
+            sfSprite_move(lnk_item->inventory, (sfVector2f){0.0, -25.0});
         } else {
             lnk_item->lock = 0;
         }

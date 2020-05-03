@@ -2,6 +2,10 @@
 
 void init_body_attack(body_att *attack)
 {
+    attack->sound = sfSound_create();
+    attack->sound_buffer = sfSoundBuffer_createFromFile(
+                            "./audio/sounds/Sword1.wav");
+    sfSound_setBuffer(attack->sound, attack->sound_buffer);
     attack->att_clock = sfClock_create();
     attack->rects = link_down_attack_rects;
     attack->origins = link_down_attack_origs;
@@ -17,6 +21,7 @@ void body_attack(body_att *attack, int direction, equipment *stuff
     if (event.key.code != sfKeyG)
         return;
     if (event.key.type == sfEvtKeyReleased && attack->attack != 1) {
+        sfSound_play(attack->sound);
         sfClock_restart(attack->att_clock);
         sfClock_restart(stuff->regeneration);
         attack->dir = direction;
