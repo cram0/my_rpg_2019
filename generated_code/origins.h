@@ -1,5 +1,6 @@
 #include <SFML/Graphics.h>
 sfVector2f boomerang_loop_origs[5];
+sfVector2f doors_origs[3];
 sfVector2f hud_boomerang_origs[2];
 sfVector2f hud_boomerang_desc_origs[2];
 sfVector2f hud_origs[2];

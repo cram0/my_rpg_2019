@@ -19,16 +19,18 @@ const char MONSTER_PATH[] = "assets/monster.png";
 
 sfVector2f mob_rel_position(sfVector2f map_pos, sfVector2f abs_pos, float zoom)
 {
-    return (vec_create(zoom * abs_pos.x - map_pos.x, zoom * abs_pos.y - map_pos.y));
+    return (vec_create(zoom * abs_pos.x + map_pos.x, zoom * abs_pos.y + map_pos.y));
 }
 
 int DECORATE(mobs_init)(DECORATE(state) *state)
 {
-    state->my_map.m.mobs = overworld_mobs;
+    if (!state->my_map.m.mobs)
+        state->my_map.m.mobs = overworld_mobs;
     mob *mobs = state->my_map.m.mobs;
 
     for (int i = 0; mobs[i].type != NUL_MOB; i++) {
         sfVector2f rel = mob_rel_position(state->my_map.m.pos, mobs[i].abs_pos, state->zoom_level);
+        DEBUG("IMPORTANT: %f %f", rel.x, rel.y);
         m_animation_init(&mobs[i].ani, state->zoom_level, MONSTER_PATH, rel, monster_bk_down_idle, vec_create(10, 10), vec_create(10, -10));
         switch (mobs[i].type) {
             case GREEN_KNIGHT : m_animation_set_rects(&mobs[i].ani, monster_gk_down_idle);

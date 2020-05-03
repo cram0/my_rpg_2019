@@ -5,16 +5,29 @@
 
 #include "../scenes/lib/animation.h"
 
+#include "../mobs/mob.h"
+
 enum {
     BUSH,
     POT,
     CHEST,
     ROCK,
     BIG_ROCK,
+    DOOR,
     NUL_OBJECT
 };
 
-typedef struct {
+struct object;
+
+struct map_change {
+    char *map_path;
+    char *color_path;
+    mob *mobs;
+    struct object *object;
+    sfVector2f map_position;
+};
+
+typedef struct object {
 
     int type;
 
@@ -25,8 +38,13 @@ typedef struct {
 
     int interacted;
 
+    struct map_change mc;
+
 } object;
 
-object overworld_objects[4];
+object overworld_objects[5];
+object overworld2_objects[1];
+
+void init_overworld_objects(void);
 
 #endif
