@@ -44,8 +44,10 @@ void DECORATE(six_update)(DECORATE(state) *state)
     if (state->time > 25000) {
         DECORATE(disable_draws(state));
         state->my_intro.images.is_drawable = 1;
-        if (state->my_intro.monolog != 4)
+        if (state->my_intro.monolog != 4) {
             state->my_intro.monolog = 1;
+            sfMusic_play(state->opening);
+        }
         DECORATE(monolog_start(state));
     }
 }

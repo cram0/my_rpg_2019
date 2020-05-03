@@ -78,7 +78,8 @@ void *DECORATE(init)(global_state *game_state)
         scene_state.my_intro.stars_change = 0;
         scene_state.my_intro.stars_update = 0;
         scene_state.my_intro.tri_first = 1;
-        scene_state.music = sfMusic_createFromFile("audio/musics/title.wav");
+        scene_state.music = sfMusic_createFromFile("audio/musics/title.ogg");
+        scene_state.opening = sfMusic_createFromFile("audio/musics/opening_demo.ogg");
     }
 
     scene_state.glo_clock = sfClock_create();

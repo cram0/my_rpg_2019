@@ -41,6 +41,7 @@ typedef struct {
 
     intro my_intro;
     sfMusic *music;
+    sfMusic *opening;
 
     int tri_update;
     int tri_once;
