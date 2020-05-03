@@ -17,8 +17,9 @@
 
 #include "lib/update_mob.h"
 #include "lib/update_objects.h"
-
 #include "lib/map_change.h"
+
+#include "lib/rain.h"
 
 int DECORATE(update)(void *data)
 {
@@ -100,6 +101,8 @@ int DECORATE(update)(void *data)
             }
         }
     }
+
+    update_rain(&state->my_map.m);
 
     return (0);
 }

@@ -1151,9 +1151,9 @@ sfIntRect rain_flash_rects[] = {
 };
 
 sfIntRect rain_noflash_rects[] = {
-    { .left =    2, .top =   33, .width =  256, .height =  233, },
-    { .left =  266, .top =   33, .width =  256, .height =  233, },
-    { .left =    2, .top =  263, .width =  256, .height =  233, },
+    { .left =    2, .top =   33, .width =  256, .height =  223, },
+    { .left =  266, .top =   33, .width =  256, .height =  223, },
+    { .left =    2, .top =  263, .width =  256, .height =  223, },
     { .left =  266, .top =  263, .width =  256, .height =  223, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
