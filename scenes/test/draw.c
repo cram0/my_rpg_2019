@@ -4,6 +4,7 @@
 #include "state.h"
 #include "lib/draw_mob.h"
 #include "lib/draw_objects.h"
+#include "../../components/textboxes/textbox.h"
 
 #include "../../mobs/mob.h"
 #include "../../objects/objects.h"
@@ -21,10 +22,13 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     }
 
     for (int i = 0; objects[i].type != NUL_OBJECT; i++) {
-        if (objects[i].not_draw == 0)
+        if (objects[i].not_draw == 0) {
             objects_draw(&objects[i], win, NULL);
+        }
     }
 
+    draw_textbox(&state->my_map.m.tuto_textbox, win);
+    
     boomerang_draw(win, &state->my_link.boomr, state->my_map.m.pos);
     animation_draw(&state->my_link.ani, win, NULL);
     if (state->my_link.is_carrying == 1) {

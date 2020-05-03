@@ -10,7 +10,7 @@
 
 #include "../../../components/textboxes/textbox.h"
 
-const char NPC_DIALOG[] = "BITE\n";
+const char NPC_DIALOG[] = "Hi Link !\nPress I to open your\ninventory,\npress E to interact with\nthe world and select\nitems in your inventory,\nPress F to use your\nequipped item,\npress G to release what\nyou have in your hands.\nNow, go and kill enemies to\nget to level two !";
 
 void link_pick_object(link *lnk, object *objects)
 {
@@ -36,7 +36,7 @@ void link_throw_object(link *lnk)
     }
 }
 
-void link_interaction(link *lnk, object *objects)
+void link_interaction(link *lnk, object *objects, map *maps)
 {
     if (lnk->is_carrying == 1) {
         return;
@@ -68,7 +68,7 @@ void link_interaction(link *lnk, object *objects)
                 link_pick_object(lnk, &objects[i]);
             }
             if (objects[i].type == NPC) {
-
+                setstring_textbox(&maps->tuto_textbox, NPC_DIALOG);
             }
             if (objects[i].type == CHEST && objects[i].interacted) {
                 m_animation_set_rects(&objects[i].ani, object_chest_open);
@@ -77,11 +77,10 @@ void link_interaction(link *lnk, object *objects)
     }
 }
 
-void interaction_event(sfEvent event, link *lnk, object *objects)
+void interaction_event(sfEvent event, link *lnk, object *objects, map *maps)
 {
     if (event.key.code == sfKeyE && event.type == sfEvtKeyPressed)
-        link_interaction(lnk, objects);
+        link_interaction(lnk, objects, maps);
     if (event.key.code == sfKeyG && event.type == sfEvtKeyPressed)
         link_throw_object(lnk);
-
 }
