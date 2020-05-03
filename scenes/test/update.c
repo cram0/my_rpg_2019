@@ -28,7 +28,8 @@ int DECORATE(update)(void *data)
     link *lnk = &state->my_link;
     mob *mobs = state->my_map.m.mobs;
     object *objects = state->my_map.m.objects;
-
+    update_textbox(&state->text_gmv);
+    if (lnk->link_stuff.health <= 0) return;
     if (lnk->attck.attack == 1) {
         attack_animation(&lnk->attck, &lnk->ani);
     }

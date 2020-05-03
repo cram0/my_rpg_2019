@@ -15,6 +15,10 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     mob *mobs = state->my_map.m.mobs;
     object *objects = state->my_map.m.objects;
 
+    if (state->my_link.link_stuff.health <= 0) {
+        display_game_over(win, &state->my_link.gmv, &state->text_gmv);
+        return;
+    }
     map_draw(&state->my_map.m, win, NULL);
 
     DEBUG("%f %f", state->my_map.m.pos.x, state->my_map.m.pos.y);

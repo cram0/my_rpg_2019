@@ -2,6 +2,7 @@
 #define BOOMERANG_H
 
 #include <SFML/Graphics.h>
+#include <SFML/Audio.h>
 #include <math.h>
 
 #include "../../generated_code/rects.h"
@@ -14,6 +15,10 @@
 #include "../lib/map.h"
 
 typedef struct {
+    sfSound *sound;
+    sfSoundBuffer *sound_buffer;
+    sfClock *sound_clock;
+
     sfSprite *sprite;
     sfTexture *texture;
     sfRectangleShape *shape;

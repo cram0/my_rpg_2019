@@ -1,11 +1,20 @@
 #include "boomerang.h"
 
+void init_sound(boomerang *boomr)
+{
+    boomr->sound = sfSound_create();
+    boomr->sound_buffer = sfSoundBuffer_createFromFile(
+                            "./audio/sounds/Boomerang.wav");
+    sfSound_setBuffer(boomr->sound, boomr->sound_buffer);
+    boomr->sound_clock = sfClock_create();
+}
+
 void init_boomerang(boomerang *boomr, float zoom_level,
                     float width, float height, sfVector2f map_pos)
 {
+    init_sound(boomr);
     boomr->sprite = sfSprite_create();
     boomr->texture = sfTexture_createFromFile("./assets/objects.gif", NULL);
-
     sfSprite_setTexture(boomr->sprite, boomr->texture, sfFalse);
     sfSprite_setTextureRect(boomr->sprite, object_boomerang_rects[0]);
     sfSprite_setOrigin(boomr->sprite,
@@ -49,8 +58,14 @@ int distance(sfVector2f pt1, sfVector2f pt2, int max)
 
 void boomerang_draw(sfRenderWindow *win, boomerang *boomr, sfVector2f map_pos)
 {
+    int ms = GET_ELAPSED_MSECS(boomr->sound_clock);
     if (boomr->equiped == 1) {
+        
         if (boomr->launch != -1) {
+            if (ms > 100) {
+                sfSound_play(boomr->sound);
+                sfClock_restart(boomr->sound_clock);
+            }
             new_pos(boomr, map_pos);
             move_boomrang(boomr);
         } else {

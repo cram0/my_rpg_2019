@@ -2,6 +2,7 @@
 #define BODY_ATTACH_H
 
 #include <SFML/Graphics.h>
+#include <SFML/Audio.h>
 #include <math.h>
 
 #include "../../generated_code/rects.h"
@@ -17,6 +18,9 @@
 #include "../lib/equiped_stuff.h"
 
 typedef struct {
+    sfSound *sound;
+    sfSoundBuffer *sound_buffer;
+
     sfClock *att_clock;
     sfIntRect *rects;
     sfVector2f *origins;

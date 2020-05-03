@@ -26,13 +26,15 @@ int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
     m_animation_init(ani, state->zoom_level, LINK_PATH,
             vec_center(width, height), link_down_idle, vec_create(10, 10),
                                                         vec_create(10, -10));
-
+    init_textbox(&state->text_gmv, width, height);
     init_hud(&state->my_link.link_stuff, state->zoom_level);
     init_inventory(&state->my_link.link_item, state->zoom_level,
                     width, height);
     init_boomerang(&state->my_link.boomr, state->zoom_level,
                     width, height, state->my_map.m.pos);
     init_body_attack(&state->my_link.attck);
+    init_game_over(&state->my_link.gmv, state->zoom_level,
+                    state->my_link.ani.position);
     return (0);
 }
 
