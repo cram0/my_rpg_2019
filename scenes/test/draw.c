@@ -34,8 +34,6 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
         }
     }
 
-    draw_textbox(&state->my_map.m.tuto_textbox, win);
-
     boomerang_draw(win, &state->my_link.boomr, state->my_map.m.pos);
     animation_draw(&state->my_link.ani, win, NULL);
     if (state->my_link.is_carrying == 1) {
@@ -45,6 +43,8 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     if (state->my_map.m.is_raining) {
         animation_draw(&state->my_map.m.rain_animation, win, NULL);
     }
+
+    draw_textbox(&state->my_map.m.tuto_textbox, win);
 
     display_hud(&state->my_link.link_stuff, win);
     display_inventory(win, &state->my_link.link_item);
