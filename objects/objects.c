@@ -14,7 +14,7 @@ object overworld_objects[6] = {
     { .type = NUL_OBJECT}
 };
 
-object overworld2_objects[100] = {
+object overworld2_objects[97] = {
     { .type = NPC, .abs_pos = vec_create(880, 1480)},
     { .type = BUSH, .abs_pos = vec_create(740, 1816)},
     { .type = BUSH, .abs_pos = vec_create(756, 1816)},
@@ -23,9 +23,6 @@ object overworld2_objects[100] = {
     { .type = BUSH, .abs_pos = vec_create(660, 1816)},
     { .type = BUSH, .abs_pos = vec_create(644, 1816)},
     { .type = BUSH, .abs_pos = vec_create(628, 1816)},
-    { .type = BUSH, .abs_pos = vec_create(660, 1832)},
-    { .type = BUSH, .abs_pos = vec_create(644, 1832)},
-    { .type = BUSH, .abs_pos = vec_create(628, 1832)},
     { .type = BUSH, .abs_pos = vec_create(564, 1816)},
     { .type = BUSH, .abs_pos = vec_create(564, 1832)},
     { .type = BUSH, .abs_pos = vec_create(548, 1816)},
