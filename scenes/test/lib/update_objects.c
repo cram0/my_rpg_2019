@@ -23,6 +23,7 @@ int obj_type_skip_collision(object *objects)
         case CHEST : return (0);
         case ROCK : return (0);
         case BIG_ROCK : return (0);
+        case NPC : return (0);
         default : if (objects->interacted) return (1);
     }
     return (0);
