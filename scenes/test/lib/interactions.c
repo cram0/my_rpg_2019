@@ -10,8 +10,8 @@
 
 #include "../../../components/textboxes/textbox.h"
 
-const char NPC_DIALOG_QUEST[] = "Hi Link !\nPress G to use your\nsword,\nPress I to open your\ninventory,\npress E to interact with\nthe world and select\nitems in your inventory,\nPress F to use your\nequipped item,\npress R to release what\nyou have in your hands.\nNow, go and kill enemies to\nget to level two !";
-const char NPC_DIALOG_QUEST_DONE[] = "Wow ! You did it !\nyou reached level two !\nBut you will need\nmore training to help\nPrincess Zelda ..\nYou can quit the game\n by pressing Q,\nor you can roam around\nand have fun killing\nenemies.";
+const char NPC_DIALOG_QUEST[] = "Hi Link !\nPress G to use your sword,\nPress I to open your inventory,\nPress E to interact with\nthe world and select\nitems in your inventory,\nPress Spacebar to rearrange\nyour inventory,\nPress F to use your\nequipped item,\nPress R to release what\nyou have in your hands.\nNow, go and kill enemies to\nget to level two,\nand then get back to me\noutside !";
+const char NPC_DIALOG_QUEST_DONE[] = "Wow ! You did it !\nyou reached level two !\nBut you will need\nmore training to help\nPrincess Zelda ..\nYou can quit the game\n by pressing Q,\nor you can roam around\nand have fun killing\nenemies !";
 
 void link_pick_object(link *lnk, object *objects)
 {
