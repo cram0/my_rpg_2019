@@ -19,6 +19,7 @@ void body_attack(body_att *attack, int direction, sfEvent event)
         DEBUG("%d", direction);
         attack->dir = direction;
         attack->attack = 1;
+        attack->last_mob_id = 0;
     }
 }
 
@@ -65,7 +66,6 @@ void attack_animation(body_att *attck, animation *ani)
     }
     if (ms > 30) {
         if (end_of_tab(attck->rects[attck->index])) {
-            DEBUG("HEY %d", attck->index);
             attck->attack = 0;
             attck->index = 0;
             ani->origins = attck->oldorigins;

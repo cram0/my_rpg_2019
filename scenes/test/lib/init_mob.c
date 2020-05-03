@@ -26,14 +26,18 @@ void init_value_mobs(mob *mobs)
 {
     mobs->is_alive = 1;
     mobs->hit_clock = sfClock_create();
+    mobs->attack_clock = sfClock_create();
     mobs->hit = -1;
     mobs->clining = 0;
     mobs->loop = 0;
+    mobs->is_aggro = 0;
     if (mobs->type == 0) {
+        mobs->att_power = 3;
         mobs->life = 10;
         mobs->xp = 25;
     }
     if (mobs->type == 1) {
+        mobs->att_power = 2;
         mobs->life = 15;
         mobs->xp = 50;
     }

@@ -38,6 +38,9 @@ typedef struct {
     int clining;
     int loop;
 
+    sfClock *attack_clock;
+    int att_power;
+
     int room_id;
     int id;
     int xp;

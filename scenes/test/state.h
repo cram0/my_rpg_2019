@@ -12,6 +12,7 @@
 #include "../lib/equiped_stuff.h"
 #include "../lib/boomerang_colision.h"
 #include "../lib/body_attack.h"
+#include "../lib/mobs_attack.h"
 
 enum {
     UP,

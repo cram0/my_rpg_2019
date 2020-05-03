@@ -8,11 +8,14 @@ void mobs_is_alive(mob *mobs, items *item)
         if (ms > 50 && mobs[i].clining == 1) {
             mobs[i].hit *= -1;
             mobs[i].loop += 1;
+            mobs[i].is_aggro = 1;
             sfClock_restart(mobs[i].hit_clock);
         }
-        if (mobs[i].loop > 4) {
-            mobs->hit = -1;
+        if (mobs[i].loop > 5) {
+            mobs[i].hit = -1;
             mobs[i].clining = 0;
+            mobs[i].loop = 0;
+            
         }
         if (mobs[i].life <= 0 && mobs[i].is_alive != 0) {
             mobs[i].is_alive = 0;

@@ -10,7 +10,7 @@ void boomerang_colision(boomerang *boomr, mob *mobs)
         mob_hb = sfRectangleShape_getGlobalBounds(mobs[i].ani.hitbox);
         if (sfFloatRect_intersects(&boomerang_hb, &mob_hb, NULL)) {
             if (mobs[i].is_alive == 0) continue;
-            if (mobs[i].id == boomr->last_mob_id) continue;
+            if (mobs[i].clining == 1) continue;
             mobs[i].life -= 5;
             sfClock_restart(mobs[i].hit_clock);
             mobs[i].clining = 1;

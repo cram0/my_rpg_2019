@@ -23,6 +23,7 @@ typedef struct {
     sfIntRect *oldrect;
     sfVector2f *oldorigins;
 
+    int last_mob_id;
     int dir;
     int index;
     int loop;
@@ -32,5 +33,6 @@ typedef struct {
 void init_body_attack(body_att *attack);
 void body_attack(body_att *attack, int direction, sfEvent event);
 void attack_animation(body_att *attck, animation *ani);
+void attack_colision(animation *ani, mob *mobs, body_att *attck);
 
 #endif
