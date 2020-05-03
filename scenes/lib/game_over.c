@@ -17,7 +17,7 @@ void display_game_over(sfRenderWindow *win, game_over *gmv, textbox_state *txt)
 {
     if (gmv->clock == NULL) {
         gmv->clock = sfClock_create();
-        setstring_textbox(txt, "GAME OVER LINK\npress: Q to quit");
+        setstring_textbox(txt, "GAME OVER\nPress Q to quit");
     }
     int ms = GET_ELAPSED_MSECS(gmv->clock);
 

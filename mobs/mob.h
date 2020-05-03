@@ -46,7 +46,7 @@ typedef struct {
     int xp;
 } mob;
 
-mob overworld2_mobs[7];
+mob overworld2_mobs[25];
 mob overworld_mobs[1];
 
 #endif

@@ -15,6 +15,7 @@
 
 #include "lib/init_mob.h"
 #include "lib/rain.h"
+#include "lib/init_music.h"
 
 #include <time.h>
 
@@ -45,6 +46,7 @@ int DECORATE(house_init)(DECORATE(state) *state)
     map_init(m, MAP_PATH, MAP_COLOR_PATH, state->zoom_level);
     init_textbox(&state->my_map.m.tuto_textbox, state->width, state->height);
     init_rain(m, state->zoom_level);
+    init_music(m);
 }
 
 void *DECORATE(init)(global_state *game_state)

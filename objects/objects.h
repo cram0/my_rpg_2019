@@ -45,7 +45,7 @@ typedef struct object {
 } object;
 
 object overworld_objects[6];
-object overworld2_objects[100];
+object overworld2_objects[94];
 
 void init_overworld_objects(void);
 
