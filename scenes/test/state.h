@@ -10,6 +10,8 @@
 #include "../lib/inventory.h"
 #include "../lib/boomerang.h"
 #include "../lib/equiped_stuff.h"
+#include "../lib/boomerang_colision.h"
+#include "../lib/body_attack.h"
 
 enum {
     UP,
@@ -26,6 +28,7 @@ typedef struct {
     int diagonals; /* ie. Left-Up: 5 */
     int is_running;
 
+    body_att attck;
     equipment link_stuff;
     items link_item;
     boomerang boomr;

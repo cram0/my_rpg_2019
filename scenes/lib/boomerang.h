@@ -29,6 +29,7 @@ typedef struct {
     int equiped;
     int launch;
     int back;
+    int last_mob_id;
 } boomerang;
 
 int distance(sfVector2f pt1, sfVector2f pt2, int max);

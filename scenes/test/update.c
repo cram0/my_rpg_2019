@@ -11,6 +11,7 @@
 #include "../lib/animation.h"
 #include "../lib/map.h"
 #include "../lib/helpers.h"
+#include "../lib/mobs_verif.h"
 
 #include "../../mobs/mob.h"
 
@@ -26,6 +27,9 @@ int DECORATE(update)(void *data)
     mob *mobs = state->my_map.m.mobs;
     object *objects = state->my_map.m.objects;
 
+    if (lnk->attck.attack == 1) {
+        attack_animation(&lnk->attck, &lnk->ani);
+    }
     animation_update(&lnk->ani, 30);
     lose_health_animation(&lnk->link_stuff);
     health_regeneration(&lnk->link_stuff);
@@ -45,10 +49,13 @@ int DECORATE(update)(void *data)
         map_update(&hous->m);
     }
 
+    boomerang_colision(&lnk->boomr, mobs);
+    mobs_is_alive(mobs, &lnk->link_item);
 
     sfVector2f offset = { hous->m.pos.x - save.x, hous->m.pos.y - save.y };
 
     for (int i = 0; mobs[i].type != NUL_MOB; i++) {
+        if (mobs[i].is_alive == 0) continue;
         mob_move_by_offset(&mobs[i], offset);
         save = mobs[i].ani.position;
         mob_update_ani(&mobs[i], 200);

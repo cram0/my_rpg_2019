@@ -31,7 +31,7 @@ int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
                     width, height);
     init_boomerang(&state->my_link.boomr, state->zoom_level,
                     width, height, state->my_map.m.pos);
-
+    init_body_attack(&state->my_link.attck);
     return (0);
 }
 
