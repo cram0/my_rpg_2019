@@ -24,5 +24,7 @@ int map_change(link *link, object *door, map *map)
    map->mobs = door->mc.mobs;
    map->objects = door->mc.object;
 
+   map->is_raining = 1;
+
    return (1);
 }

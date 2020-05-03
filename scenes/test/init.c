@@ -14,6 +14,7 @@
 #include "../../generated_code/rects.h"
 
 #include "lib/init_mob.h"
+#include "lib/rain.h"
 
 #include <time.h>
 
@@ -43,6 +44,7 @@ int DECORATE(house_init)(DECORATE(state) *state)
     map *m = &state->my_map.m;
     map_init(m, MAP_PATH, MAP_COLOR_PATH, state->zoom_level);
     init_textbox(&state->my_map.m.tuto_textbox, state->width, state->height);
+    init_rain(m, state->zoom_level);
 }
 
 void *DECORATE(init)(global_state *game_state)

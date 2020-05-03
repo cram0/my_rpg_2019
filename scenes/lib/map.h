@@ -35,6 +35,9 @@ typedef struct {
 
     object *objects;
 
+    animation rain_animation;
+    int is_raining;
+
     textbox_state tuto_textbox;
 
 } map;

@@ -1136,7 +1136,7 @@ sfVector2f rain_flash_origs[] = {
 };
 
 sfVector2f rain_noflash_origs[] = {
-    { .x =    2, .y =    3 },
+    { .x =    2, .y =   33 },
     { .x =  266, .y =   33 },
     { .x =    2, .y =  263 },
     { .x =  266, .y =  263 },
