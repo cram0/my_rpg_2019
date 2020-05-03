@@ -46,12 +46,10 @@ void chose_orientation(body_att *attck, animation *ani)
         attck->origins = link_down_attack_origs;
     }
     if (attck->dir == 2) {
-        ani->invert_y = 0;
         attck->rects = link_right_attack_rects;
         attck->origins = link_right_attack_origs;
     }
     if (attck->dir == 3) {
-        ani->invert_y = 1;
         attck->rects = link_left_attack_rects;
         attck->origins = link_left_attack_origs;
     }
@@ -66,12 +64,17 @@ void attack_animation(body_att *attck, animation *ani)
         attck->oldorigins = ani->origins;
         attck->oldrect = ani->rects;
     }
+    ani->invert_y = (attck->dir == 3) ? 1 : 0;
     if (ms > 30) {
         if (end_of_tab(attck->rects[attck->index])) {
             attck->attack = 0;
             attck->index = 0;
             ani->origins = attck->oldorigins;
             ani->rects = attck->oldrect;
+            if (attck->dir >= 2)
+                ani->invert_y = ani->invert_y ? 0 : 1;
+            else
+                ani->invert_y = 0;
             return;
         }
         ani->rects = attck->rects;
