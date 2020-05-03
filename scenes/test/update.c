@@ -17,6 +17,8 @@
 #include "lib/update_mob.h"
 #include "lib/update_objects.h"
 
+#include "lib/map_change.h"
+
 int DECORATE(update)(void *data)
 {
     DECORATE(state) *state = data;
@@ -25,6 +27,8 @@ int DECORATE(update)(void *data)
     link *lnk = &state->my_link;
     mob *mobs = state->my_map.m.mobs;
     object *objects = state->my_map.m.objects;
+
+    DEBUG("%p", mobs);
 
     animation_update(&lnk->ani, 30);
     lose_health_animation(&lnk->link_stuff);
@@ -73,6 +77,13 @@ int DECORATE(update)(void *data)
     for (int i = 0; objects[i].type != NUL_OBJECT; i++) {
         obj_move_by_offset(&objects[i], offset);
         obj_update_ani(&objects[i], 30);
+        if (objects[i].type == DOOR) {
+            if (map_change(lnk, &objects[i], &hous->m) == 1) {
+                DECORATE(mobs_init)(state);
+                DECORATE(objects_init)(state);
+                break;
+            }
+        }
     }
 
     return (0);
