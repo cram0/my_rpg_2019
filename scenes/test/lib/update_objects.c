@@ -20,9 +20,11 @@ void obj_move_by_offset(object *objects, sfVector2f offset)
 int obj_type_skip_collision(object *objects)
 {
     switch (objects->type) {
+        case DOOR: return (1);
         case CHEST : return (0);
         case ROCK : return (0);
         case BIG_ROCK : return (0);
+        case NPC : return (0);
         default : if (objects->interacted) return (1);
     }
     return (0);

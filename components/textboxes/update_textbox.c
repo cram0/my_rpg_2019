@@ -64,6 +64,7 @@ int update_textbox(textbox_state *state)
                     state->offset++;
                 sfClock_restart(state->clock);
             } else if (elaps > sleep_finished) {
+                reset_textbox(state);
                 state->on = 0;
             }
         }

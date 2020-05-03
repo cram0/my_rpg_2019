@@ -6,6 +6,8 @@
 #include "../../mobs/mob.h"
 #include "../../objects/objects.h"
 
+#include "../../components/textboxes/textbox.h"
+
 /*
 ** You may only *touch* the following members:
 **     - speed_factor (default value is 0.360) you can increase it to make the
@@ -32,6 +34,8 @@ typedef struct {
     mob *mobs;
 
     object *objects;
+
+    textbox_state tuto_textbox;
 
 } map;
 

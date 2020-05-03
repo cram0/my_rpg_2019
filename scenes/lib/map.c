@@ -41,7 +41,11 @@ int map_init(map *m, char *map_pth, char *color_pth, float zoom)
     sfSprite_setScale(m->sprite, vec_same(zoom));
     sfSprite_setScale(m->sprite_color, vec_same(zoom));
 
+#ifndef NDEBUG
     sfSprite_setColor(m->sprite_color, (sfColor){255, 255, 255, 100});
+#else
+    sfSprite_setColor(m->sprite_color, (sfColor){255, 255, 255, 0});
+#endif
 
     m->hitbox_dump = sfTexture_copyToImage(m->texture_color);
     if (!m->hitbox_dump)

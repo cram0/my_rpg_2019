@@ -1,5 +1,6 @@
 #include <SFML/Graphics.h>
 sfIntRect boomerang_loop_rects[5];
+sfIntRect doors_rects[3];
 sfIntRect hud_boomerang_rects[2];
 sfIntRect hud_boomerang_desc_rects[2];
 sfIntRect hud_rects[2];

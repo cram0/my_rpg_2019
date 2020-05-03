@@ -18,6 +18,8 @@
 #include "lib/update_mob.h"
 #include "lib/update_objects.h"
 
+#include "lib/map_change.h"
+
 int DECORATE(update)(void *data)
 {
     DECORATE(state) *state = data;
@@ -34,7 +36,9 @@ int DECORATE(update)(void *data)
     lose_health_animation(&lnk->link_stuff);
     health_regeneration(&lnk->link_stuff);
     synchro_boomrang(&lnk->boomr, &lnk->link_item);
+
     synchro_level(&lnk->link_stuff, &lnk->link_item);
+    update_textbox(&state->my_map.m.tuto_textbox);
 
     sfVector2f save = hous->m.pos;
     map_move(&hous->m, lnk->is_running, lnk->diagonals);
@@ -87,6 +91,13 @@ int DECORATE(update)(void *data)
     for (int i = 0; objects[i].type != NUL_OBJECT; i++) {
         obj_move_by_offset(&objects[i], offset);
         obj_update_ani(&objects[i], 30);
+        if (objects[i].type == DOOR) {
+            if (map_change(lnk, &objects[i], &hous->m) == 1) {
+                DECORATE(mobs_init)(state);
+                DECORATE(objects_init)(state);
+                break;
+            }
+        }
     }
 
     return (0);
