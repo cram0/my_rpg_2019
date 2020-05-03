@@ -20,12 +20,13 @@ const char NPC_PATH[] = "assets/npc.png";
 
 sfVector2f obj_rel_position(sfVector2f map_pos, sfVector2f abs_pos, float zoom)
 {
-    return (vec_create(zoom * abs_pos.x - map_pos.x, zoom * abs_pos.y - map_pos.y));
+    return (vec_create(zoom * abs_pos.x + map_pos.x, zoom * abs_pos.y + map_pos.y));
 }
 
 int DECORATE(objects_init)(DECORATE(state) *state)
 {
-    state->my_map.m.objects = overworld_objects;
+    if (!state->my_map.m.objects)
+        state->my_map.m.objects = overworld_objects;
     object *objects = state->my_map.m.objects;
 
     for (int i = 0; objects[i].type != NUL_OBJECT; i++) {
@@ -42,6 +43,8 @@ int DECORATE(objects_init)(DECORATE(state) *state)
             case POT : m_animation_init(&objects[i].ani, state->zoom_level, OBJECTS_PATH, rel, object_pot, vec_create(12, 13), vec_create(18, 19.5));
                 break;
             case NPC : m_animation_init(&objects[i].ani, state->zoom_level, NPC_PATH, rel, npc_uncle_down_idle, vec_create(20, 26), vec_create(10, -26));
+                break;
+            case DOOR: m_animation_init(&objects[i].ani, state->zoom_level, OBJECTS_PATH, rel, doors, vec_create(12, 13), vec_create(18, 19.5));
             default : break;
         }
     }

@@ -35,6 +35,7 @@ typedef struct {
 
 } mob;
 
-mob overworld_mobs[6];
+mob overworld2_mobs[7];
+mob overworld_mobs[1];
 
 #endif

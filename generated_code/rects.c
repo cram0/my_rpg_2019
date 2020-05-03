@@ -7,6 +7,12 @@ sfIntRect boomerang_loop_rects[] = {
     { .left =    0, .top =    0, .width =    0, .height =    0, },
 };
 
+sfIntRect doors_rects[] = {
+    { .left =  209, .top =  526, .width =   25, .height =   25, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+    { .left =    0, .top =    0, .width =    0, .height =    0, },
+};
+
 sfIntRect hud_boomerang_rects[] = {
     { .left =  276, .top =   74, .width =   16, .height =   16, },
     { .left =    0, .top =    0, .width =    0, .height =    0, },

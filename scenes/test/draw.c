@@ -17,6 +17,8 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
 
     map_draw(&state->my_map.m, win, NULL);
 
+    DEBUG("%f %f", state->my_map.m.pos.x, state->my_map.m.pos.y);
+
     for (int i = 0; mobs[i].type != NUL_MOB; i++) {
         mob_draw(&mobs[i], win, NULL);
     }

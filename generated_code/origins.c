@@ -7,6 +7,12 @@ sfVector2f boomerang_loop_origs[] = {
     { .x =    0, .y =    0 },
 };
 
+sfVector2f doors_origs[] = {
+    { .x =  209, .y =  526 },
+    { .x =    0, .y =    0 },
+    { .x =    0, .y =    0 },
+};
+
 sfVector2f hud_boomerang_origs[] = {
     { .x =  276, .y =   74 },
     { .x =    0, .y =    0 },
