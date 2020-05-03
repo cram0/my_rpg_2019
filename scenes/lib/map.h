@@ -39,6 +39,8 @@ typedef struct {
     animation rain_animation;
     int is_raining;
     sfMusic *overworld_music;
+    sfSound *rain_sound_inside;
+    sfSound *rain_sound_outside;
 
     textbox_state tuto_textbox;
 

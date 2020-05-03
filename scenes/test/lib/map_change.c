@@ -26,5 +26,8 @@ int map_change(link *link, object *door, map *map)
 
    map->is_raining = 1;
 
+   sfSound_stop(map->rain_sound_inside);
+   sfSound_play(map->rain_sound_outside);
+
    return (1);
 }
