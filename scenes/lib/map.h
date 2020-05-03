@@ -1,6 +1,7 @@
 #ifndef MAP_H
 #define MAP_H
 
+#include <SFML/Audio.h>
 #include <SFML/Graphics.h>
 
 #include "../../mobs/mob.h"
@@ -37,6 +38,7 @@ typedef struct {
 
     animation rain_animation;
     int is_raining;
+    sfMusic *overworld_music;
 
     textbox_state tuto_textbox;
 
