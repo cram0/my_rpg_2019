@@ -2,6 +2,7 @@
 #define INTRO_STATE_H
 
 #include "decorator.h"
+#include <SFML/Audio.h>
 
 #include "../../components/textboxes/textbox.h"
 #include "../lib/animation.h"
@@ -39,6 +40,8 @@ typedef struct {
     textbox_state textbox;
 
     intro my_intro;
+    sfMusic *music;
+    sfMusic *opening;
 
     int tri_update;
     int tri_once;
