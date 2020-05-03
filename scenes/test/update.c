@@ -34,6 +34,7 @@ int DECORATE(update)(void *data)
     lose_health_animation(&lnk->link_stuff);
     health_regeneration(&lnk->link_stuff);
     synchro_boomrang(&lnk->boomr, &lnk->link_item);
+    update_textbox(&state->my_map.m.tuto_textbox);
 
     sfVector2f save = hous->m.pos;
     map_move(&hous->m, lnk->is_running, lnk->diagonals);

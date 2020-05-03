@@ -13,6 +13,7 @@ enum {
     CHEST,
     ROCK,
     BIG_ROCK,
+    NPC,
     DOOR,
     NUL_OBJECT
 };
@@ -37,12 +38,13 @@ typedef struct object {
     sfVector2f rel_pos;
 
     int interacted;
+    int not_draw;
 
     struct map_change mc;
 
 } object;
 
-object overworld_objects[5];
+object overworld_objects[6];
 object overworld2_objects[1];
 
 void init_overworld_objects(void);

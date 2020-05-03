@@ -46,7 +46,7 @@ typedef struct {
     int arrow;
     int key;
     int bomb;
-    int max_health
+    int max_health;
 } equipment;
 
 void lose_health_animation(equipment *stuff);
