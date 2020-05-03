@@ -59,7 +59,7 @@ void init_inventory(items *item, int zoom_level, float width, float height)
     sfSprite_setPosition(item->inventory,
                             (sfVector2f){0.0, -244 * zoom_level});
     item->clining = 1, item->lock = 0, item->cursor_pos = 0;
-    item->cursor_item = 0, item->equiped = 0;
+    item->cursor_item = 0, item->equiped = 1;
 }
 
 void draw_equiped_item(sfRenderWindow *win, items *item)

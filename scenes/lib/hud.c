@@ -35,7 +35,7 @@ void init_hud(equipment *stuff, float zoom_level)
     sfSprite_setTextureRect(stuff->sprite, hud_rects[0]);
     sfSprite_setScale(stuff->sprite, vec_same(zoom_level));
     init_heart(stuff, &stuff->hearts, zoom_level);
-    stuff->arrow = 30;
+    stuff->arrow = 0;
     stuff->health = 5;
     stuff->old_health = 5;
     stuff->lose_health = 0;
