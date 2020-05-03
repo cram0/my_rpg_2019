@@ -14,6 +14,7 @@
 #include "../lib/boomerang.h"
 #include "../lib/animation.h"
 #include "../lib/map.h"
+#include "../lib/equiped_stuff.h"
 
 typedef struct {
     sfClock *att_clock;
@@ -23,6 +24,7 @@ typedef struct {
     sfIntRect *oldrect;
     sfVector2f *oldorigins;
 
+    int power;
     int last_mob_id;
     int dir;
     int index;
@@ -31,7 +33,8 @@ typedef struct {
 } body_att;
 
 void init_body_attack(body_att *attack);
-void body_attack(body_att *attack, int direction, sfEvent event);
+void body_attack(body_att *attack, int direction, equipment *stuff,
+                sfEvent event);
 void attack_animation(body_att *attck, animation *ani);
 void attack_colision(animation *ani, mob *mobs, body_att *attck);
 

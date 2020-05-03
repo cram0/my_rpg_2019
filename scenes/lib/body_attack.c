@@ -8,15 +8,17 @@ void init_body_attack(body_att *attack)
     attack->dir = -1;
     attack->index = 0;
     attack->attack = 0;
+    attack->power = 4;
 }
 
-void body_attack(body_att *attack, int direction, sfEvent event) 
+void body_attack(body_att *attack, int direction, equipment *stuff
+                ,sfEvent event) 
 {
     if (event.key.code != sfKeyG)
         return;
     if (event.key.type == sfEvtKeyReleased && attack->attack != 1) {
         sfClock_restart(attack->att_clock);
-        DEBUG("%d", direction);
+        sfClock_restart(stuff->regeneration);
         attack->dir = direction;
         attack->attack = 1;
         attack->last_mob_id = 0;

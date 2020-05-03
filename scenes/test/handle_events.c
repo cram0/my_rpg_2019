@@ -29,8 +29,8 @@ int DECORATE(handle_events)(void *data, sfEvent event)
 
     inventory_interaction(&state->my_link.link_item, event);
     if (state->my_link.link_item.lock == 0) {
-        body_attack(&state->my_link.attck,
-                    state->my_link.direction, event);
+        body_attack(&state->my_link.attck, state->my_link.direction,
+                    &state->my_link.link_stuff, event);
         boomerang_launch(&state->my_link.boomr,
                         state->my_link.direction, event);
         DECORATE(link_direction)(&state->my_link, event);

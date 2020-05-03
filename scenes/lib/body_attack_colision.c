@@ -11,7 +11,7 @@ void attack_colision(animation *ani, mob *mobs, body_att *attck)
         if (sfFloatRect_intersects(&link, &mob_hb, NULL)) {
             if (mobs[i].is_alive == 0) continue;
             if (mobs[i].clining == 1) continue;
-            mobs[i].life -= 1;
+            mobs[i].life -= attck->power;
             DEBUG("HIT: %d-> %d", mobs[i].id, mobs[i].life);
             sfClock_restart(mobs[i].hit_clock);
             mobs[i].clining = 1;
