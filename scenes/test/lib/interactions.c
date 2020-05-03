@@ -85,6 +85,6 @@ void interaction_event(sfEvent event, link *lnk, object *objects, map *maps)
 {
     if (event.key.code == sfKeyE && event.type == sfEvtKeyPressed)
         link_interaction(lnk, objects, maps);
-    if (event.key.code == sfKeyG && event.type == sfEvtKeyPressed)
+    if (event.key.code == sfKeyR && event.type == sfEvtKeyPressed)
         link_throw_object(lnk);
 }
