@@ -11,7 +11,7 @@ SRC	=	$(wildcard *.c) \
 		$(wildcard objects/*.c)
 OBJ	=	$(SRC:.c=.o)
 LDLIBS	=	-lcsfml-graphics -lcsfml-window -lcsfml-system -lcsfml-audio -lm
-CFLAGS	=	-O0 -g -g3
+CFLAGS	=	-O0 -g -g3 -Wno-discarded-qualifiers -Wno-incompatible-pointer-types -Wno-implicit-function-declaration
 
 all: $(NAME)
 
