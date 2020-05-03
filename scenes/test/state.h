@@ -25,6 +25,10 @@ typedef struct {
     int direction;
     int diagonals; /* ie. Left-Up: 5 */
     int is_running;
+    int is_carrying;
+
+    sfSprite *object_carried;
+    sfVector2f interact_point;
 
     equipment link_stuff;
     items link_item;

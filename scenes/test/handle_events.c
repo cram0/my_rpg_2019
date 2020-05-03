@@ -8,6 +8,7 @@
 #include "../../generated_code/rects.h"
 
 #include "lib/link_direction.h"
+#include "lib/interactions.h"
 
 void test(items *item, equipment *stuff, sfEvent event)
 {
@@ -28,6 +29,7 @@ int DECORATE(handle_events)(void *data, sfEvent event)
     test(&state->my_link.link_item, &state->my_link.link_stuff, event);
     inventory_interaction(&state->my_link.link_item, event);
     if (state->my_link.link_item.lock == 0) {
+        interaction_event(event, &state->my_link, state->my_map.m.objects);
         boomerang_launch(&state->my_link.boomr,
                         state->my_link.direction, event);
         DECORATE(link_direction)(&state->my_link, event);

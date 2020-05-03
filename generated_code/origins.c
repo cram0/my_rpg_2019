@@ -74,7 +74,7 @@ sfVector2f link_down_boomerang_throw_origs[] = {
 };
 
 sfVector2f link_down_carry_idle_origs[] = {
-    { .x =  173, .y =  158 },
+    { .x =  164, .y =  158 },
     { .x =    0, .y =    0 },
 };
 
@@ -176,7 +176,7 @@ sfVector2f link_left_boomerang_throw_origs[] = {
 };
 
 sfVector2f link_left_carry_idle_origs[] = {
-    { .x =  166, .y =  291 },
+    { .x =  166, .y =  191 },
     { .x =    0, .y =    0 },
 };
 
@@ -264,7 +264,7 @@ sfVector2f link_right_boomerang_throw_origs[] = {
 };
 
 sfVector2f link_right_carry_idle_origs[] = {
-    { .x =  166, .y =  291 },
+    { .x =  166, .y =  191 },
     { .x =    0, .y =    0 },
 };
 

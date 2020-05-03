@@ -21,7 +21,8 @@ int DECORATE(link_init)(DECORATE(state) *state, float width, float height)
 {
     animation *ani = &state->my_link.ani;
     state->my_link.direction = DOWN;
-
+    state->my_link.object_carried = sfSprite_create();
+    
     m_animation_init(ani, state->zoom_level, LINK_PATH,
             vec_center(width, height), link_down_idle, vec_create(10, 10),
                                                         vec_create(10, -10));
