@@ -20,6 +20,7 @@ int DECORATE(draw)(void *data, sfRenderWindow *win)
     DEBUG("%f %f", state->my_map.m.pos.x, state->my_map.m.pos.y);
 
     for (int i = 0; mobs[i].type != NUL_MOB; i++) {
+        if (mobs[i].is_alive == 0 || mobs[i].hit == 1) continue;
         mob_draw(&mobs[i], win, NULL);
     }
 

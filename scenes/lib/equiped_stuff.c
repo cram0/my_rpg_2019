@@ -8,3 +8,8 @@ void synchro_boomrang(boomerang *boomr, items *item)
         boomr->equiped = 0;
     }
 }
+
+void synchro_level(equipment *stuff, items *item)
+{
+    stuff->max_health = 10 + item->level * 2;
+}

@@ -49,6 +49,7 @@ typedef struct {
     int max_health;
 } equipment;
 
+void health_regeneration(equipment *stuff);
 void lose_health_animation(equipment *stuff);
 void init_hud(equipment *stuff, float zoom_level);
 void init_heart(equipment *stuff, health *hearts, int zoom_level);

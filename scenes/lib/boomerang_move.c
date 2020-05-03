@@ -33,6 +33,7 @@ void back_move(boomerang *boomr, float speed)
     sfSprite_move(boomr->sprite, vector_back);
     if (!distance(pt1, pt2, 20)) {
         boomr->back = 0;
+        boomr->last_mob_id = 0;
         boomr->launch = -1;
         sfSprite_setRotation(boomr->sprite, 0);
         sfSprite_setPosition(boomr->sprite, boomr->origine);

@@ -22,6 +22,27 @@ sfVector2f mob_rel_position(sfVector2f map_pos, sfVector2f abs_pos, float zoom)
     return (vec_create(zoom * abs_pos.x + map_pos.x, zoom * abs_pos.y + map_pos.y));
 }
 
+void init_value_mobs(mob *mobs)
+{
+    mobs->is_alive = 1;
+    mobs->hit_clock = sfClock_create();
+    mobs->attack_clock = sfClock_create();
+    mobs->hit = -1;
+    mobs->clining = 0;
+    mobs->loop = 0;
+    mobs->is_aggro = 0;
+    if (mobs->type == 0) {
+        mobs->att_power = 3;
+        mobs->life = 10;
+        mobs->xp = 25;
+    }
+    if (mobs->type == 1) {
+        mobs->att_power = 2;
+        mobs->life = 15;
+        mobs->xp = 50;
+    }
+}
+
 int DECORATE(mobs_init)(DECORATE(state) *state)
 {
     if (!state->my_map.m.mobs)
@@ -29,6 +50,7 @@ int DECORATE(mobs_init)(DECORATE(state) *state)
     mob *mobs = state->my_map.m.mobs;
 
     for (int i = 0; mobs[i].type != NUL_MOB; i++) {
+        init_value_mobs(&mobs[i]);
         sfVector2f rel = mob_rel_position(state->my_map.m.pos, mobs[i].abs_pos, state->zoom_level);
         DEBUG("IMPORTANT: %f %f", rel.x, rel.y);
         m_animation_init(&mobs[i].ani, state->zoom_level, MONSTER_PATH, rel, monster_bk_down_idle, vec_create(10, 10), vec_create(10, -10));

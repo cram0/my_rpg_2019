@@ -20,6 +20,7 @@ void init_boomerang(boomerang *boomr, float zoom_level,
     boomr->equiped = 1;
     boomr->launch = -1;
     boomr->back = 0;
+    boomr->last_mob_id = 0;
 }
 
 void new_pos(boomerang *boomr, sfVector2f map_pos)
@@ -58,8 +59,10 @@ void boomerang_draw(sfRenderWindow *win, boomerang *boomr, sfVector2f map_pos)
         }
         if (distance(boomr->ori_launch,
             sfSprite_getPosition(boomr->sprite), 300)
-            && boomr->back == 0)
+            && boomr->back == 0) {
             boomr->back = 1;
+            boomr->last_mob_id = 0;
+        }
         sfRenderWindow_drawSprite(win, boomr->sprite, NULL);
     }
 }
