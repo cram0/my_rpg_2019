@@ -76,7 +76,5 @@ int DECORATE(update)(void *data)
         obj_update_ani(&objects[i], 30);
     }
 
-
-
     return (0);
 }
