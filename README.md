@@ -1,5 +1,7 @@
 # RPG
 
+![build](https://github.com/TanguyAndreani/zelda/workflows/build/badge.svg)
+
 ## How to create a new scene
 
 ```bash
