@@ -11,6 +11,13 @@
 
 #include "textbox.h"
 
+#ifdef UBUNTU_MISSING_GETLINESPACING
+float sfText_getLineSpacing(sfText *text)
+{
+    return (2.0);
+}
+#endif
+
 static sfText *generate_text_object(textbox_state *state)
 {
     sfRenderTexture_clear(state->texture, sfTransparent);
