@@ -1,7 +1,6 @@
 NAME	=	my_rpg
 SRC	=	$(wildcard *.c) \
 		$(wildcard lib/*.c) \
-		$(wildcard get_next_line/*.c) \
 		$(wildcard components/**/*.c) \
 		$(wildcard scenes/**/*.c) \
 		$(wildcard scenes/**/**/*.c) \
