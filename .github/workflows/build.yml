@@ -1,0 +1,19 @@
+name: build
+
+on:
+  push:
+    branches: [ develop ]
+  pull_request:
+    branches: [ develop ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: install libs
+      run: sudo apt update && sudo apt install -y libsfml-dev libcsfml-dev
+    - name: make
+      run: make
