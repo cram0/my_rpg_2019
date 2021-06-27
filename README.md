@@ -1,4 +1,5 @@
 # RPG
+![build](https://github.com/TanguyAndreani/zelda/workflows/build/badge.svg)
 
 RPG made in C using SFML
 
