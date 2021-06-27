@@ -1,7 +1,6 @@
 # RPG
+#### RPG made in C using SFML
 ![build](https://github.com/TanguyAndreani/zelda/workflows/build/badge.svg)
-
-RPG made in C using SFML
 
 ## Preview
 ![](https://s6.gifyu.com/images/Zelda_introfe7a78be38ce9f2a.gif)
